@@ -1,9 +1,295 @@
-<html>
+
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; URL='https://huggingface.co/spaces/gptomics/simple-geno-model'" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GPTomics is a research lab focused on the intersection of Bioinformatics and AI." />
+  <title>GPTomics</title>
+
+  <link rel="icon" href="resources/favicon.ico" />
+
+  <style>
+    :root{
+      --bg: #fbf6ea; /* ivory (main) */
+      --bg2: #ffffff; /* white (secondary) */
+      --ink: #0f231a;
+      --muted: #3c5a4c;
+      --border: #dfe9e3;
+      --accent: #2a7f62;
+      --accent2: #2c6aa6;
+      --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
+      --radius: 14px;
+      --maxw: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:0;
+      margin:0 0 22px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .logo{
+      width:58px;
+      height:58px;
+      border-radius:0;
+      border:0;
+      background: transparent;
+      object-fit:contain;
+      flex:0 0 auto;
+    }
+    .brand h1{
+      margin:0;
+      font-weight:750;
+      letter-spacing:0.2px;
+      font-size:24px;
+    }
+    .brand p{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:13.8px;
+      max-width:60ch;
+    }
+    nav{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: rgba(42,127,98,0.06);
+      text-decoration:none;
+    }
+
+    .summary{
+      margin: 6px 0 26px 0;
+    }
+    .summary h2{
+      margin:0 0 12px;
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:0.15px;
+    }
+    .summary p{
+      margin:0 0 12px;
+      color: var(--muted);
+      font-size:15px;
+      max-width: 95ch;
+    }
+    .summary p:last-child{margin-bottom:0}
+
+    .projects{
+      margin: 0 0 26px 0;
+    }
+    .projects h3{
+      margin:0 0 12px;
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:0.15px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media (max-width: 720px){
+      .grid{grid-template-columns: 1fr;}
+      header{flex-direction:column; align-items:flex-start;}
+      nav{justify-content:flex-start;}
+    }
+
+    .tile{
+      display:block;
+      padding:14px 14px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.70));
+      box-shadow: var(--shadow);
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+      color: inherit;
+    }
+    .tile:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,35,26,0.09);
+      border-color: #cfe2d8;
+      text-decoration:none;
+    }
+    .tile .kicker{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+    }
+    .tile h4{
+      margin:0;
+      font-size:15.5px;
+      font-weight:800;
+      letter-spacing:0.1px;
+    }
+    .badge{
+      font-size:12px;
+      color: var(--accent);
+      border:1px solid rgba(42,127,98,0.28);
+      background: rgba(42,127,98,0.07);
+      padding:3px 8px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .tile p{
+      margin:0;
+      color: var(--muted);
+      font-size:13.9px;
+    }
+
+    .contact{
+      margin: 0 0 18px 0;
+    }
+    .contact h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:0.15px;
+    }
+    .contact p{
+      margin:0;
+      color: var(--muted);
+      font-size:14.8px;
+      max-width: 95ch;
+    }
+
+    footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid rgba(15,35,26,0.10);
+      color: rgba(15,35,26,0.55);
+      font-size:12.5px;
+      text-align:center;
+    }
+  </style>
 </head>
 <body>
-    <p>Please follow <a href="https://huggingface.co/spaces/gptomics/simple-geno-model">this link</a> if you are not redirected automatically.</p>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img class="logo" src="resources/logo.png" alt="GPTomics logo" />
+        <div>
+          <h1>GPTomics</h1>
+          <p>Research at the intersection of bioinformatics and artificial intelligence.</p>
+        </div>
+      </div>
+      <nav aria-label="Primary">
+   
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/GPTomics" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://x.com/gptomics" target="_blank" rel="noreferrer">X</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary" id="summary" aria-label="Summary">
+        <hr> 
+        <p>
+          Creating the next wave of bioinformatics through AI acceleration is one of the most impactful technical challenges of our time.
+        </p>
+        <p>
+          We started this research lab to tackle this problem with a simple goal: unravel ALL biological mysteries.
+          We, somewhat short-sightedly, call our lab GPTomics. While we use many transformers, that name no longer
+          fits fully as achieving this goal will require a broad set of technologies, but we'll still use it to
+          remind us of the start.
+        </p>
+        <p>
+          We’re taking a multi-path approach to understanding biology by both building new models to simulate biological
+          systems at different scales, and customizing general-purpose tools (e.g., agents) to improve how we research
+          and discover patterns in biology. Our plan is to move as fast as possible so humanity can benefit from what we learn.
+        </p>
+        <p>
+          We truly believe this is the moment and we are the generation that can unravel biology down to its core principles
+          and build a reductionist foundation that holds up to the rigor of falsifiable science.
+        </p>
+        <p>
+          We plan to build in public for as long as we can. If you have ideas, suggestions, or want to contribute,
+          submit a PR or contact us.
+        </p>
+      </section>
+
+      <section class="projects" id="projects" aria-label="Projects">
+        <div class="grid">
+            <a class="tile" href="https://github.com/GPTomics/biojepa" target="_blank" rel="noreferrer">
+            <div class="kicker">
+              <h4>BioJEPA</h4>
+              <span class="badge">GitHub</span>
+            </div>
+            <p>
+              Applying JEPA-based architectures to biology: building an action-conditioned “world model” for cells
+              inspired by V-JEPA 2-AC, aiming for a digital simulator that predicts how cell states respond to
+              perturbations.
+            </p>
+          </a>
+          <a class="tile" href="https://github.com/GPTomics/bioSkills" target="_blank" rel="noreferrer">
+            <div class="kicker">
+              <h4>BioSkills</h4>
+              <span class="badge">GitHub</span>
+            </div>
+            <p>
+              A collection of skills that guide AI coding agents (Claude Code, Codex, Gemini) through common
+              bioinformatics tasks, with code patterns, best practices, and examples across analyses from sequence
+              work to single-cell and population genetics.
+            </p>
+          </a>
+
+          
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-label="Contact">
+        <h3>Contact</h3>
+        <p>
+          If you have something to tell us, email us at
+          <a href="mailto:gptomics@gmail.com">gptomics@gmail.com</a>,
+          or on Twitter/X <a href="https://x.com/gptomics" target="_blank" rel="noreferrer">@gptomics</a>.
+        </p>
+      </section>
+
+      <footer>
+        © <span id="year"></span> GPTomics. Just figure things out. 
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+```
