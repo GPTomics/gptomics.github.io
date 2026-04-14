@@ -85,7 +85,7 @@ TEMPLATE = '''<!doctype html>
       --accent2: #2c6aa6;
       --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
       --radius: 14px;
-      --maxw: 980px;
+      --maxw: 800px;
     }}
     *{{box-sizing:border-box}}
     body{{
