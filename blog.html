@@ -103,68 +103,48 @@
     nav a.icon:hover{color: var(--accent)}
     nav a.icon svg{width:18px; height:18px; display:block}
 
-    main{padding:6px 0 0}
-    .blog-header h2{
-      margin:0 0 10px;
-      font-size: 22px;
+    main{padding:20px 0 0}
+    .blog-header h1{
+      margin:0 0 14px;
+      font-size: clamp(28px, 4vw, 42px);
       font-weight:800;
-      letter-spacing:0.15px;
+      line-height:1.2;
+      letter-spacing:-0.3px;
     }
     .blog-header p{
-      margin:0 0 28px;
+      margin:0 0 40px;
       color: var(--muted);
-      font-size:15px;
-      max-width:90ch;
+      font-size:16px;
+      line-height:1.7;
+      max-width:80ch;
     }
 
     .post-list{display:flex; flex-direction:column; gap:0}
     .post-item{
       display:block;
-      padding:18px 14px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.70));
-      box-shadow: var(--shadow);
-      margin-bottom:12px;
-      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+      padding:22px 0;
+      border-bottom:1px solid var(--border);
+      transition: padding .15s ease;
       color: inherit;
     }
-    .post-item:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(15,35,26,0.09);
-      border-color:#cfe2d8;
-      text-decoration:none;
-    }
-    .post-item .meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      font-size:12.5px;
+    .post-item:last-child{border-bottom:none}
+    .post-item:hover{padding-left:8px; text-decoration:none}
+    .post-item:hover h2{color: var(--accent)}
+    .post-item .date{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size:13px;
       color: var(--accent);
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      font-weight:700;
       margin-bottom:6px;
     }
-    .post-item .meta .author{
-      color: var(--muted);
-      letter-spacing:0.5px;
-      text-transform:none;
-      font-weight:600;
-      font-style:italic;
-    }
-    .post-item .meta .author a{color: inherit; text-decoration: underline; text-underline-offset: 2px}
-    .post-item .meta .author a:hover{color: var(--accent); text-decoration: none}
-    .post-item h3{
+    .post-item h2{
       margin:0;
-      font-size:17px;
-      font-weight:800;
-      letter-spacing:0.1px;
+      font-size:22px;
+      font-weight:600;
       color: var(--ink);
+      transition: color .15s ease;
+      letter-spacing:normal;
     }
-    .post-item:hover h3{color: var(--accent)}
-    .empty, .loading{color:var(--muted); font-size:15px; padding:20px 4px}
+    .empty, .loading{color: var(--muted); font-size:15px; padding:20px 0}
 
     html{scroll-behavior:smooth}
     footer{
@@ -215,8 +195,7 @@
 
     <main>
       <section class="blog-header">
-        <hr>
-        <h2>Blog</h2>
+        <h1>Blog</h1>
         <p>Writings from GPTomics members about their interests including biology, AI, product management, and research.</p>
       </section>
 
@@ -240,7 +219,7 @@
 
     function formatDate(iso){
       const d = new Date(iso + "T00:00:00");
-      return d.toLocaleDateString("en-US", {year:"numeric", month:"long", day:"numeric"}).toUpperCase();
+      return d.toLocaleDateString("en-US", {year:"numeric", month:"long", day:"numeric"});
     }
 
     function escapeHtml(s){
@@ -248,7 +227,7 @@
     }
 
     async function renderList(){
-      let posts, authors = {};
+      let posts;
       try {
         const res = await fetch("blogs/blogs.json");
         if (!res.ok) throw new Error("fetch failed");
@@ -257,10 +236,6 @@
         host.innerHTML = '<p class="empty">Could not load posts.</p>';
         return;
       }
-      try {
-        const res = await fetch("blogs/authors.json");
-        if (res.ok) authors = await res.json();
-      } catch {}
 
       posts.sort((a,b) => (a.date < b.date ? 1 : -1));
 
@@ -275,22 +250,11 @@
         }
       }));
 
-      function authorHtml(name){
-        const safe = escapeHtml(name);
-        const url = authors[name];
-        return url
-          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${safe}</a>`
-          : safe;
-      }
-
       const list = entries.length
         ? `<div class="post-list">${entries.map(e => `
-            <a class="post-item" href="blog/${encodeURIComponent(slugFromFile(e.file))}.html" data-author="${escapeHtml(e.author || '')}">
-              <div class="meta">
-                <span>${formatDate(e.date)}</span>
-                ${e.author ? `<span class="author">${authorHtml(e.author)}</span>` : ""}
-              </div>
-              <h3>${escapeHtml(e.title)}</h3>
+            <a class="post-item" href="blog/${encodeURIComponent(slugFromFile(e.file))}.html">
+              <div class="date">${formatDate(e.date)}</div>
+              <h2>${escapeHtml(e.title)}</h2>
             </a>`).join("")}</div>`
         : '<p class="empty">No posts yet.</p>';
 
