@@ -11,7 +11,7 @@ from pathlib import Path
 from datetime import date
 import markdown
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 BLOGS_DIR = ROOT / 'blogs'
 OUT_DIR = ROOT / 'blog'
 MANIFEST = BLOGS_DIR / 'blogs.json'
