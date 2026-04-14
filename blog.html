@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Writings from GPTomics members about their interests including biology, AI, product management, and research." />
+  <meta name="author" content="GPTomics" />
+  <meta name="robots" content="index, follow" />
+  <title>Blog | GPTomics</title>
+
+  <link rel="canonical" href="https://www.gptomics.com/blog.html" />
+  <link rel="icon" href="resources/favicon.ico" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <meta property="og:site_name" content="GPTomics" />
+  <meta property="og:title" content="Blog | GPTomics" />
+  <meta property="og:description" content="Writings from GPTomics members about their interests including biology, AI, product management, and research." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gptomics.com/blog.html" />
+  <meta property="og:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta property="og:image:alt" content="GPTomics logo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gptomics" />
+  <meta name="twitter:creator" content="@gptomics" />
+  <meta name="twitter:title" content="Blog | GPTomics" />
+  <meta name="twitter:description" content="Writings from GPTomics members about their interests including biology, AI, product management, and research." />
+  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "GPTomics Blog",
+    "url": "https://www.gptomics.com/blog.html",
+    "description": "Writings from GPTomics members about their interests including biology, AI, product management, and research.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #fcfff9;
+      --bg2: #ffffff;
+      --ink: #0f231a;
+      --muted: #3c5a4c;
+      --border: #dfe9e3;
+      --accent: #2a7f62;
+      --accent2: #2c6aa6;
+      --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
+      --radius: 14px;
+      --maxw: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--accent2); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin:0 0 22px 0;
+    }
+    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:center; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: rgba(42,127,98,0.06);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--accent); border-color: rgba(42,127,98,0.28); background: rgba(42,127,98,0.07)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--accent)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{padding:6px 0 0}
+    .blog-header h2{
+      margin:0 0 10px;
+      font-size: 22px;
+      font-weight:800;
+      letter-spacing:0.15px;
+    }
+    .blog-header p{
+      margin:0 0 28px;
+      color: var(--muted);
+      font-size:15px;
+      max-width:90ch;
+    }
+
+    .post-list{display:flex; flex-direction:column; gap:0}
+    .post-item{
+      display:block;
+      padding:18px 14px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.70));
+      box-shadow: var(--shadow);
+      margin-bottom:12px;
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+      color: inherit;
+    }
+    .post-item:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(15,35,26,0.09);
+      border-color:#cfe2d8;
+      text-decoration:none;
+    }
+    .post-item .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      font-size:12.5px;
+      color: var(--accent);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .post-item .meta .author{
+      color: var(--muted);
+      letter-spacing:0.5px;
+      text-transform:none;
+      font-weight:600;
+      font-style:italic;
+    }
+    .post-item .meta .author a{color: inherit; text-decoration: underline; text-underline-offset: 2px}
+    .post-item .meta .author a:hover{color: var(--accent); text-decoration: none}
+    .post-item h3{
+      margin:0;
+      font-size:17px;
+      font-weight:800;
+      letter-spacing:0.1px;
+      color: var(--ink);
+    }
+    .post-item:hover h3{color: var(--accent)}
+    .empty, .loading{color:var(--muted); font-size:15px; padding:20px 4px}
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(15,35,26,0.10);
+      color: rgba(15,35,26,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--accent)}
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <a class="brand-link" href="index.html">
+          <img class="logo" src="resources/logo.png" alt="GPTomics logo" />
+          <div>
+            <h1>GPTomics</h1>
+            <p>Research at the intersection of bioinformatics and artificial intelligence.</p>
+          </div>
+        </a>
+      </div>
+      <nav aria-label="Primary">
+        <a href="blog.html" class="active">Blog</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="icon" href="https://github.com/GPTomics" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="icon" href="https://x.com/gptomics" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="blog-header">
+        <hr>
+        <h2>Blog</h2>
+        <p>Writings from GPTomics members about their interests including biology, AI, product management, and research.</p>
+      </section>
+
+      <section id="posts">
+        <div class="loading">Loading…</div>
+      </section>
+
+      <footer>
+        <div>&copy; <span id="year"></span> GPTomics. Just figure things out.</div>
+        <div><a href="#top">I'm lazy, take me to the top</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const host = document.getElementById("posts");
+
+    function slugFromFile(file){ return file.replace(/\.md$/i, ""); }
+
+    function formatDate(iso){
+      const d = new Date(iso + "T00:00:00");
+      return d.toLocaleDateString("en-US", {year:"numeric", month:"long", day:"numeric"}).toUpperCase();
+    }
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    }
+
+    async function renderList(){
+      let posts, authors = {};
+      try {
+        const res = await fetch("blogs/blogs.json");
+        if (!res.ok) throw new Error("fetch failed");
+        posts = await res.json();
+      } catch(e){
+        host.innerHTML = '<p class="empty">Could not load posts.</p>';
+        return;
+      }
+      try {
+        const res = await fetch("blogs/authors.json");
+        if (res.ok) authors = await res.json();
+      } catch {}
+
+      posts.sort((a,b) => (a.date < b.date ? 1 : -1));
+
+      const entries = await Promise.all(posts.map(async p => {
+        if (p.title) return p;
+        try {
+          const md = await fetch("blogs/" + p.file).then(r => r.text());
+          const m = md.split("\n").find(l => /^#\s+/.test(l));
+          return {...p, title: m ? m.replace(/^#\s+/, "").trim() : slugFromFile(p.file)};
+        } catch {
+          return {...p, title: slugFromFile(p.file)};
+        }
+      }));
+
+      function authorHtml(name){
+        const safe = escapeHtml(name);
+        const url = authors[name];
+        return url
+          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${safe}</a>`
+          : safe;
+      }
+
+      const list = entries.length
+        ? `<div class="post-list">${entries.map(e => `
+            <a class="post-item" href="blog/${encodeURIComponent(slugFromFile(e.file))}.html" data-author="${escapeHtml(e.author || '')}">
+              <div class="meta">
+                <span>${formatDate(e.date)}</span>
+                ${e.author ? `<span class="author">${authorHtml(e.author)}</span>` : ""}
+              </div>
+              <h3>${escapeHtml(e.title)}</h3>
+            </a>`).join("")}</div>`
+        : '<p class="empty">No posts yet.</p>';
+
+      host.innerHTML = list;
+    }
+
+    renderList();
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</body>
+</html>

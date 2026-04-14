@@ -4,24 +4,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology. Explore our work on BioJEPA and BioSkills." />
+  <meta name="description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology. Explore our work on BioTaskBench, BioJEPA, and BioSkills." />
+  <meta name="author" content="GPTomics" />
+  <meta name="robots" content="index, follow" />
   <title>GPTomics | AI neolab for Biology</title>
 
   <link rel="canonical" href="https://www.gptomics.com/" />
   <link rel="icon" href="resources/favicon.ico" />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
 
+  <meta property="og:site_name" content="GPTomics" />
   <meta property="og:title" content="GPTomics | AI neolab for Biology" />
   <meta property="og:description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.gptomics.com/" />
   <meta property="og:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta property="og:image:alt" content="GPTomics logo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gptomics" />
+  <meta name="twitter:creator" content="@gptomics" />
   <meta name="twitter:title" content="GPTomics | AI neolab for Biology" />
   <meta name="twitter:description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology." />
   <meta name="twitter:image" content="https://www.gptomics.com/resources/logo.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
 
   <script type="application/ld+json">
   {
@@ -119,6 +133,9 @@
       background: rgba(42,127,98,0.06);
       text-decoration:none;
     }
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--accent)}
+    nav a.icon svg{width:18px; height:18px; display:block}
 
     .summary{
       margin: 6px 0 26px 0;
@@ -239,10 +256,14 @@
         </div>
       </div>
       <nav aria-label="Primary">
-   
+        <a href="blog.html">Blog</a>
         <a href="#contact">Contact</a>
-        <a href="https://github.com/GPTomics" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://x.com/gptomics" target="_blank" rel="noreferrer">X</a>
+        <a class="icon" href="https://github.com/GPTomics" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="icon" href="https://x.com/gptomics" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
       </nav>
     </header>
 
@@ -256,7 +277,7 @@
           We started this research lab to tackle this problem with a simple goal: unravel ALL biological mysteries. We, somewhat short-sightedly, call our lab GPTomics. While we use many transformers, that name no longer fits fully as achieving this goal will require a broad set of technologies, but we'll still use it to remind us of the start.
         </p>
         <p>
-          We’re taking a multi-path approach to understanding biology by both building new models to simulate biological systems at different scales, and customizing general-purpose tools (e.g., agents) to improve how we research and discover patterns in biology. Our plan is to move as fast as possible so humanity can benefit from what we learn.
+          We're taking a multi-path approach to understanding biology by both building new models to simulate biological systems at different scales, and customizing general-purpose tools (e.g., agents) to improve how we research and discover patterns in biology. Our plan is to move as fast as possible so humanity can benefit from what we learn.
         </p>
         <p>
           We truly believe this is the moment and we are the generation that can unravel biology down to its core principles and build a reductionist foundation that holds up to the rigor of falsifiable science.
@@ -268,7 +289,7 @@
 
       <section class="projects" id="projects" aria-label="Projects">
         <div class="grid">
-          <a class="tile" href="https://github.com/GPTomics/bioTaskBench" target="_blank" rel="noreferrer">
+          <a class="tile" href="https://github.com/GPTomics/bioTaskBench" target="_blank" rel="noopener">
             <div class="kicker">
               <h4>Bio-Task Benchmarker</h4>
               <span class="badge">GitHub</span>
@@ -277,25 +298,25 @@
               Bio-Task Bench is both a benchmark and evaluation tool for evaluating how well AI coding agents perform bioinformatics tasks. It includes 33 original tests across 10 domains, a deterministic grading harness, and adapters for running external bioinformatics benchmarks under the same CLI.
             </p>
           </a>
-          <a class="tile" href="https://github.com/GPTomics/biojepa/blob/main/docs/biojepa_ac_technical_report_v0_6.pdf" target="_blank" rel="noreferrer">
+          <a class="tile" href="https://github.com/GPTomics/biojepa/blob/main/docs/biojepa_ac_technical_report_v0_6.pdf" target="_blank" rel="noopener">
             <div class="kicker">
               <h4>BioJEPA-AC v0.6 Technical Report</h4>
               <span class="badge">PDF</span>
             </div>
             <p>
-              This report presents v0.6 of BioJEPA-AC (Biological Joint-Embedding Predictive Architecture - Action Conditioned), a joint-embedding predictive architecture that uses a shared latent space to learn cell dynamics and perturbation response.
+              This report presents v0.6 of BioJEPA-AC (Biological Joint-Embedding Predictive Architecture — Action Conditioned), a joint-embedding predictive architecture that uses a shared latent space to learn cell dynamics and perturbation response.
             </p>
           </a>
-            <a class="tile" href="https://github.com/GPTomics/biojepa" target="_blank" rel="noreferrer">
+          <a class="tile" href="https://github.com/GPTomics/biojepa" target="_blank" rel="noopener">
             <div class="kicker">
               <h4>BioJEPA</h4>
               <span class="badge">GitHub</span>
             </div>
             <p>
-              Applying JEPA-based architectures to biology: building an action-conditioned “world model” for cells inspired by V-JEPA 2-AC, aiming for a digital simulator that predicts how cell states respond to perturbations.
+              Applying JEPA-based architectures to biology: building an action-conditioned "world model" for cells inspired by V-JEPA 2-AC, aiming for a digital simulator that predicts how cell states respond to perturbations.
             </p>
           </a>
-          <a class="tile" href="https://github.com/GPTomics/bioSkills" target="_blank" rel="noreferrer">
+          <a class="tile" href="https://github.com/GPTomics/bioSkills" target="_blank" rel="noopener">
             <div class="kicker">
               <h4>BioSkills</h4>
               <span class="badge">GitHub</span>
@@ -304,8 +325,6 @@
               A collection of skills that guide AI coding agents (Claude Code, Codex, Gemini) through common bioinformatics tasks, with code patterns, best practices, and examples across analyses from sequence work to single-cell and population genetics.
             </p>
           </a>
-
-          
         </div>
       </section>
 
@@ -314,12 +333,12 @@
         <p>
           If you have something to tell us, email us at
           <a href="mailto:gptomics@gmail.com">gptomics@gmail.com</a>,
-          or on Twitter/X <a href="https://x.com/gptomics" target="_blank" rel="noreferrer">@gptomics</a>.
+          or on Twitter/X <a href="https://x.com/gptomics" target="_blank" rel="noopener">@gptomics</a>.
         </p>
       </section>
 
       <footer>
-        © <span id="year"></span> GPTomics. Just figure things out. 
+        © <span id="year"></span> GPTomics. Just figure things out.
       </footer>
     </main>
   </div>
@@ -329,14 +348,4 @@
   </script>
 
 </body>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WC0W8D6J20');
-</script>
 </html>
-```
