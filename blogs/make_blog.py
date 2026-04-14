@@ -31,8 +31,6 @@ TEMPLATE = '''<!doctype html>
   <meta property='og:description' content='{description}' />
   <meta property='og:url' content='{url}' />
   <meta property='og:type' content='article' />
-  <meta property='og:image' content='{SITE_URL}/resources/logo.png' />
-  <meta property='og:image:alt' content='GPTomics logo' />
   <meta property='article:author' content='{author}' />
   <meta property='article:published_time' content='{iso_date}' />
   <meta name='twitter:card' content='summary' />
@@ -40,7 +38,6 @@ TEMPLATE = '''<!doctype html>
   <meta name='twitter:creator' content='@gptomics' />
   <meta name='twitter:title' content='{title}' />
   <meta name='twitter:description' content='{description}' />
-  <meta name='twitter:image' content='{SITE_URL}/resources/logo.png' />
   <link rel='canonical' href='{url}' />
   <link rel='icon' href='../resources/favicon.ico' />
   <link rel='preconnect' href='https://www.googletagmanager.com' />
@@ -70,8 +67,7 @@ TEMPLATE = '''<!doctype html>
     "mainEntityOfPage": {{
       "@type": "WebPage",
       "@id": "{url}"
-    }},
-    "image": "{SITE_URL}/resources/logo.png"
+    }}
   }}
   </script>
   <style>
