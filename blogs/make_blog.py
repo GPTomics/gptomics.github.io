@@ -261,7 +261,6 @@ TEMPLATE = '''<!doctype html>
           <img class='logo' src='../resources/logo.png' alt='GPTomics logo' />
           <div>
             <h1>GPTomics</h1>
-            <p>Research at the intersection of bioinformatics and artificial intelligence.</p>
           </div>
         </a>
       </div>
