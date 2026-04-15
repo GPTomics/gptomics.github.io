@@ -63,7 +63,7 @@
       --accent2: #2c6aa6;
       --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
       --radius: 14px;
-      --maxw: 800px;
+      --maxw: 1280px;
     }
     *{box-sizing:border-box}
     body{
@@ -85,11 +85,11 @@
       padding:0;
       margin:0 0 22px 0;
     }
-    .brand{display:flex; align-items:center; gap:14px; min-width:0}
-    .brand a.brand-link{display:flex; align-items:center; gap:14px; color:inherit}
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
     .brand a.brand-link:hover{text-decoration:none}
     .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
-    .brand h1{margin:0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
     .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
     nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
     nav a{
@@ -109,7 +109,7 @@
     nav a.icon:hover{color: var(--accent)}
     nav a.icon svg{width:18px; height:18px; display:block}
 
-    main{padding:8px 0 0}
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
     .back-link{
       display:inline-flex;
       align-items:center;
