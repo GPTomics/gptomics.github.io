@@ -39,7 +39,13 @@ TEMPLATE = '''<!doctype html>
   <meta name='twitter:title' content='{title}' />
   <meta name='twitter:description' content='{description}' />
   <link rel='canonical' href='{url}' />
-  <link rel='icon' href='../resources/favicon.ico' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
   <link rel='preconnect' href='https://www.googletagmanager.com' />
   <meta name='author' content='{author}' />
   <meta name='robots' content='index, follow' />
