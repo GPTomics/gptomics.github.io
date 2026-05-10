@@ -10,6 +10,7 @@
   <title>GPTomics | AI neolab for Biology</title>
 
   <link rel="canonical" href="https://www.gptomics.com/" />
+  <link rel="icon" type="image/svg+xml" href="resources/logo.svg" />
   <link rel="icon" href="resources/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png" />
@@ -24,7 +25,7 @@
   <meta property="og:description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.gptomics.com/" />
-  <meta property="og:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta property="og:image" content="https://www.gptomics.com/resources/logo_square.png" />
   <meta property="og:image:alt" content="GPTomics logo" />
 
   <meta name="twitter:card" content="summary" />
@@ -32,7 +33,7 @@
   <meta name="twitter:creator" content="@gptomics" />
   <meta name="twitter:title" content="GPTomics | AI neolab for Biology" />
   <meta name="twitter:description" content="GPTomics is an AI neolab building foundation models and intelligent agents for biology." />
-  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo_square.png" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20"></script>
@@ -49,7 +50,7 @@
     "@type": "ResearchOrganization",
     "name": "GPTomics",
     "url": "https://www.gptomics.com",
-    "logo": "https://www.gptomics.com/resources/logo.png",
+    "logo": "https://www.gptomics.com/resources/logo_square.png",
     "description": "An AI neolab building foundation models and intelligent agents for biology.",
     "email": "gptomics@gmail.com",
     "sameAs": [
@@ -66,8 +67,12 @@
       --ink: #0f231a;
       --muted: #3c5a4c;
       --border: #dfe9e3;
-      --accent: #2a7f62;
-      --accent2: #2c6aa6;
+      --brand: #2a7f62;
+      --brand-tint: var(--brand-tint);
+      --brand-tint-soft: var(--brand-tint-soft);
+      --brand-edge: var(--brand-edge);
+      --brand-pale: var(--brand-pale);
+      --editorial: #b35a3f;
       --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
       --radius: 14px;
       --maxw: 1280px;
@@ -80,7 +85,7 @@
       background: var(--bg);
       line-height:1.6;
     }
-    a{color:var(--accent2); text-decoration:none}
+    a{color:var(--editorial); text-decoration:none}
     a:hover{text-decoration:underline}
 
     .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
@@ -136,11 +141,11 @@
     }
     nav a:hover{
       border-color: var(--border);
-      background: rgba(42,127,98,0.06);
+      background: var(--brand-tint);
       text-decoration:none;
     }
     nav a.icon{padding:7px; color: var(--muted)}
-    nav a.icon:hover{color: var(--accent)}
+    nav a.icon:hover{color: var(--brand)}
     nav a.icon svg{width:18px; height:18px; display:block}
 
     .summary{
@@ -156,7 +161,6 @@
       margin:0 0 12px;
       color: var(--muted);
       font-size:15px;
-      max-width: 95ch;
     }
     .summary p:last-child{margin-bottom:0}
 
@@ -194,7 +198,7 @@
     .tile:hover{
       transform: translateY(-1px);
       box-shadow: 0 14px 34px rgba(15,35,26,0.09);
-      border-color: #cfe2d8;
+      border-color: var(--brand-pale);
       text-decoration:none;
     }
     .tile .kicker{
@@ -212,9 +216,9 @@
     }
     .badge{
       font-size:12px;
-      color: var(--accent);
-      border:1px solid rgba(42,127,98,0.28);
-      background: rgba(42,127,98,0.07);
+      color: var(--brand);
+      border:1px solid var(--brand-edge);
+      background: var(--brand-tint);
       padding:3px 8px;
       border-radius:999px;
       white-space:nowrap;
@@ -255,7 +259,7 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <img class="logo" src="resources/logo.png" alt="GPTomics logo" />
+        <img class="logo" src="resources/logo.svg" alt="GPTomics logo" />
         <div>
           <h1>GPTomics</h1>
           <p>Research at the intersection of bioinformatics and artificial intelligence.</p>

@@ -85,7 +85,7 @@ def render_saas():
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.6))
 
-    axes[0].stackplot(N_USERS, cogs, build_opex, labels=['COGS', 'Build & opex'], colors=[p.CHART_COGS, p.BLUE_LIGHT], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
+    axes[0].stackplot(N_USERS, cogs, build_opex, labels=['COGS', 'Build & opex'], colors=[p.CHART_COGS, p.CHART_OPEX], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
     axes[0].plot(N_USERS, revenue, color=p.CHART_REVENUE, linewidth=2.0, label='Revenue')
     axes[0].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
     axes[0].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
@@ -115,7 +115,7 @@ def render_ai():
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.6))
 
-    axes[0].stackplot(N_USERS, infra, tokens, fixed, labels=['Infra COGS', 'AI tokens', 'Build & opex'], colors=[p.CHART_COGS, p.CHART_AI_TOKENS, p.BLUE_LIGHT], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
+    axes[0].stackplot(N_USERS, infra, tokens, fixed, labels=['Infra COGS', 'AI tokens', 'Build & opex'], colors=[p.CHART_COGS, p.CHART_AI_TOKENS, p.CHART_OPEX], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
     axes[0].plot(N_USERS, revenue, color=p.CHART_REVENUE, linewidth=2.0, label='Revenue')
     axes[0].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
     axes[0].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')

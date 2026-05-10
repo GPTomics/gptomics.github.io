@@ -1,21 +1,33 @@
 '''Color palette for charts and figures across GPTomics blog posts.
 
-Anchored to the live site theme (see :root in index.html / blog.html and the
-make_blog.py template). The brand forest-green and steel-blue accents are
-LOCKED — every chart color is chosen so the figures sit on the ivory page
-as if part of it, not on top of it.
+Built to harmonize with the live site palette ('editorial single-warm'):
+brand forest-green + editorial terracotta + ink type on ivory. The site
+:root variables live in index.html / blog.html / blogs/make_blog.py.
+
+Site anchors (locked):
+  --brand     #2a7f62  forest green   biology / brand presence
+  --editorial #b35a3f  terracotta     links, dates, pull-quote markers
+  --ink       #0f231a  near-black     body text, headings, logo gradient terminus
+  --bg        #fcfff9  ivory          page background
+
+Brand green (ACCENT_GREEN) and terracotta (TERRACOTTA / CHART_NET) do
+double duty here — the same colors that mark a link or a date in body
+text also mark categorical series on a chart, so figures rhyme with
+typography. The cool secondary in chart roles is SLATE_TEAL (CHART_GROSS)
+and SLATE_TEAL_LIGHT (CHART_OPEX) — analogous to brand-green so the cool
+side of every chart stays in the same OKLCH neighborhood as the brand.
+ACCENT_BLUE (#2c6aa6) is retained as a constant but no longer used by
+any CHART_* role; it was the page brand color before the move to
+editorial single-warm and was dropped site-wide.
 
 Design rationale (research synthesis):
 
-The brand anchors form an analogous cool pair on the OKLCH wheel — forest
-green at H~165 and steel blue at H~250, both at lightness ~0.52-0.53 and
-chroma ~0.09-0.12. To extend this into a categorical chart palette, we
-mirror that ~85 degree cool arc with a custom warm arc spanning ~10-90 deg
-(crimson through ochre). This is the move the FT, Stripe Press, and the
-NYT graphics desk use when their primary brand sits on the cool side: a
-custom warm arc rather than a textbook split-complementary or triadic
-expansion, since those would either cluster the warms (split-complement)
-or drop a clashing purple beside the steel blue (triadic).
+The chart palette extends from the cool brand-green by mirroring it with
+a custom warm arc spanning ~10-90 deg (crimson through ochre) — the move
+FT, Stripe Press, and the NYT graphics desk use when their primary brand
+sits on the cool side. Textbook split-complementary or triadic expansions
+would cluster the warms or drop a clashing purple, neither of which fits
+the editorial register.
 
 Two craft rules from Color Supply, Paletton, FT Origami, and Datawrapper
 guidance carry the palette:
@@ -57,17 +69,18 @@ AMBER_LIGHT = '#cfae6b'
 CRIMSON = '#9c3a55'
 PLUM = '#7a4775'
 SLATE_TEAL = '#3a7588'
+SLATE_TEAL_LIGHT = '#94b3bd'
 OLIVE = '#7e8a3a'
 
 CHART_REVENUE = INK
 CHART_GRID = BORDER
 CHART_AXIS = MUTED
-CHART_GROSS = ACCENT_BLUE
+CHART_GROSS = SLATE_TEAL
 CHART_NET = TERRACOTTA
 CHART_GROSS_BREAKEVEN = ACCENT_GREEN
 CHART_NET_BREAKEVEN = CRIMSON
 CHART_COGS = AMBER
-CHART_OPEX = BLUE_LIGHT
+CHART_OPEX = SLATE_TEAL_LIGHT
 CHART_AI_TOKENS = TERRACOTTA
 CHART_ZERO_LINE = MUTED
 

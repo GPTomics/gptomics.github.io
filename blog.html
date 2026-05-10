@@ -9,6 +9,7 @@
   <title>Blog | GPTomics</title>
 
   <link rel="canonical" href="https://www.gptomics.com/blog.html" />
+  <link rel="icon" type="image/svg+xml" href="resources/logo.svg" />
   <link rel="icon" href="resources/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png" />
@@ -23,7 +24,7 @@
   <meta property="og:description" content="Writings from GPTomics members about their interests including biology, AI, product management, and research." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.gptomics.com/blog.html" />
-  <meta property="og:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta property="og:image" content="https://www.gptomics.com/resources/logo_square.png" />
   <meta property="og:image:alt" content="GPTomics logo" />
 
   <meta name="twitter:card" content="summary" />
@@ -31,7 +32,7 @@
   <meta name="twitter:creator" content="@gptomics" />
   <meta name="twitter:title" content="Blog | GPTomics" />
   <meta name="twitter:description" content="Writings from GPTomics members about their interests including biology, AI, product management, and research." />
-  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo.png" />
+  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo_square.png" />
 
   <script type="application/ld+json">
   {
@@ -46,7 +47,7 @@
       "url": "https://www.gptomics.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.gptomics.com/resources/logo.png"
+        "url": "https://www.gptomics.com/resources/logo_square.png"
       }
     }
   }
@@ -59,8 +60,12 @@
       --ink: #0f231a;
       --muted: #3c5a4c;
       --border: #dfe9e3;
-      --accent: #2a7f62;
-      --accent2: #2c6aa6;
+      --brand: #2a7f62;
+      --brand-tint: var(--brand-tint);
+      --brand-tint-soft: var(--brand-tint-soft);
+      --brand-edge: var(--brand-edge);
+      --brand-pale: var(--brand-pale);
+      --editorial: #b35a3f;
       --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
       --radius: 14px;
       --maxw: 1280px;
@@ -73,7 +78,7 @@
       background: var(--bg);
       line-height:1.6;
     }
-    a{color:var(--accent2); text-decoration:none}
+    a{color:var(--editorial); text-decoration:none}
     a:hover{text-decoration:underline}
 
     .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
@@ -101,12 +106,12 @@
     }
     nav a:hover{
       border-color: var(--border);
-      background: rgba(42,127,98,0.06);
+      background: var(--brand-tint);
       text-decoration:none;
     }
-    nav a.active{color: var(--accent); border-color: rgba(42,127,98,0.28); background: rgba(42,127,98,0.07)}
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
     nav a.icon{padding:7px; color: var(--muted)}
-    nav a.icon:hover{color: var(--accent)}
+    nav a.icon:hover{color: var(--brand)}
     nav a.icon svg{width:18px; height:18px; display:block}
 
     main{padding:20px 0 0}
@@ -134,11 +139,11 @@
     }
     .post-item:last-child{border-bottom:none}
     .post-item:hover{padding-left:8px; text-decoration:none}
-    .post-item:hover h2{color: var(--accent)}
+    .post-item:hover h2{color: var(--brand)}
     .post-item .date{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size:13px;
-      color: var(--accent);
+      color: var(--editorial);
       margin-bottom:6px;
     }
     .post-item h2{
@@ -163,7 +168,7 @@
       align-items:center;
       gap:10px;
     }
-    footer a{color: var(--accent)}
+    footer a{color: var(--brand)}
     @media (max-width: 500px){
       footer{flex-direction:column; text-align:center}
     }
@@ -179,7 +184,7 @@
     <header>
       <div class="brand">
         <a class="brand-link" href="index.html">
-          <img class="logo" src="resources/logo.png" alt="GPTomics logo" />
+          <img class="logo" src="resources/logo.svg" alt="GPTomics logo" />
           <div>
             <h1>GPTomics</h1>
           </div>
