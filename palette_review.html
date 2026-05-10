@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<title>Palette comparison — current vs iris dichroic</title>
+<style>
+  body { margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #eef0f3; color: #111; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1480px; margin: 0 auto; padding: 32px 24px 80px; }
+  .page > h1 { font-size: 22px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .page > p.lede { margin: 0 0 28px; color: #4a5260; font-size: 14px; max-width: 780px; line-height: 1.55; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } }
+
+  .col { border-radius: 12px; overflow: hidden; box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(15,23,42,0.06); }
+  .col-head { padding: 18px 22px; border-bottom: 1px solid rgba(0,0,0,0.06); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .col-head .name { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+  .col-head .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; padding: 3px 8px; border-radius: 999px; }
+  .col-body { padding: 22px; }
+
+  .swatch-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 18px; }
+  .sw { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 8px; }
+  .sw .chip { width: 38px; height: 38px; border-radius: 6px; flex: 0 0 38px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+  .sw .meta { display: flex; flex-direction: column; min-width: 0; }
+  .sw .meta .role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; }
+  .sw .meta .hex { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; }
+  .sw .meta .var { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; opacity: 0.7; }
+
+  .section-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.6; margin: 18px 0 10px; }
+
+  .tints { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 22px; }
+  .tint { border-radius: 8px; padding: 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10.5px; min-height: 64px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tint .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.75; }
+
+  /* Sample UI shared layout */
+  .demo { border-radius: 10px; padding: 22px; margin-top: 8px; }
+  .demo .topbar { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid; }
+  .demo .topbar .logo { width: 22px; height: 39px; flex: 0 0 22px; display: block; }
+  .demo .topbar .word { font-weight: 700; font-size: 16px; letter-spacing: -0.005em; }
+  .demo .topbar nav { display: flex; gap: 6px; margin-left: auto; }
+  .demo .topbar nav a { font-size: 12.5px; padding: 5px 10px; border-radius: 6px; text-decoration: none; }
+  .demo .topbar nav a.active { font-weight: 600; }
+
+  .demo h1 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .demo .byline { font-size: 12px; margin: 0 0 14px; }
+  .demo .byline .date { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 600; }
+  .demo p { font-size: 14px; line-height: 1.65; margin: 0 0 12px; }
+  .demo a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .demo h2 { font-size: 15px; margin: 18px 0 8px; letter-spacing: 0.02em; text-transform: uppercase; }
+  .demo blockquote { margin: 12px 0; padding: 4px 14px; border-left: 3px solid; font-style: italic; font-size: 13.5px; }
+  .demo code.inline { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; padding: 1px 5px; border-radius: 4px; }
+  .demo pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; padding: 12px 14px; border-radius: 8px; overflow-x: auto; margin: 10px 0 14px; line-height: 1.55; }
+  .demo .badge { display: inline-block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 8px; border-radius: 999px; font-weight: 600; }
+  .demo table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .demo thead th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 10px; border-bottom: 1px solid; font-weight: 600; }
+  .demo tbody td { padding: 8px 10px; border-bottom: 1px solid; }
+  .demo .post-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid; align-items: baseline; }
+  .demo .post-item .pdate { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; min-width: 96px; }
+  .demo .post-item .ptitle { font-size: 14px; font-weight: 600; }
+
+  /* ============ CURRENT (left) ============ */
+  .col.current {
+    --brand: #2a7f62;
+    --editorial: #b35a3f;
+    --ink: #0f231a;
+    --muted: #3c5a4c;
+    --bg: #fcfff9;
+    --bg2: #ffffff;
+    --border: #dfe9e3;
+    --brand-tint: rgba(42,127,98,0.07);
+    --brand-tint-soft: rgba(42,127,98,0.04);
+    --brand-edge: rgba(42,127,98,0.28);
+    --brand-pale: #cfe2d8;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  /* ============ NEW iris dichroic (right) ============ */
+  .col.iris {
+    --brand: #5d44a8;
+    --editorial: #c2483a;
+    --spark: #00b7f3;
+    --ink: #16122e;
+    --muted: #4d4666;
+    --bg: #fbfafe;
+    --bg2: #ffffff;
+    --border: #e4dff0;
+    --brand-tint: rgba(93,68,168,0.07);
+    --brand-tint-soft: rgba(93,68,168,0.04);
+    --brand-edge: rgba(93,68,168,0.28);
+    --brand-pale: #d4cce4;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .col.iris .demo blockquote { border-left-color: var(--spark); }
+  .col.iris .demo .hl { background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+  /* Per-column derived rules using the cascade */
+  .col .col-head { background: var(--bg2); color: var(--ink); }
+  .col .col-head .tag { background: var(--brand-tint); color: var(--brand); border: 1px solid var(--brand-edge); }
+  .col .sw { background: var(--bg2); border: 1px solid var(--border); }
+  .col .sw .meta .role { color: var(--muted); }
+  .col .section-label { color: var(--muted); }
+
+  .col .demo { background: var(--bg2); border: 1px solid var(--border); }
+  .col .demo .topbar { border-bottom-color: var(--border); }
+  .col .demo .topbar .word { color: var(--ink); }
+  .col .demo .topbar nav a { color: var(--muted); }
+  .col .demo .topbar nav a.active { background: var(--brand-tint); color: var(--brand); border: 1px solid var(--brand-edge); }
+  .col .demo h1, .col .demo h2 { color: var(--ink); }
+  .col .demo .byline { color: var(--muted); }
+  .col .demo .byline .date { color: var(--editorial); }
+  .col .demo p { color: var(--ink); }
+  .col .demo a { color: var(--editorial); }
+  .col .demo blockquote { border-left-color: var(--editorial); color: var(--muted); background: var(--brand-tint-soft); }
+  .col .demo code.inline { color: var(--brand); background: var(--brand-tint); }
+  .col .demo pre { background: var(--bg); color: var(--ink); border: 1px solid var(--border); }
+  .col .demo pre .k { color: var(--brand); }
+  .col .demo pre .s { color: var(--editorial); }
+  .col .demo pre .c { color: var(--muted); font-style: italic; }
+  .col .demo .badge { background: var(--brand-tint); color: var(--brand); border: 1px solid var(--brand-edge); }
+  .col .demo table thead th { color: var(--muted); border-bottom-color: var(--border); }
+  .col .demo table tbody td { color: var(--ink); border-bottom-color: var(--border); }
+  .col .demo table tbody tr:hover td { background: var(--brand-tint-soft); }
+  .col .demo .post-item { border-bottom-color: var(--border); }
+  .col .demo .post-item .pdate { color: var(--editorial); }
+  .col .demo .post-item .ptitle { color: var(--ink); }
+  .col .demo .post-item:hover .ptitle { color: var(--brand); }
+
+  /* tints box uses cascade too */
+  .col .tints .tint { border: 1px solid var(--border); color: var(--ink); }
+
+  /* Logo gradient swatches (top→bottom) */
+  .logo-strip { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg2); }
+  .logo-strip .gradient { width: 64px; height: 64px; border-radius: 8px; flex: 0 0 64px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+  .logo-strip .desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .logo-strip .desc b { color: var(--ink); font-weight: 600; }
+  .col.current .logo-strip .gradient { background: linear-gradient(180deg, #2a7f62 0%, #0f231a 100%); }
+  .col.iris .logo-strip .gradient { background: linear-gradient(180deg, #5d44a8 0%, #16122e 100%); }
+</style>
+</head>
+<body>
+<div class='page'>
+  <h1>Palette comparison — current vs iris dichroic</h1>
+  <p class='lede'>Left: the live editorial single-warm palette (forest green brand + terracotta editorial accent). Right: the proposed iris triadic palette — iris violet anchors as brand (cool gravitas), warm red carries text accents (links, dates, like the current terracotta) for legible AA contrast, electric cyan returns as a decoration-only spark (blockquote rule, highlighted phrase) where contrast doesn't matter. Three roles, each suited to its perceptual physics: warm hues for text, cool cyan for illumination, violet bridging them.</p>
+
+  <div class='grid'>
+    <!-- ===================== CURRENT ===================== -->
+    <section class='col current'>
+      <div class='col-head'>
+        <div class='name'>Editorial single-warm</div>
+        <div class='tag'>current — live</div>
+      </div>
+      <div class='col-body'>
+        <div class='logo-strip'>
+          <div class='gradient'></div>
+          <div class='desc'><b>Logo gradient.</b> Forest green <code>#2a7f62</code> at top → ink <code>#0f231a</code> at bottom. Biology hits first; the mark grounds in body type.</div>
+        </div>
+
+        <div class='section-label'>Anchors</div>
+        <div class='swatch-grid'>
+          <div class='sw'><div class='chip' style='background:#2a7f62'></div><div class='meta'><span class='role'>Brand</span><span class='hex'>#2a7f62</span><span class='var'>--brand · forest green</span></div></div>
+          <div class='sw'><div class='chip' style='background:#b35a3f'></div><div class='meta'><span class='role'>Editorial</span><span class='hex'>#b35a3f</span><span class='var'>--editorial · terracotta</span></div></div>
+          <div class='sw'><div class='chip' style='background:#0f231a'></div><div class='meta'><span class='role'>Ink (text)</span><span class='hex'>#0f231a</span><span class='var'>--ink · green-undertone near-black</span></div></div>
+          <div class='sw'><div class='chip' style='background:#3c5a4c'></div><div class='meta'><span class='role'>Muted</span><span class='hex'>#3c5a4c</span><span class='var'>--muted · forest gray</span></div></div>
+          <div class='sw'><div class='chip' style='background:#fcfff9'></div><div class='meta'><span class='role'>Background</span><span class='hex'>#fcfff9</span><span class='var'>--bg · ivory (green undertone)</span></div></div>
+          <div class='sw'><div class='chip' style='background:#ffffff'></div><div class='meta'><span class='role'>Surface</span><span class='hex'>#ffffff</span><span class='var'>--bg2 · pure white</span></div></div>
+          <div class='sw'><div class='chip' style='background:#dfe9e3'></div><div class='meta'><span class='role'>Border</span><span class='hex'>#dfe9e3</span><span class='var'>--border · green hairline</span></div></div>
+        </div>
+
+        <div class='section-label'>Brand-derived tints</div>
+        <div class='tints'>
+          <div class='tint' style='background: rgba(42,127,98,0.07)'><span class='label'>tint</span><span>rgba(42,127,98,0.07)</span></div>
+          <div class='tint' style='background: rgba(42,127,98,0.04)'><span class='label'>tint-soft</span><span>rgba(42,127,98,0.04)</span></div>
+          <div class='tint' style='background: #fff; box-shadow: inset 0 0 0 1px rgba(42,127,98,0.28);'><span class='label'>edge</span><span>rgba(42,127,98,0.28)</span></div>
+          <div class='tint' style='background: #cfe2d8'><span class='label'>pale</span><span>#cfe2d8</span></div>
+        </div>
+
+        <div class='section-label'>In context</div>
+        <div class='demo'>
+          <div class='topbar'>
+            <svg class='logo' viewBox='0 0 564 1000' aria-hidden='true'>
+              <linearGradient id='cur_g1' gradientUnits='userSpaceOnUse' x1='407.5518' y1='1.6509' x2='206.8929' y2='876.1806'>
+                <stop offset='0' style='stop-color:#2A7F62'/><stop offset='1' style='stop-color:#0F231A'/>
+              </linearGradient>
+              <linearGradient id='cur_gb' gradientUnits='userSpaceOnUse' x1='282' y1='42.4973' x2='282' y2='974.9769'>
+                <stop offset='0' style='stop-color:#2A7F62'/><stop offset='1' style='stop-color:#0F231A'/>
+              </linearGradient>
+              <linearGradient id='cur_g2' gradientUnits='userSpaceOnUse' x1='314.5713' y1='16.5149' x2='16.2654' y2='954.3541'>
+                <stop offset='0' style='stop-color:#2A7F62'/><stop offset='1' style='stop-color:#0F231A'/>
+              </linearGradient>
+              <path fill='url(#cur_g1)' d='M458.11,731.5c-0.43,0-0.84,0.04-1.25,0.09C457.23,731.54,457.63,731.5,458.11,731.5H232.46c-38.81-20.69-74.09-43.89-96.72-71.27h278.37c-0.3,0-0.56-0.02-0.81-0.04c0.27,0.02,0.54,0.04,0.81,0.04c5.52,0,10-4.48,10-10c0-5.52-4.48-10-10-10c-0.27,0-0.54,0.02-0.81,0.04c0.25-0.02,0.52-0.04,0.81-0.04h-292.1c-10.38-18.87-14.69-39.63-10.52-62.72c0.01,0.46,0.8-4.75,2.28-10.31h202.34c5.52,0,10-4.48,10-10c0-5.52-4.48-10-10-10H123.87l2.69-4.32c91.01-126.74,442.29-246.47,290-442.26c-3.09-1.28-4.79-0.66-5.35,2c25.91,86.93-28.13,167.77-94.81,219.67C220.61,411.32-6.78,477.19,57.95,638.39c53.91,134.26,231.29,144.12,342.85,216.46c3.25,2.13,4.47,3.49,8.83-0.88c7.46-7.46,7.77-8.14,12.98-14.19c6.32-7.36,7.16-6.88-2.64-13.44c-32.91-24.27-90.79-47.61-147.7-74.84h185.84c-0.48,0-0.88-0.04-1.25-0.09c0.41,0.05,0.83,0.09,1.25,0.09c5.52,0,10-4.48,10-10C468.11,735.98,463.63,731.5,458.11,731.5z'/>
+              <path fill='url(#cur_gb)' d='M52.75,921.72c-18.58-22.56-34.58-50.47-28.19-80.4c5.62-23.56,41.56-27.35,51.93-7.44c6.71,11.03,5.91,24,10.91,35.59c8.95,20.77,23.05,36.34,41.99,47.85c94.09,52.48,220.59,25.79,295.55-48.65c121.88-131.02,40.38-252.7-93.33-326.93c-32.82-20.7-65.79-41.19-98.78-61.63c-5.37-3.33-5.23-3.66,0.03-8.92c26.98-24.83,26.95-25.2,38.49-17.27c93.62,54.72,95.71,53.6,141.57,83.64c189.91,111,159.35,328.1-31.89,416.06C278.72,999.49,137.59,1005.09,52.75,921.72z'/>
+              <path fill='url(#cur_g2)' d='M498.88,56.43c-7.05-33.34-76.87-39.12-105.06-41.84C171.49-6.83-108.85,256.06,140.35,417.6c11.52-7.41,22.88-15.05,34.28-22.64c4.35-2.9,3.99-5.02-0.4-8.17c-25.03-17.01-44.6-39.31-57.54-64.08h156.68c5.52,0,10-4.48,10-10s-4.48-10-10-10H107.87c-8.34-23.07-11.17-47.51-7.6-71.36h247.09c5.52,0,10-4.48,10-10s-4.48-10-10-10H104.82c7.07-22.84,20.48-44.57,41.01-63.33l8.78-8.01h219.98c5.52,0,10-4.48,10-10s-4.48-10-10-10H177.91c77.53-52.8,195.45-91.92,280.92-39.57C475.35,91.91,502.61,77.5,498.88,56.43z'/>
+            </svg>
+            <span class='word'>GPTomics</span>
+            <nav>
+              <a href='#'>Home</a>
+              <a href='#' class='active'>Blog</a>
+              <a href='#'>About</a>
+            </nav>
+          </div>
+          <span class='badge'>Research note</span>
+          <h1 style='margin-top:10px'>Token economics of single-cell foundation models</h1>
+          <p class='byline'>By Domen Jemec · <span class='date'>2026-04-22</span></p>
+          <p>Training a foundation model on cell atlases is a different beast than language. The <a href='#'>cost curve bends</a> earlier because the data ceiling is much closer — a few million well-annotated cells, not a few trillion tokens.</p>
+          <blockquote>The cheapest cell is the one you don't sequence twice.</blockquote>
+          <p>Below: a per-tissue summary in editorial style. Inline code looks like <code class='inline'>scanpy.read_h5ad()</code>, and a code block:</p>
+          <pre><span class='c'># clip outlier cells before embedding</span>
+<span class='k'>import</span> scanpy <span class='k'>as</span> sc
+adata = sc.read_h5ad(<span class='s'>'atlas.h5ad'</span>)</pre>
+          <h2>Per-tissue cost</h2>
+          <table>
+            <thead><tr><th>Tissue</th><th>Cells</th><th>$/run</th></tr></thead>
+            <tbody>
+              <tr><td>Liver</td><td>1.2M</td><td>$840</td></tr>
+              <tr><td>Lung</td><td>3.4M</td><td>$2,310</td></tr>
+              <tr><td>Brain</td><td>5.1M</td><td>$3,860</td></tr>
+            </tbody>
+          </table>
+          <h2>Recent posts</h2>
+          <div class='post-item'><span class='pdate'>2026-04-22</span><span class='ptitle'>Token economics of single-cell foundation models</span></div>
+          <div class='post-item'><span class='pdate'>2026-03-30</span><span class='ptitle'>Why batch effects break embeddings</span></div>
+          <div class='post-item' style='border-bottom:none'><span class='pdate'>2026-03-11</span><span class='ptitle'>BioJEPA, six months in</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IRIS DICHROIC ===================== -->
+    <section class='col iris'>
+      <div class='col-head'>
+        <div class='name'>Iris dichroic</div>
+        <div class='tag'>proposed</div>
+      </div>
+      <div class='col-body'>
+        <div class='logo-strip'>
+          <div class='gradient'></div>
+          <div class='desc'><b>Logo gradient.</b> Iris violet <code>#5d44a8</code> at top → violet-undertone ink <code>#16122e</code> at bottom. Same top-grounds-in-body-type idea; violet rhymes with the deepened ink.</div>
+        </div>
+
+        <div class='section-label'>Anchors</div>
+        <div class='swatch-grid'>
+          <div class='sw'><div class='chip' style='background:#5d44a8'></div><div class='meta'><span class='role'>Brand</span><span class='hex'>#5d44a8</span><span class='var'>--brand · iris violet</span></div></div>
+          <div class='sw'><div class='chip' style='background:#c2483a'></div><div class='meta'><span class='role'>Editorial</span><span class='hex'>#c2483a</span><span class='var'>--editorial · warm red (links + dates)</span></div></div>
+          <div class='sw'><div class='chip' style='background:#00b7f3'></div><div class='meta'><span class='role'>Spark</span><span class='hex'>#00b7f3</span><span class='var'>--spark · cyan (decoration only)</span></div></div>
+          <div class='sw'><div class='chip' style='background:#16122e'></div><div class='meta'><span class='role'>Ink (text)</span><span class='hex'>#16122e</span><span class='var'>--ink · violet-undertone near-black</span></div></div>
+          <div class='sw'><div class='chip' style='background:#4d4666'></div><div class='meta'><span class='role'>Muted</span><span class='hex'>#4d4666</span><span class='var'>--muted · plum gray</span></div></div>
+          <div class='sw'><div class='chip' style='background:#fbfafe'></div><div class='meta'><span class='role'>Background</span><span class='hex'>#fbfafe</span><span class='var'>--bg · pale lavender ivory</span></div></div>
+          <div class='sw'><div class='chip' style='background:#ffffff'></div><div class='meta'><span class='role'>Surface</span><span class='hex'>#ffffff</span><span class='var'>--bg2 · pure white</span></div></div>
+          <div class='sw'><div class='chip' style='background:#e4dff0'></div><div class='meta'><span class='role'>Border</span><span class='hex'>#e4dff0</span><span class='var'>--border · lavender hairline</span></div></div>
+        </div>
+
+        <div class='section-label'>Brand-derived tints</div>
+        <div class='tints'>
+          <div class='tint' style='background: rgba(93,68,168,0.07)'><span class='label'>tint</span><span>rgba(93,68,168,0.07)</span></div>
+          <div class='tint' style='background: rgba(93,68,168,0.04)'><span class='label'>tint-soft</span><span>rgba(93,68,168,0.04)</span></div>
+          <div class='tint' style='background: #fff; box-shadow: inset 0 0 0 1px rgba(93,68,168,0.28);'><span class='label'>edge</span><span>rgba(93,68,168,0.28)</span></div>
+          <div class='tint' style='background: #d4cce4'><span class='label'>pale</span><span>#d4cce4</span></div>
+        </div>
+
+        <div class='section-label'>In context</div>
+        <div class='demo'>
+          <div class='topbar'>
+            <svg class='logo' viewBox='0 0 564 1000' aria-hidden='true'>
+              <linearGradient id='iris_g1' gradientUnits='userSpaceOnUse' x1='407.5518' y1='1.6509' x2='206.8929' y2='876.1806'>
+                <stop offset='0' style='stop-color:#5D44A8'/><stop offset='1' style='stop-color:#16122E'/>
+              </linearGradient>
+              <linearGradient id='iris_gb' gradientUnits='userSpaceOnUse' x1='282' y1='42.4973' x2='282' y2='974.9769'>
+                <stop offset='0' style='stop-color:#5D44A8'/><stop offset='1' style='stop-color:#16122E'/>
+              </linearGradient>
+              <linearGradient id='iris_g2' gradientUnits='userSpaceOnUse' x1='314.5713' y1='16.5149' x2='16.2654' y2='954.3541'>
+                <stop offset='0' style='stop-color:#5D44A8'/><stop offset='1' style='stop-color:#16122E'/>
+              </linearGradient>
+              <path fill='url(#iris_g1)' d='M458.11,731.5c-0.43,0-0.84,0.04-1.25,0.09C457.23,731.54,457.63,731.5,458.11,731.5H232.46c-38.81-20.69-74.09-43.89-96.72-71.27h278.37c-0.3,0-0.56-0.02-0.81-0.04c0.27,0.02,0.54,0.04,0.81,0.04c5.52,0,10-4.48,10-10c0-5.52-4.48-10-10-10c-0.27,0-0.54,0.02-0.81,0.04c0.25-0.02,0.52-0.04,0.81-0.04h-292.1c-10.38-18.87-14.69-39.63-10.52-62.72c0.01,0.46,0.8-4.75,2.28-10.31h202.34c5.52,0,10-4.48,10-10c0-5.52-4.48-10-10-10H123.87l2.69-4.32c91.01-126.74,442.29-246.47,290-442.26c-3.09-1.28-4.79-0.66-5.35,2c25.91,86.93-28.13,167.77-94.81,219.67C220.61,411.32-6.78,477.19,57.95,638.39c53.91,134.26,231.29,144.12,342.85,216.46c3.25,2.13,4.47,3.49,8.83-0.88c7.46-7.46,7.77-8.14,12.98-14.19c6.32-7.36,7.16-6.88-2.64-13.44c-32.91-24.27-90.79-47.61-147.7-74.84h185.84c-0.48,0-0.88-0.04-1.25-0.09c0.41,0.05,0.83,0.09,1.25,0.09c5.52,0,10-4.48,10-10C468.11,735.98,463.63,731.5,458.11,731.5z'/>
+              <path fill='url(#iris_gb)' d='M52.75,921.72c-18.58-22.56-34.58-50.47-28.19-80.4c5.62-23.56,41.56-27.35,51.93-7.44c6.71,11.03,5.91,24,10.91,35.59c8.95,20.77,23.05,36.34,41.99,47.85c94.09,52.48,220.59,25.79,295.55-48.65c121.88-131.02,40.38-252.7-93.33-326.93c-32.82-20.7-65.79-41.19-98.78-61.63c-5.37-3.33-5.23-3.66,0.03-8.92c26.98-24.83,26.95-25.2,38.49-17.27c93.62,54.72,95.71,53.6,141.57,83.64c189.91,111,159.35,328.1-31.89,416.06C278.72,999.49,137.59,1005.09,52.75,921.72z'/>
+              <path fill='url(#iris_g2)' d='M498.88,56.43c-7.05-33.34-76.87-39.12-105.06-41.84C171.49-6.83-108.85,256.06,140.35,417.6c11.52-7.41,22.88-15.05,34.28-22.64c4.35-2.9,3.99-5.02-0.4-8.17c-25.03-17.01-44.6-39.31-57.54-64.08h156.68c5.52,0,10-4.48,10-10s-4.48-10-10-10H107.87c-8.34-23.07-11.17-47.51-7.6-71.36h247.09c5.52,0,10-4.48,10-10s-4.48-10-10-10H104.82c7.07-22.84,20.48-44.57,41.01-63.33l8.78-8.01h219.98c5.52,0,10-4.48,10-10s-4.48-10-10-10H177.91c77.53-52.8,195.45-91.92,280.92-39.57C475.35,91.91,502.61,77.5,498.88,56.43z'/>
+            </svg>
+            <span class='word'>GPTomics</span>
+            <nav>
+              <a href='#'>Home</a>
+              <a href='#' class='active'>Blog</a>
+              <a href='#'>About</a>
+            </nav>
+          </div>
+          <span class='badge'>Research note</span>
+          <h1 style='margin-top:10px'>Token economics of single-cell foundation models</h1>
+          <p class='byline'>By Domen Jemec · <span class='date'>2026-04-22</span></p>
+          <p>Training a foundation model on cell atlases is a different beast than language. The <a href='#'>cost curve bends</a> earlier because the <span class='hl'>data ceiling is much closer</span> — a few million well-annotated cells, not a few trillion tokens.</p>
+          <blockquote>The cheapest cell is the one you don't sequence twice.</blockquote>
+          <p>Below: a per-tissue summary in editorial style. Inline code looks like <code class='inline'>scanpy.read_h5ad()</code>, and a code block:</p>
+          <pre><span class='c'># clip outlier cells before embedding</span>
+<span class='k'>import</span> scanpy <span class='k'>as</span> sc
+adata = sc.read_h5ad(<span class='s'>'atlas.h5ad'</span>)</pre>
+          <h2>Per-tissue cost</h2>
+          <table>
+            <thead><tr><th>Tissue</th><th>Cells</th><th>$/run</th></tr></thead>
+            <tbody>
+              <tr><td>Liver</td><td>1.2M</td><td>$840</td></tr>
+              <tr><td>Lung</td><td>3.4M</td><td>$2,310</td></tr>
+              <tr><td>Brain</td><td>5.1M</td><td>$3,860</td></tr>
+            </tbody>
+          </table>
+          <h2>Recent posts</h2>
+          <div class='post-item'><span class='pdate'>2026-04-22</span><span class='ptitle'>Token economics of single-cell foundation models</span></div>
+          <div class='post-item'><span class='pdate'>2026-03-30</span><span class='ptitle'>Why batch effects break embeddings</span></div>
+          <div class='post-item' style='border-bottom:none'><span class='pdate'>2026-03-11</span><span class='ptitle'>BioJEPA, six months in</span></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>

@@ -79,18 +79,19 @@ TEMPLATE = '''<!doctype html>
   </script>
   <style>
     :root{{
-      --bg: #fcfff9;
+      --bg: #fbfafe;
       --bg2: #ffffff;
-      --ink: #0f231a;
-      --muted: #3c5a4c;
-      --border: #dfe9e3;
-      --brand: #2a7f62;
-      --brand-tint: var(--brand-tint);
-      --brand-tint-soft: var(--brand-tint-soft);
-      --brand-edge: var(--brand-edge);
-      --brand-pale: var(--brand-pale);
-      --editorial: #b35a3f;
-      --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
       --radius: 14px;
       --maxw: 1280px;
     }}
@@ -204,12 +205,13 @@ TEMPLATE = '''<!doctype html>
     }}
     article li{{margin-bottom: 6px}}
     article blockquote{{
-      border-left: 3px solid var(--editorial);
+      border-left: 3px solid var(--spark);
       padding-left: 16px;
       margin: 20px 0;
       color: var(--muted);
       font-style: italic;
     }}
+    article .hl{{background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone}}
     article code{{
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       font-size: 14px;
@@ -234,7 +236,7 @@ TEMPLATE = '''<!doctype html>
     .lightbox{{
       position: fixed;
       inset: 0;
-      background: rgba(15, 35, 26, 0.86);
+      background: rgba(22, 18, 46, 0.88);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -295,7 +297,7 @@ TEMPLATE = '''<!doctype html>
       vertical-align: top;
     }}
     article tbody tr:last-child td{{border-bottom: 1px solid var(--ink)}}
-    article tbody tr:hover td{{background: var(--brand-tint-soft)}}
+    article tbody tr:hover td{{background: rgba(0,183,243,0.10)}}
     article th[style*='right']{{text-align: right}}
     article td[style*='right']{{text-align: right}}
     article table a{{color: var(--editorial)}}
@@ -304,8 +306,8 @@ TEMPLATE = '''<!doctype html>
     footer{{
       margin-top:40px;
       padding-top:14px;
-      border-top:1px solid rgba(15,35,26,0.10);
-      color: rgba(15,35,26,0.55);
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
       font-size:12.5px;
       display:flex;
       justify-content:space-between;
