@@ -247,6 +247,14 @@
     }
     .lightbox-close:hover{color: #fff}
     article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
+    article .katex-display > .katex{white-space: nowrap}
+    @media (max-width: 700px){
+      article .katex-display .katex{font-size: 0.85em}
+    }
+    @media (max-width: 480px){
+      article .katex-display .katex{font-size: 0.72em}
+    }
     article .table-wrap{overflow-x: auto; margin: 22px 0}
     article table{
       width: 100%;
