@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='AI features break the high-margin SaaS playbook. A unit-economics walkthrough comparing a traditional SaaS company to an AI-native one, and the arbitrage paths ahead.' />
+  <title>How AI changes software P&amp;L | GPTomics</title>
+  <meta property='og:site_name' content='GPTomics' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:title' content='How AI changes software P&amp;L' />
+  <meta property='og:description' content='AI features break the high-margin SaaS playbook. A unit-economics walkthrough comparing a traditional SaaS company to an AI-native one, and the arbitrage paths ahead.' />
+  <meta property='og:url' content='https://www.gptomics.com/blog/how_ai_changes_software_pnl.html' />
+  <meta property='og:type' content='article' />
+  <meta property='article:author' content='Domen Jemec' />
+  <meta property='article:published_time' content='2026-05-11T08:00:00-07:00' />
+  <meta property='article:modified_time' content='2026-05-11T08:00:00-07:00' />
+  <meta property='article:section' content='Software economics' />
+  <meta property='article:tag' content='AI economics' />
+  <meta property='article:tag' content='SaaS margins' />
+  <meta property='article:tag' content='Unit economics' />
+  <meta property='article:tag' content='Product management' />
+  <meta property='article:tag' content='COGS' />
+  <meta name='twitter:card' content='summary' />
+  <meta name='twitter:site' content='@gptomics' />
+  <meta name='twitter:creator' content='@gptomics' />
+  <meta name='twitter:title' content='How AI changes software P&amp;L' />
+  <meta name='twitter:description' content='AI features break the high-margin SaaS playbook. A walkthrough of the new unit economics and the arbitrage paths ahead.' />
+  <link rel='canonical' href='https://www.gptomics.com/blog/how_ai_changes_software_pnl.html' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
+  <link rel='preconnect' href='https://www.googletagmanager.com' />
+  <meta name='author' content='Domen Jemec' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How AI changes software P&L",
+    "description": "AI features break the high-margin SaaS playbook. A unit-economics walkthrough comparing a traditional SaaS company to an AI-native one, and the arbitrage paths ahead.",
+    "datePublished": "2026-05-11T08:00:00-07:00",
+    "dateModified": "2026-05-11T08:00:00-07:00",
+    "wordCount": 4044,
+    "articleSection": "Software economics",
+    "keywords": "AI economics, SaaS margins, unit economics, COGS, gross margin, net margin, product management, software business model",
+    "author": {
+      "@type": "Person",
+      "name": "Domen Jemec",
+      "url": "https://domenjemec.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.gptomics.com/blog/how_ai_changes_software_pnl.html"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg: #fcfff9;
+      --bg2: #ffffff;
+      --ink: #0f231a;
+      --muted: #3c5a4c;
+      --border: #dfe9e3;
+      --accent: #2a7f62;
+      --accent2: #2c6aa6;
+      --shadow: 0 8px 26px rgba(15, 35, 26, 0.06);
+      --radius: 14px;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a{color: var(--accent2); text-decoration:none}
+    a:hover{text-decoration: underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:0;
+      margin:0 0 22px 0;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: rgba(42,127,98,0.06);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--accent); border-color: rgba(42,127,98,0.28); background: rgba(42,127,98,0.07)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--accent)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color: var(--muted);
+      font-size:13.5px;
+      margin-bottom: 22px;
+    }
+    .back-link:hover{color: var(--accent)}
+    .back-link svg{width:12px; height:12px}
+
+    article .post-date{
+      font-size:13px;
+      color: var(--accent);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    article h1{
+      margin:0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-0.2px;
+      color: var(--ink);
+    }
+    article .byline{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+    article .byline a{color: inherit; text-decoration: underline; text-underline-offset: 3px}
+    article .byline a:hover{color: var(--accent); text-decoration: none}
+    article h2{
+      margin: 36px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      color: var(--ink);
+    }
+    article h3{
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    article p{
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    article a{color: var(--accent2); text-decoration: underline; text-underline-offset: 3px}
+    article a:hover{text-decoration: none}
+    article ul, article ol{
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+    article li{margin-bottom: 6px}
+    article blockquote{
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    article code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      background: rgba(42,127,98,0.08);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    article pre{
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    article pre code{background: none; color: var(--ink); padding: 0}
+    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 35, 26, 0.86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
+    article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(42,127,98,0.04)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--accent2)}
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(15,35,26,0.10);
+      color: rgba(15,35,26,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--accent)}
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+  </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</head>
+<body id='top'>
+  <div class='wrap'>
+    <header>
+      <div class='brand'>
+        <a class='brand-link' href='../index.html'>
+          <img class='logo' src='../resources/logo.png' alt='GPTomics logo' />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label='Primary'>
+        <a href='../blog.html' class='active'>Blog</a>
+        <a href='../index.html#contact'>Contact</a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'>
+          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>
+        </a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'>
+          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <a class='back-link' href='../blog.html'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
+        All posts
+      </a>
+      <article>
+        <div class='post-date'>MAY 11, 2026</div>
+        <h1>How AI changes software P&amp;L</h1>
+        <p class='byline'><a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
+        <h2 id="summary-of-software-pl">Summary of software P&amp;L</h2>
+<p>Software is thought of as having uniquely high margins compared to other industries. The high margin is due to the fact that most of the cost of building software is in writing it, and the cost to create a copy for each user is negligible. Originally, the main costs for adding an additional user, or the cost of goods sold (COGS), were some form of support and variable costs that included the CDs/floppy disks the software was distributed on. As software became cloud/server hosted, the COGS grew to include the hosting infrastructure and expanded support costs for things like DevOps and onboarding. Despite this increase in costs, gross margins remained exceptionally high, with many SaaS companies exceeding 70%.<br />
+$$\text{Gross Margin} = \frac{\text{Total Revenue} - \text{COGS}}{\text{Total Revenue}}$$<br />
+Gross margin is great since it can tell you if you're generally making or losing money with each user you add, but it does hide the actual cost to build the software in the first place. If that cost is not properly accounted for, a company with a high gross margin might find that they're actually losing money. To figure out if the total business is making money once you account for all costs, not just COGS, companies calculate net margin.<br />
+$$\text{Net Margin} = \frac{\text{Total Revenue} - \text{Total Costs} - \text{Interest} - \text{Taxes}}{\text{Total Revenue}}$$<br />
+Net margin goes beyond gross margin to include all fixed costs such as the actual cost of developers and the team, research cost, office cost, software licenses, and compliance. Net margin also subtracts from revenue the costs for taxes, interest, marketing, and any other fixed budgets. The goal with calculating net margin is to understand if the company is recovering its total investments. In software, it tells us if the revenue has covered the cost to build out the software. The same SaaS companies that can have a 70%+ gross margin also target a 20-30% net margin. This net margin is still exceptionally high when compared with consumer goods, which tend to reach <a href="https://www.employers.com/blog/employers-news/2020/whats-a-good-profit-margin-for-retailers/">&lt;10%</a> net margin.</p>
+<p>Many companies balance investing in growth and optimizing for a positive net margin. During a growth focus, companies will increase their fixed cost spend to acquire more users, which results in downward pressure on the net margin. In SaaS, this tradeoff has become known as the <a href="https://en.wikipedia.org/wiki/Rule_of_40">"rule of 40"</a>, where healthy companies try to have the sum of the growth rate and net margin exceed 40% (e.g. 10% growth, 30% net margin; 50% growth, -10% net margin). These high margins and the ability to invest in growth while recouping that cost at scale are what led to high multiples for software company valuations, and made strategies such as <a href="https://www.blitzscaling.com/">Blitzscaling</a> viable. To see how this plays out in real companies, in <a href="#appendix-1">Appendix 1</a>, I've extracted the margins for 8 public SaaS companies.</p>
+<p><strong>AI features break this.</strong> Because traditional software can reuse experiences across common behavior patterns and find multi-tenancy optimizations, for these companies the COGS per user decreases as adoption increases, allowing them to reach high margins compared to other industries. I expect that AI-based capabilities will break from this pattern. Since the value of AI-based features is that they introduce personalized, dynamic experiences, there will be significantly fewer technical options to lower the AI cost per user as adoption increases. Because of this, AI-heavy products will no longer see the same reduction in COGS per user at scale. Instead, companies with these products will see the COGS per user grow linearly with adoption, resulting in lower margins, which will push their business model closer to that of a consumer goods company.</p>
+<h2 id="example">Example</h2>
+<p>To explain this further, I'll build out two example companies:</p>
+<ul>
+<li><strong>GainZ</strong>, which is a traditional SaaS company.</li>
+<li><strong>AIBoost</strong>, which is a new company being built.</li>
+</ul>
+<p>Both of these will sell products that generate annually about $120/user, equivalent to ~$10/user monthly. This could be either a license with capped usage or a usage-driven average. The costs I'll outline may seem high since they're in the millions. Consider that the cost associated with a single engineer is now at, or over, $500K/year, so a company with 10 people exceeds $5M in just employee costs. I'll show how the two companies' product P&amp;Ls compare.</p>
+<p><em>For simplification, we'll talk about high costs being incurred before a single user is added and a predictably recursive growth rate in the cost. In practice, companies may start adding/generating revenue before a product reaches completion of the first version and have less predictable cost scaling by user gained. I'm simplifying to show my points more clearly.</em></p>
+<h3 id="gainz-margins-for-traditional-saas">GainZ: Margins for traditional SaaS</h3>
+<p><strong>Revenue</strong> GainZ sells usage-driven plans that generate annually about $120/user reliably. At 1 million users, this adds up to $120M in annual revenue.</p>
+<p><strong>Fixed Costs</strong> Between the salaries for the team needed to build the product, the infrastructure they need for R&amp;D, marketing to get the first users, and everything else needed to ship the first version of the product before a single user has paid for it, it costs ~$25M. Now, this might be enough to get the first set of users, but inevitably they will need to increase their investment if they want to double their users since they will need more features and capabilities. We'll assume it costs an incremental 10% each time they want to double their user base. At this rate, to reach 1 million users, GainZ needs a fixed investment of ~$73M.</p>
+<p><strong>COGS</strong> Luckily, the team has built a highly efficient scalable core where the more users they have, the lower the cost/user gets. Early on, the annual cost is about $200/user to support their usage, but by the time they reach a million users, it's down to $24/user.</p>
+<p><strong>Margin</strong> With the costs and pricing, GainZ runs at a negative gross margin for the first 58 users and a negative net margin all the way up to 758K users. After this break-even point, because of the scaling benefits, adding 242K users drives the net margin close to the target of 20%. Additional users would push it even higher. Review <em>Table 1</em> for a full breakdown of the costs, profit, and margin for different user levels.</p>
+<p>While the margin seems to be growing fast once the break-even points are reached, both asymptote as shown in <em>Figure 1</em>. We can see that in this model, gross margin has already reached its limit while the net margin's growth is slowing down. At this scale, GainZ is likely starting to reach market saturation, meaning that they are likely running out of customers willing to buy their current product at its price point. When this happens, to drive adoption, many companies may lower prices or start building new products, both of which put downward pressure on the margins.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">Users</th>
+<th style="text-align: right;">Revenue</th>
+<th style="text-align: right;">COGS</th>
+<th style="text-align: right;">Total Cost</th>
+<th style="text-align: right;">Profit</th>
+<th style="text-align: right;">Gross Margin</th>
+<th style="text-align: right;">Net Margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$120</td>
+<td style="text-align: right;">$4.4K</td>
+<td style="text-align: right;">$25M</td>
+<td style="text-align: right;">-$25.0M</td>
+<td style="text-align: right;">-3,533%</td>
+<td style="text-align: right;">-20,836,867%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">$1.2K</td>
+<td style="text-align: right;">$5.0K</td>
+<td style="text-align: right;">$32.5M</td>
+<td style="text-align: right;">-$32.5M</td>
+<td style="text-align: right;">-313%</td>
+<td style="text-align: right;">-2,708,646%</td>
+</tr>
+<tr>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">$7.0K</td>
+<td style="text-align: right;">$6.9K</td>
+<td style="text-align: right;">$37.5M</td>
+<td style="text-align: right;">-$37.5M</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">-538,792%</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">$12K</td>
+<td style="text-align: right;">$8.3K</td>
+<td style="text-align: right;">$40.0M</td>
+<td style="text-align: right;">-$40.0M</td>
+<td style="text-align: right;">31%</td>
+<td style="text-align: right;">-333,303%</td>
+</tr>
+<tr>
+<td style="text-align: right;">1K</td>
+<td style="text-align: right;">$120K</td>
+<td style="text-align: right;">$33.7K</td>
+<td style="text-align: right;">$47.5M</td>
+<td style="text-align: right;">-$47.4M</td>
+<td style="text-align: right;">72%</td>
+<td style="text-align: right;">-39,511%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10K</td>
+<td style="text-align: right;">$1.2M</td>
+<td style="text-align: right;">$261.8K</td>
+<td style="text-align: right;">$57.8M</td>
+<td style="text-align: right;">-$56.6M</td>
+<td style="text-align: right;">78%</td>
+<td style="text-align: right;">-4,713%</td>
+</tr>
+<tr>
+<td style="text-align: right;">100K</td>
+<td style="text-align: right;">$12M</td>
+<td style="text-align: right;">$2.5M</td>
+<td style="text-align: right;">$67.5M</td>
+<td style="text-align: right;">-$55.5M</td>
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">-462%</td>
+</tr>
+<tr>
+<td style="text-align: right;">758K</td>
+<td style="text-align: right;">$91.0M</td>
+<td style="text-align: right;">$18.3M</td>
+<td style="text-align: right;">$90.8M</td>
+<td style="text-align: right;">$110.6K</td>
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">0%</td>
+</tr>
+<tr>
+<td style="text-align: right;">1M</td>
+<td style="text-align: right;">$120M</td>
+<td style="text-align: right;">$24.2M</td>
+<td style="text-align: right;">$96.7M</td>
+<td style="text-align: right;">$23.3M</td>
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">19%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 1. The revenue, costs, profit, and margins for GainZ at each order of magnitude of user growth. We also have the break-even points for both the gross margin (58 users) and net margin (758K users).</em></p>
+<p><img alt="SaaS revenue and cost" src="./assets/how_ai_changes_software_pnl/figure_1.svg" /><br />
+<em>Figure 1. GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<h3 id="aiboost-margins-for-ai-native-software">AIBoost: Margins for AI native software</h3>
+<p><strong>Revenue</strong> AIBoost is coming into the market and has done their homework, so they know how much users are willing to pay for GainZ. AIBoost decides that even though they'll have new AI-based features, because they are new and can build more cheaply, they'll charge the same amount as GainZ. They expect that their new features will let them win customers. With this strategy, AIBoost will similarly generate annually about $120/user. At 1 million users, this also adds up to $120M in revenue.</p>
+<p><strong>Fixed Costs</strong> AIBoost is counting on using the latest AI capabilities to build their product more efficiently and with fewer people. They expect that with this approach they're able to build the first version of the product for 1/10th the cost, or ~$2.5M. Even though their building cost has been decreased, they similarly have to invest more to increase adoption. We'll again assume it costs an incremental 10% each time they want to double their user base. At this scale, to reach 1 million users, AIBoost needs a fixed investment of ~$7.3M.</p>
+<p><strong>COGS</strong> Even though AIBoost was able to build the product for 1/10th the cost, they quickly find that, for the core product capabilities, their COGS mirror those of GainZ closely. This means that for the first set of users, it costs them annually ~$200/user. Similarly, for this set of COGS, they see scaling benefits where, at 1 million users, the annual cost has dropped to $24/user.</p>
+<p>But this is only half of AIBoost's COGS since they also added several AI-based capabilities to their product. These features were added to drive adoption by taking advantage of AI capabilities to create new personalized, adaptive experiences. These new capabilities burn tokens each time a user uses them and end up costing AIBoost ~$75/user annually. Because the capabilities are unique to each user, this cost remains consistent, even at 1 million users.</p>
+<p><strong>Margin</strong> For AIBoost, the margin picture looks quite different. Despite AIBoost having a lower fixed cost, the higher COGS means that they need 357 users to reach a positive gross margin, almost 6x as many users as GainZ. To break even on net margin, though, because of the lower fixed cost, AIBoost only needs 339K users, about half as many as GainZ. As AIBoost keeps scaling, even at 1 million users their net margin only reaches 11%. This highlights that despite reaching profitability earlier than GainZ, the high linearly growing COGS is preventing AIBoost from reaching the high margins software companies strive for.</p>
+<p>In <em>Table 2</em>, we can see that the gross and net margins are significantly closer for AIBoost than they are for GainZ. This is because the COGS is on the same order of magnitude as the fixed costs. This cost pattern is more similar to cost patterns seen in consumer goods and manufacturing. We can see a similar margin limit in <em>Figure 2</em>. Additionally, in the figure we can also see just how large of an impact the cost of AI features has, very quickly becoming the dominant cost. This change in cost profile for AI-heavy products means that companies building them need to change their growth strategies.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">Users</th>
+<th style="text-align: right;">Revenue</th>
+<th style="text-align: right;">COGS</th>
+<th style="text-align: right;">Total Cost</th>
+<th style="text-align: right;">Profit</th>
+<th style="text-align: right;">Gross Margin</th>
+<th style="text-align: right;">Net Margin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">$120</td>
+<td style="text-align: right;">$4.4K</td>
+<td style="text-align: right;">$2.5M</td>
+<td style="text-align: right;">-$2.5M</td>
+<td style="text-align: right;">-3,596%</td>
+<td style="text-align: right;">-2,086,929%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">$1.2K</td>
+<td style="text-align: right;">$5.7K</td>
+<td style="text-align: right;">$3.3M</td>
+<td style="text-align: right;">-$3.3M</td>
+<td style="text-align: right;">-376%</td>
+<td style="text-align: right;">-271,209%</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">$12K</td>
+<td style="text-align: right;">$15.8K</td>
+<td style="text-align: right;">$4.0M</td>
+<td style="text-align: right;">-$4.0M</td>
+<td style="text-align: right;">-32%</td>
+<td style="text-align: right;">-33,365%</td>
+</tr>
+<tr>
+<td style="text-align: right;">357</td>
+<td style="text-align: right;">$42.8K</td>
+<td style="text-align: right;">$42.8K</td>
+<td style="text-align: right;">$4.5M</td>
+<td style="text-align: right;">-$4.5M</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">-10,504%</td>
+</tr>
+<tr>
+<td style="text-align: right;">1K</td>
+<td style="text-align: right;">$120K</td>
+<td style="text-align: right;">$108.7K</td>
+<td style="text-align: right;">$4.9M</td>
+<td style="text-align: right;">-$4.7M</td>
+<td style="text-align: right;">9%</td>
+<td style="text-align: right;">-3,949%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10K</td>
+<td style="text-align: right;">$1.2M</td>
+<td style="text-align: right;">$1.0M</td>
+<td style="text-align: right;">$6.8M</td>
+<td style="text-align: right;">-$5.6M</td>
+<td style="text-align: right;">16%</td>
+<td style="text-align: right;">-463%</td>
+</tr>
+<tr>
+<td style="text-align: right;">100K</td>
+<td style="text-align: right;">$12M</td>
+<td style="text-align: right;">$10.0M</td>
+<td style="text-align: right;">$16.5M</td>
+<td style="text-align: right;">-$4.5M</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">-37%</td>
+</tr>
+<tr>
+<td style="text-align: right;">339K</td>
+<td style="text-align: right;">$40.7M</td>
+<td style="text-align: right;">$33.7M</td>
+<td style="text-align: right;">$40.7M</td>
+<td style="text-align: right;">$12.4K</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">0%</td>
+</tr>
+<tr>
+<td style="text-align: right;">1M</td>
+<td style="text-align: right;">$120M</td>
+<td style="text-align: right;">$99.2M</td>
+<td style="text-align: right;">$106.4M</td>
+<td style="text-align: right;">$13.6M</td>
+<td style="text-align: right;">17%</td>
+<td style="text-align: right;">11%</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Table 2. The revenue, costs, profit, and margins for AIBoost at each order of magnitude of user growth. We also have the break-even points for both the gross margin (357 users) and net margin (339K).</em><br />
+<img alt="AI revenue and cost" src="./assets/how_ai_changes_software_pnl/figure_2.svg" /><br />
+<em>Figure 2. AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<h3 id="handling-expensive-ai-features">Handling expensive AI features</h3>
+<p><strong>Economy of scale</strong></p>
+<p>So why is there not an economy of scale for AI features similar to traditional features? If an AI capability is just another feature in a product, why can it not be optimized similarly to a database or workflow?</p>
+<p>Economies of scale arise when efficiencies can be found from the redundancy of doing the same thing thousands or millions of times. For instance, in a database that focuses on storing clothing information, as adoption scales, users will start to show common patterns. Their usage will likely follow consistent patterns, so the infrastructure can scale down dynamically during expected low usage periods. The data entered in the database will have similarities, allowing better compression rates on the data and leading to more efficient storage. Users in the same company will also have similar queries, so tables can be indexed and results can be cached, reducing querying costs. All of these will combine to ensure that, for the database, each additional user or company costs less to add and support than the previous one. AI-based features, though, are different. Their benefit in products is to add flexibility, dynamics, and personalization. When the feature is used, it's personalized to the user. The focus on personalization and context leak prevention will mean scaling efficiencies such as caching will have a lot less benefit. This implementation pattern is why there won't be efficiencies at scale, and cost will scale linearly with usage.</p>
+<p>If you're following the space, you will rightly point out that per-token costs are declining predictably, as highlighted by <a href="https://en.wikipedia.org/wiki/Experience_curve_effect#Wright's_law_and_the_discovery_of_the_learning_curve_effect">Wright's Law</a> that predicts the cost per token has dropped roughly an order of magnitude per year for the past few years. While this is indeed true due to inference efficiencies, distillation, and chip improvements, this drop in cost has been matched by a similar growth in the tokens consumed to complete a task. Reasoning models burn 10-100x more tokens than the models they replaced and agent frameworks can make dozens of thinking calls together. This is coupled with growing context windows that get filled with personalized data on each call. This increased usage means that while the cost per token has dropped, the cost to complete a task has stayed roughly flat. Even if token deflation eventually outpaces this growth in usage, the costs will still be linearly linked to adoption. </p>
+<p><strong>Increased cost</strong></p>
+<p>If there isn't an economy of scale, can't you just charge more for AI features to hit your target margin? If the features are so great and powerful, won't users be willing to pay more for them?</p>
+<p>Raising prices and/or charging separately for AI features may work in the short term, especially for the first few products in a space or for an existing product with users adding new AI capabilities. This approach of charging a premium in a green-field space can be seen in consumer goods and manufacturing. In software, this will truly only be a short-term bandaid. Since agents have lowered the cost to build so much, once a proven price point has been established in a space, competitors willing to take lower margins will enter lucrative markets, increasing competition. The main pressure against competitors will be non-software moats such as network effects, data flywheels, or switching costs, will hold up better.</p>
+<p>If a company raises prices, this increased competition will force them to respond in two ways. First, race to the bottom by lowering prices. This can be effective if they're in a winner-takes-most market and they have access to a lot of capital. In this scenario, the viable approach is burning cash to be the winner and, once they are the winner, increasing prices to regain margins. Alternatively, they can focus on going beyond software to add more value to their product. This could include ensuring that buying the software also means transferring liability, gaining regulatory compliance, or some other service-based value. The key is to find a capability that is hard to copy. By bundling that capability for customers with the easy-to-copy software, they can charge a premium, resulting in increased margins.</p>
+<p><strong>Build your own model</strong></p>
+<p>Wouldn't building your own model give you a wedge to increase the margin on AI features? By owning the model, surely you can find some scaling efficiencies.</p>
+<p>For generalizable models and agents, at this time, it will be hard to compete with OpenAI, Google, Anthropic, and other frontier labs. Open models require hosting costs, which have their own high costs. Additionally, open models are consistently 6-12 months behind in capabilities, a gap that, in a competitive market, can mean losing customers. If a company manages to find a profitable pattern for generalizable models that users enjoy, their best product will likely be to sell access to the model and not worry about other software products.</p>
+<p>For a specialized task, though, building and hosting their own model can be a leverage point. If they need AI flexibility for a nuanced task, they have access to non-public data for the task, and they can create an efficient model that proves valuable (via cost or performance), then this can be a major differentiator. For specialized models, since their utility is constrained, scaling benefits may also emerge. Additionally, if they are deployed with the right data flywheels in place, deploying them can lead to an even better product differentiation. All of these can lead to decreasing costs and the ability to charge a premium, helping increase their margins. I do warn them to be cautious with this approach. Thoroughly vet if they truly have a unique task, unique data, and/or unique approach. Often, a company might think they have unique data, but they either can't train on it for regulatory reasons or every competitor has their own similar version of the unique non-public data.</p>
+<h2 id="arbitrage-opportunities">Arbitrage opportunities</h2>
+<p>Given how new the latest AI capabilities are in software, there are a number of arbitrage opportunities for those willing to move fast enough. Not all of the opportunities will have high margins, but, as outlined below, under the right operating models they can be successful. Many people have built successful businesses in low-margin industries, and those of us in software can learn from their successes and failures.</p>
+<h3 id="cheap-clone">Cheap clone</h3>
+<p>This is the least creative option. During a time of transition like we are in now, a short-term opportunity emerges to use modern tools to create a lower-cost competitor to existing options. For this opportunity, a company would use the latest AI capabilities to lower their fixed costs by 90%. They would not add any new AI capabilities, so they also maintain low COGS. Because of the low costs, they can enter an existing market and undercut competitors while maintaining healthy margins. To execute this correctly, they will need to move quickly, since existing companies are transitioning to adopt new AI capabilities and lower their own fixed costs. The winning move here is to build fast and launch a product soon enough and at a cheap enough price to build momentum before an incumbent can react. This move is only available in the short term since it has no moat, so others can do the same move and trigger a race to the bottom.</p>
+<p>A more sustainable twist on this move is to be more than just a low-cost knock-off. A company can use this strategy to gain a foothold in a space, only build the table stakes portion of the product, and then use the low build cost to innovate and build a superior product.</p>
+<h3 id="niche-ultra-low-cost-products">Niche &amp; ultra low-cost products</h3>
+<p>One better approach is to create a scenario where revenue in the billions isn't required and focus on what the new unit economics unlocks. Since the build cost is dropping, niche products that did not have a path to a positive margin have suddenly become viable. The most common examples are:</p>
+<ol>
+<li>Products that need to be priced super cheaply so they could not pay for the build cost even at enormous scale. This is likely a product that does just a single thing well (e.g. turn a photo into a headshot) or is being sold in a cash-restricted market so it needs to be sold cheaply. Now that the fixed cost to build is 1/10th of what it was, suddenly there's a path to a positive margin.</li>
+<li>Products that have a small user base. While there are multiple SaaS products that are incredibly expensive (e.g. <a href="https://www.investopedia.com/terms/b/bloomberg_terminal.asp">Bloomberg terminal costs $32K/year/seat</a>), if a product just doesn't have a large enough user base willing to pay the price required to cover the total cost, there is no path to profitability. With the decreases in the fixed cost, many of these products where the limit was a small total market will now have a path to a positive margin.</li>
+<li>Products that were too expensive because they were too complex to build. There are some problems that can already be solved with software today, but solving them has been just too expensive to tackle. With the decreased build cost, and the ability to use AI-based features as a replacement for enumerating every possibility at a decision point, some of these problems will become cheap enough to have a path to a positive margin.</li>
+</ol>
+<p>The key to the first two items on the list is to ruthlessly manage the fixed cost investment and to lower revenue expectations. I expect that in the coming years, we'll see many lifestyle businesses emerge to target both of these spaces. A lifestyle business is a company established and operated by founders primarily to sustain a specific level of income and support a desired personal lifestyle, rather than rapid growth or quick exit. Users will also benefit from these companies since, instead of having to customize a generic solution, it's more likely they'll find a better bespoke solution.</p>
+<p>For the third opportunity, complex products, I expect that many incumbents will reach for them. As competition invades the SaaS space, incumbents will look for differentiation to retain users and margin. They will leverage their ongoing revenue streams, industry expertise, and data flywheels to tackle the expensive problems that used to not make sense. They'll hope that tackling these problems is beyond the reach of competitors while also desirable enough that users are willing to pay the premium.</p>
+<h3 id="luxury-software">Luxury software</h3>
+<p>In the consumer goods space, one of the higher-margin segments is luxury goods. These companies use a number of levers to differentiate themselves, including focusing on quality and experience. In the most competitive markets, the biggest lever they pull is branding. Branding becomes a strategic process that creates a distinct identity, reputation, and perception about their product. Paul Graham recently wrote an <a href="https://www.paulgraham.com/brandage.html">essay</a> about branding in relation to watches, and how luxury Swiss watches use branding to command higher prices.</p>
+<p>This strategy requires that a software company is able to pull the right levers and create the right branding to create the "luxury software" segment. This segment would need to trigger the same exclusivity and FOMO luxury goods create. Companies in this space will then be able to drive higher prices and higher margins. I've seen hints of exclusivity being leveraged by dating apps (e.g. <a href="https://www.rayatheapp.com/">Raya</a>), event communities (e.g. <a href="https://www.dorsia.com/">Dorsia</a>), and financial apps (e.g. <a href="https://professional.bloomberg.com/explore/demo-request/?utm_source=google&amp;utm_medium=pdsrch&amp;utm_campaign=trmnl&amp;utm_content=text_trml-branded&amp;tactic=946268&amp;utm_term=bloomberg+terminal">Bloomberg Terminal</a>) but all of these rely on exclusive access, not just pure branding. The closest to a pure luxury software was the <a href="https://en.wikipedia.org/wiki/I_Am_Rich">I Am Rich App</a> that sold for $999.99 (ironic to try to be luxury but resort to price gimmicks), but it was quickly shut down.</p>
+<h3 id="more-than-software">More than software</h3>
+<p>Similar to products pairing exclusive access with software, any product that bundles more than just software is going to be one of the best paths to leverage the new AI capabilities and hit the revenue and growth targets for venture-backed companies. An example is companies that are able to work in the world of atoms (e.g. do lab tests, run manufacturing, connect humans) or atom proxies (unique results or data). This capability will be paired with great software to drive an advantage over a pure-play software company in the same space. This mirrors the vertical integration strategies used in manufacturing and consumer goods. A company can improve its margins by going directly from raw good or service to the user and finding economies of scale through the vertical specialization. I expect that, in the coming decade, this will become the dominant format new hyper-growth startups choose.</p>
+<h2 id="wrap-up">Wrap-up</h2>
+<p>All of these arbitrage opportunities represent some of the ways to attack the changing cost profile coming from AI-based capabilities. Software companies and PMs will need to adjust how they view software costs at scale and prepare for lower margins. For small teams and driven individuals, this will be a great time to build lifestyle businesses and avoid the hyper-scaling push of venture capital. For larger software companies, now is the time to tackle the expensive, complex problems that had been deferred and/or start eyeing vertical integration.</p>
+<p>Across the board, PMs should look at other low-margin industries and start learning from their successes and failures. The companies and PMs that don't adjust will be in for a rude awakening as their costs keep growing and their margin drops.</p>
+<h2 id="appendix-1">Appendix 1</h2>
+<p><strong>A sample of SaaS company margins</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Company</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">Revenue</th>
+<th style="text-align: right;">Gross Margin</th>
+<th style="text-align: right;">Net Margin</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salesforce</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$37.895B</td>
+<td style="text-align: right;">77.2%</td>
+<td style="text-align: right;">16.4%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Adobe</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$23.769B</td>
+<td style="text-align: right;">89.3%</td>
+<td style="text-align: right;">30.0%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>ServiceNow</td>
+<td style="text-align: right;">FY2024</td>
+<td style="text-align: right;">$10.984B</td>
+<td style="text-align: right;">79.2%</td>
+<td style="text-align: right;">13.0%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1373715/000137371525000010/now-20241231.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Workday</td>
+<td style="text-align: right;">FY2026</td>
+<td style="text-align: right;">$9.552B</td>
+<td style="text-align: right;">75.7%</td>
+<td style="text-align: right;">7.3%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1327811/000132781126000014/wday-20260131.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Atlassian</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$5.215B</td>
+<td style="text-align: right;">82.8%</td>
+<td style="text-align: right;">-4.9%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1650372/000165037225000036/team-20250630.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Palantir</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$4.475B</td>
+<td style="text-align: right;">82.4%</td>
+<td style="text-align: right;">36.5%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Snowflake</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$3.626B</td>
+<td style="text-align: right;">66.5%</td>
+<td style="text-align: right;">-35.5%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1640147/000164014725000052/snow-20250131.htm">SEC 10-K</a></td>
+</tr>
+<tr>
+<td>Datadog</td>
+<td style="text-align: right;">FY2025</td>
+<td style="text-align: right;">$3.427B</td>
+<td style="text-align: right;">80.0%</td>
+<td style="text-align: right;">3.1%</td>
+<td><a href="https://www.sec.gov/Archives/edgar/data/1561550/000162828026008819/ddog-20251231.htm">SEC 10-K</a></td>
+</tr>
+</tbody>
+</table></div>
+      </article>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 GPTomics. Just figure things out.</div>
+      <div><a href='#top'>I'm lazy, take me to the top</a></div>
+    </footer>
+  </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
+</body>
+</html>

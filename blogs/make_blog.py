@@ -225,8 +225,67 @@ TEMPLATE = '''<!doctype html>
       line-height: 1.6;
     }}
     article pre code{{background: none; color: var(--ink); padding: 0}}
-    article img{{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px}}
+    article img{{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}}
+    .lightbox{{
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 35, 26, 0.86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }}
+    .lightbox.is-open{{opacity: 1; pointer-events: auto}}
+    .lightbox img{{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}}
+    .lightbox-close{{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }}
+    .lightbox-close:hover{{color: #fff}}
     article hr{{border: none; border-top: 1px solid var(--border); margin: 32px 0}}
+    article .table-wrap{{overflow-x: auto; margin: 22px 0}}
+    article table{{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }}
+    article thead th{{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }}
+    article tbody td{{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }}
+    article tbody tr:last-child td{{border-bottom: 1px solid var(--ink)}}
+    article tbody tr:hover td{{background: rgba(42,127,98,0.04)}}
+    article th[style*='right']{{text-align: right}}
+    article td[style*='right']{{text-align: right}}
+    article table a{{color: var(--accent2)}}
 
     html{{scroll-behavior:smooth}}
     footer{{
@@ -250,6 +309,10 @@ TEMPLATE = '''<!doctype html>
       footer{{flex-direction:column; text-align:center}}
     }}
   </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, {{ delimiters: [{{ left: "$$", right: "$$", display: true }}, {{ left: "\\\\(", right: "\\\\)", display: false }}, {{ left: "\\\\[", right: "\\\\]", display: true }}], throwOnError: false }});'></script>
   <!-- Google tag (gtag.js) -->
   <script async src='https://www.googletagmanager.com/gtag/js?id={GA_ID}'></script>
   <script>
@@ -300,6 +363,34 @@ TEMPLATE = '''<!doctype html>
       <div><a href='#top'>I'm lazy, take me to the top</a></div>
     </footer>
   </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){{
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){{
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }}
+      function close(){{
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }}
+      document.querySelectorAll('article img').forEach(function(el){{
+        el.addEventListener('click', function(){{ open(el.currentSrc || el.src, el.alt); }});
+      }});
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){{ if(e.key === 'Escape') close(); }});
+    }})();
+  </script>
 </body>
 </html>
 '''
@@ -416,7 +507,8 @@ def main():
     else:
         author_html = author_escaped
 
-    body_html = markdown.markdown(body_md, extensions=['extra', 'sane_lists', 'nl2br'])
+    body_html = markdown.markdown(body_md, extensions=['extra', 'sane_lists', 'nl2br', 'toc'])
+    body_html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', body_html, flags=re.DOTALL)
 
     url = f'{SITE_URL}/blog/{slug}.html'
     page = TEMPLATE.format(

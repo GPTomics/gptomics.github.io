@@ -3,22 +3,28 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <meta name='description' content='AI is collapsing the cost of shipping. The product manager role is shifting from managing delivery scarcity to defending product coherence and deciding what deserves to exist.' />
-  <meta name='keywords' content='AI product manager, product management, AI product management, agentic products, product coherence, PM role, future of product management' />
-  <title>Coherently Solve User Problems: The PM Role in the AI Era | GPTomics</title>
+  <meta name='description' content="AI is collapsing software build costs. The PM role should shift from managing delivery scarcity to defending product coherence and knowing when to say &quot;let's not.&quot;" />
+  <title>Coherently solve user problems | GPTomics</title>
   <meta property='og:site_name' content='GPTomics' />
-  <meta property='og:title' content='Coherently Solve User Problems: The PM Role in the AI Era' />
-  <meta property='og:description' content='AI is collapsing the cost of shipping. The product manager role is shifting from managing delivery scarcity to defending product coherence and deciding what deserves to exist.' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:title' content='Coherently solve user problems' />
+  <meta property='og:description' content="AI is collapsing software build costs. The PM role should shift from managing delivery scarcity to defending product coherence and knowing when to say &quot;let's not.&quot;" />
   <meta property='og:url' content='https://www.gptomics.com/blog/coherently_solve_user_problems.html' />
   <meta property='og:type' content='article' />
   <meta property='article:author' content='Domen Jemec' />
-  <meta property='article:published_time' content='2026-04-13' />
-  <meta property='article:section' content='Product Management' />
+  <meta property='article:published_time' content='2026-04-13T08:00:00-07:00' />
+  <meta property='article:modified_time' content='2026-04-13T08:00:00-07:00' />
+  <meta property='article:section' content='Product management' />
+  <meta property='article:tag' content='Product management' />
+  <meta property='article:tag' content='AI agents' />
+  <meta property='article:tag' content='PM role' />
+  <meta property='article:tag' content='Product strategy' />
+  <meta property='article:tag' content='Software development' />
   <meta name='twitter:card' content='summary' />
   <meta name='twitter:site' content='@gptomics' />
   <meta name='twitter:creator' content='@gptomics' />
-  <meta name='twitter:title' content='Coherently Solve User Problems: The PM Role in the AI Era' />
-  <meta name='twitter:description' content='AI is collapsing the cost of shipping. The product manager role is shifting from managing delivery scarcity to defending product coherence and deciding what deserves to exist.' />
+  <meta name='twitter:title' content='Coherently solve user problems' />
+  <meta name='twitter:description' content="AI is collapsing software build costs. The PM role shifts from managing delivery scarcity to defending product coherence and knowing when to say &quot;let's not.&quot;" />
   <link rel='canonical' href='https://www.gptomics.com/blog/coherently_solve_user_problems.html' />
   <link rel='icon' href='../resources/favicon.ico' sizes='any' />
   <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
@@ -29,19 +35,22 @@
   <link rel='manifest' href='../resources/site.webmanifest' />
   <link rel='preconnect' href='https://www.googletagmanager.com' />
   <meta name='author' content='Domen Jemec' />
-  <meta name='robots' content='index, follow' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
   <script type='application/ld+json'>
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Coherently Solve User Problems: The PM Role in the AI Era",
-    "description": "AI is collapsing the cost of shipping. The product manager role is shifting from managing delivery scarcity to defending product coherence and deciding what deserves to exist.",
-    "keywords": "AI product manager, product management, AI product management, agentic products, product coherence, PM role, future of product management",
-    "datePublished": "2026-04-13",
-    "dateModified": "2026-04-13",
+    "headline": "Coherently solve user problems",
+    "description": "AI is collapsing software build costs. The PM role should shift from managing delivery scarcity to defending product coherence and knowing when to say \"let's not.\"",
+    "datePublished": "2026-04-13T08:00:00-07:00",
+    "dateModified": "2026-04-13T08:00:00-07:00",
+    "wordCount": 2436,
+    "articleSection": "Product management",
+    "keywords": "product management, PM role, AI agents, product strategy, software development, product coherence",
     "author": {
       "@type": "Person",
-      "name": "Domen Jemec"
+      "name": "Domen Jemec",
+      "url": "https://domenjemec.com/"
     },
     "publisher": {
       "@type": "Organization",
@@ -207,8 +216,67 @@
       line-height: 1.6;
     }
     article pre code{background: none; color: var(--ink); padding: 0}
-    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px}
+    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 35, 26, 0.86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
     article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(42,127,98,0.04)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--accent2)}
 
     html{scroll-behavior:smooth}
     footer{
@@ -232,6 +300,10 @@
       footer{flex-direction:column; text-align:center}
     }
   </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
   <!-- Google tag (gtag.js) -->
   <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
   <script>
@@ -272,18 +344,18 @@
       <article>
         <div class='post-date'>APRIL 13, 2026</div>
         <h1>Coherently solve user problems</h1>
-        <p class='byline'><a href='https://domenjemec.com/' target='_blank' rel='noopener'>Domen Jemec</a></p>
+        <p class='byline'><a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
         <p>The software product management role was created to manage the scarcity of product capabilities due to high build costs. Engineering time was limited, delivery cycles were slow, and experimentation was expensive. Building the wrong feature burned real team capacity, blew up plans, and left behind debt. Applied AI tools such as agents are removing this constraint. The cost of building and shipping ideas is collapsing. This does not mean software delivery is free. Instead, it means the cost of ideating, building, and shipping features is falling much faster than the cost of deciding what should exist and making it coherent, secure, supportable, and contract-ready.</p>
 <p>Because of this change, product management is moving from managing the scarcity of engineering to defending coherence against the abundance of possibility. This shift became clear to me while working on an agent-native drug discovery workbench and has only become more obvious since then. The way I had described features on earlier products stopped working once the system became more dynamic and the team could prototype faster than I could enumerate every possible interaction. I realized that the scarce resource was no longer the ability to build. It was the ability to correctly decide what should exist.</p>
-<h2>A brief history</h2>
+<h2 id="a-brief-history">A brief history</h2>
 <p>Product management started in the consumer product space with <a href="https://hbr.org/2003/12/kill-a-brand-keep-a-customer">Neil McElroy's early brand-management memo at Procter &amp; Gamble</a>, which argued that someone should be directly responsible for whether a product succeeded, not just for its production. Software adopted the role for a similar reason. As software became a real product business, companies grew beyond the point where founders could still decide what was worth building on their own. The PM role was adopted to take over that function. The role was meant to sit between technology, customers, and the business and make decisions about what mattered, who it was for, and why it was worth doing.</p>
 <p>Later, ideas in the <a href="https://agilemanifesto.org/">Agile Manifesto</a> tried to push teams back toward that view by emphasizing customer value and adaptation over rigid planning. But software became economically important faster than it became easy to build. Delivery stayed complex and expensive to change, which kept the cost of mistakes high and made coordination harder. Under those conditions, product managers increasingly had to define success in terms of what could actually ship. As delivery became the main bottleneck, the job shifted from asking what would make the product best in theory to asking which features had enough value to justify the team's limited time and could realistically make it out the door. That shift pulled the role beyond deciding what to build and into making sure features actually shipped.</p>
 <p>This is the version of PMing most people still have in mind. The argument in this essay is that its central constraint, expensive shipping, is now weakening. Once that happens, the obvious next question is what becomes the new bottleneck.</p>
-<h2>The assumptions</h2>
+<h2 id="the-assumptions">The assumptions</h2>
 <p>Our foundational assumption for this essay is that shipping is no longer the main bottleneck. The rapid growth in coding agents will drive the cost to go from idea to delivered feature toward zero. As the bottleneck around building and shipping code weakens, the bottleneck will shift to decision quality. For years PMs were forced to figure out what was worth building with the limited bandwidth the team actually had. If building and shipping become trivial, the real question becomes whether you can separate the good ideas from the bad ones before the product fills up with slop. I wanted to understand just how far this bottleneck had shifted. In mid-2025, I built an agentic workout app from scratch in just two weeks. Features could be added in hours and bugs could be fixed in minutes. Not every product is this easy to build, but the cost curve has moved far enough that treating delivery scarcity as the default is no longer safe.</p>
 <p>As building gets cheaper, buyers get more options and their own friction to build drops. Their willingness to stitch together smaller tools rises, they can change tools faster, and their tolerance for bad software falls. Once that happens, PMs no longer just have to defend what the team should build, but also why the product should exist at all.</p>
 <p>If those two assumptions hold, the PM role does not disappear, it shifts back to its original mandate.</p>
-<h2>What changes</h2>
+<h2 id="what-changes">What changes</h2>
 <p>The first change is in the role's mandate. Cheap feature generation changes the core question from “What can the team afford to build?” to “What should actually exist?” This forces PMs into tougher judgment calls since they have to be much clearer about who the product is for, why it deserves to exist, and where its boundaries need to persist.</p>
 <p>That is why PMs will have to spend more time focused on product coherence. In an abundant build environment, the default instinct is to build every idea anyone, including AI, mentions. That logic sounds great until the product starts accumulating individually defensible features that collectively feel like slop. Users notice whether the product feels usable, trustworthy, and right. When shipping is trivial, just having a capability stops being the differentiator. Now what matters is whether the product feels like it understands the user's workflow instead of just flooding them with options. Because of this, user research will matter more, not less.</p>
 <p>I saw this directly on the drug discovery workbench project. Once we started working on the first dynamic agent-based features, the hard questions were no longer which fields to add, but more behavioral, such as what the system should remember, how it should adapt, and what had to remain static. Since many users were encountering an agentic system for the first time, the behavior boundaries and system defaults mattered more than the surface feature list.</p>
@@ -293,17 +365,17 @@
 <p>Once PMs shift from managing delivery scarcity to defending judgment and coherence, the artifacts they author have to change too. The roadmap becomes more of an investment thesis and less a list of promised features. Its job is no longer to enumerate every feature the team will build, but to explain why a problem space is worth attacking, why it matters now, and where to draw the boundary. The PRD changes in the same way. It becomes less a fixed specification and more a decision document built around guardrails and evaluation criteria. It focuses on clarifying product behavior, especially how user behavior shapes the experience, what success actually looks like, and what must remain stable. Its scope also broadens as it frames the larger problem the team is trying to solve and the constraints that should shape its features. I learned this the hard way while trying to use a traditional PRD to describe agent capabilities for researchers and finding that I could never capture all the edge cases. Things became clearer once we rewrote the spec section as a behavioral profile describing the agent's temperament, interaction style, and limits. I also saw that this change expanded the PRD to frame the full problem rather than a single milestone.</p>
 <p>To supplement the PRD, PMs will now be expected to build prototypes and assemble evaluation sets. Because building is cheap, teams will expect interactive and testable artifacts, not more polished documents. To know whether features are actually solving the target problem, the PM will need to build and own the evaluation set. I learned this while building NLP-based products, where curating my own eval sets made it possible to spot drift as models changed, including cases the team missed.</p>
 <p>Many of these “new” responsibilities already sit within product management, but work that used to be secondary or reserved for executives will increasingly become central to the IC PM role.</p>
-<h2>Second-order impacts</h2>
+<h2 id="second-order-impacts">Second-order impacts</h2>
 <p>Once the PM has defended what ideas are worth making real, the next challenge is managing what happens as those ideas accumulate in the product. This is where the role starts looking less like feature planning and more like alignment management.</p>
 <p>A surprising amount of that work will come down to preventing metric distortion and local optimization. Rapid building, deployment, and iteration make it easier for teams and features to optimize against weak metrics. If the success metrics are naive, they will be hacked. PMs will need to spend more time on metric design, counter-metrics, and failure-mode analysis. A green dashboard can easily hide a product that is getting worse for users.</p>
 <p>Defaults also become a differentiator. In a world drifting toward feature parity, products will increasingly win or lose based on their default behavior. PMs will have to shape the product's judgment much more deliberately. The difference between a good product and an annoying one usually comes down to default behaviors, not features. Good products step in at the right moments, stay out of the way when they are not needed, and leave the user in control when it matters. When those defaults are right, the product feels like a natural extension of the workflow. When they are wrong, it feels noisy, creepy, or generic. We ran into this directly when deciding what the system should suggest, what it should expose, and what it should keep behind a harder boundary. We found that because most users were encountering an agentic product for the first time, we had to dial down the automation, increase assistance, and preserve more user control.</p>
 <p>How PMs handle all these changes will also drive the market to split. The next wave of products will likely fall into three classes: vision-led products, derivatives, and feature slop. Additionally, cheap building will make room for new features that were previously too simple or too complex to build profitably. In this new wave, the common failure mode will not be missing features. It will be too many. Since shipping is easy, the hard part becomes adding capability and variability without degrading the product. The companies most obsessed with shipping velocity will be the ones most likely to walk straight into this trap.</p>
-<h2>Should PMing still exist</h2>
+<h2 id="should-pming-still-exist">Should PMing still exist</h2>
 <p>If this is where the market is headed and the role is shifting this much, it is fair to ask whether the PM role even needs to exist.</p>
 <p>In one sense, no. The version of PMing built around managing delivery scarcity will no longer be needed. A role built to squeeze features through expensive engineering cycles becomes unnecessary once shipping gets cheap. As the delivery bottleneck weakens and tracking is automated, the work built to manage that constraint becomes unnecessary. But this does not mean the role should disappear, just that it should return to its core value.</p>
 <p>For PMs inside larger software companies, this means the role will shift away from delivery management toward a focus on vision and coherence. Some PMs will move to the buyer side, where they stay close to the user and shape decisions about what to stitch together, what to build, and what actually merits buying. Other PMs will be part of the wave of founders starting new, leaner companies where a tiny team using agents can hold the thesis, set the boundaries, and keep the product coherent without layers of internal PMs.</p>
 <p>So PMing should not disappear. It should move upward in responsibility and outward across the market. This broadening across the market may even increase demand for the people who actually know users well and can maintain product coherence. As team productivity rises, the scarce skill is no longer pushing work through a process. It is steering that new abundance toward something that deserves to exist.</p>
-<h2>Let's not</h2>
+<h2 id="lets-not">Let's not</h2>
 <p>PMs are currently rewarded for getting things built. As shipping gets easier, success as a PM will shift. The job will become less about generating motion and more about deciding what deserves to exist, what must be measured, what must be constrained, and what should never ship. The best PMs will not be the ones with the most ideas or the cleanest process. They will be the ones who can keep the product coherent and the team aligned while everyone around them can generate software quickly and cheaply.</p>
 <p>That brings the role back to where we started. Product management was created to know your user well enough to make judgment calls under delivery constraint. That constraint is changing, but the need for judgment and user understanding is only increasing. In an age of abundance, product judgment will come down to preserving coherence and knowing, when asked to add a feature, when to say clearly, “let's not.”</p>
       </article>
@@ -314,5 +386,33 @@
       <div><a href='#top'>I'm lazy, take me to the top</a></div>
     </footer>
   </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
 </html>
