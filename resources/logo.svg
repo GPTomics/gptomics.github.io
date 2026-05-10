@@ -9,9 +9,9 @@
 </style>
 <g>
 	<g>
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="448.6128" y1="28.6581" x2="198.2512" y2="865.3915">
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="417.6443" y1="114.161" x2="217.6233" y2="806.0085">
 			<stop  offset="0" style="stop-color:#00B7F3"/>
-			<stop  offset="0.7679" style="stop-color:#D4CCE4"/>
+			<stop  offset="0.7404" style="stop-color:#00B7F3"/>
 			<stop  offset="1" style="stop-color:#5D44A8"/>
 		</linearGradient>
 		<path class="st0" d="M462.11,731.5c-0.43,0-0.84,0.04-1.25,0.09C461.23,731.54,461.63,731.5,462.11,731.5H236.46
@@ -23,8 +23,9 @@
 			c7.46-7.46,7.77-8.14,12.98-14.19c6.32-7.36,7.16-6.88-2.64-13.44c-32.91-24.27-90.79-47.61-147.7-74.84h185.84
 			c-0.48,0-0.88-0.04-1.25-0.09c0.41,0.05,0.83,0.09,1.25,0.09c5.52,0,10-4.48,10-10C472.11,735.98,467.63,731.5,462.11,731.5z"/>
 	</g>
-	<linearGradient id="Bottom_1_" gradientUnits="userSpaceOnUse" x1="442.8454" y1="349.1223" x2="222.77" y2="991.103">
-		<stop  offset="0" style="stop-color:#D4CCE4"/>
+	<linearGradient id="Bottom_1_" gradientUnits="userSpaceOnUse" x1="527.9465" y1="67.4997" x2="231.8115" y2="971.4907">
+		<stop  offset="0" style="stop-color:#00B7F3"/>
+		<stop  offset="0.5862" style="stop-color:#5D44A8"/>
 		<stop  offset="1" style="stop-color:#5D44A8"/>
 	</linearGradient>
 	<path id="Bottom" class="st1" d="M56.75,921.72c-18.58-22.56-34.58-50.47-28.19-80.4c5.62-23.56,41.56-27.35,51.93-7.44
@@ -33,9 +34,9 @@
 		c26.98-24.83,26.95-25.2,38.49-17.27c93.62,54.72,95.71,53.6,141.57,83.64c189.91,111,159.35,328.1-31.89,416.06
 		C282.72,999.49,141.59,1005.09,56.75,921.72z"/>
 	<g id="New_top">
-		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="330.4406" y1="-5.9559" x2="-0.4105" y2="939.3309">
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="321.5463" y1="21.8029" x2="129.3183" y2="560.3876">
 			<stop  offset="0" style="stop-color:#00B7F3"/>
-			<stop  offset="0.4942" style="stop-color:#D4CCE4"/>
+			<stop  offset="0.4181" style="stop-color:#00B7F3"/>
 			<stop  offset="1" style="stop-color:#5D44A8"/>
 		</linearGradient>
 		<path class="st2" d="M502.88,56.43c-7.05-33.34-76.87-39.12-105.06-41.84C175.49-6.83-104.85,256.06,144.35,417.6
