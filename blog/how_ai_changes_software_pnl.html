@@ -20,11 +20,17 @@
   <meta property='article:tag' content='Unit economics' />
   <meta property='article:tag' content='Product management' />
   <meta property='article:tag' content='COGS' />
-  <meta name='twitter:card' content='summary' />
+  <meta property='og:image' content='https://www.gptomics.com/blog/assets/how_ai_changes_software_pnl/figure_2a.png' />
+  <meta property='og:image:width' content='1200' />
+  <meta property='og:image:height' content='630' />
+  <meta property='og:image:alt' content='Stacked area chart of AIBoost revenue versus infrastructure COGS, AI tokens, and build & opex costs scaling from 0 to 1 million users.' />
+  <meta name='twitter:card' content='summary_large_image' />
   <meta name='twitter:site' content='@gptomics' />
   <meta name='twitter:creator' content='@gptomics' />
   <meta name='twitter:title' content='How AI changes software P&amp;L' />
   <meta name='twitter:description' content='AI features break the high-margin SaaS playbook. A walkthrough of the new unit economics and the arbitrage paths ahead.' />
+  <meta name='twitter:image' content='https://www.gptomics.com/blog/assets/how_ai_changes_software_pnl/figure_2a.png' />
+  <meta name='twitter:image:alt' content='Stacked area chart of AIBoost revenue versus infrastructure COGS, AI tokens, and build & opex costs scaling from 0 to 1 million users.' />
   <link rel='canonical' href='https://www.gptomics.com/blog/how_ai_changes_software_pnl.html' />
   <link rel='icon' type='image/svg+xml' href='../resources/logo.svg' />
   <link rel='icon' href='../resources/favicon.ico' sizes='any' />
@@ -43,6 +49,7 @@
     "@type": "BlogPosting",
     "headline": "How AI changes software P&L",
     "description": "AI features break the high-margin SaaS playbook. A unit-economics walkthrough comparing a traditional SaaS company to an AI-native one, and the arbitrage paths ahead.",
+    "image": "https://www.gptomics.com/blog/assets/how_ai_changes_software_pnl/figure_2a.png",
     "datePublished": "2026-05-11T08:00:00-07:00",
     "dateModified": "2026-05-11T08:00:00-07:00",
     "wordCount": 4046,
@@ -224,6 +231,13 @@
     }
     article pre code{background: none; color: var(--ink); padding: 0}
     article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    article .figure-pair{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    article .figure-pair img{width: 100%; margin: 0}
     .lightbox{
       position: fixed;
       inset: 0;
@@ -479,8 +493,11 @@ Net margin goes beyond gross margin to include all fixed costs such as the actua
 </tbody>
 </table></div>
 <p><em>Table 1. The revenue, costs, profit, and margins for GainZ at each order of magnitude of user growth. We also have the break-even points for both the gross margin (58 users) and net margin (758K users).</em></p>
-<p><img alt="SaaS revenue and cost" src="./assets/how_ai_changes_software_pnl/figure_1.svg" /><br />
-<em>Figure 1. GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<div class="figure-pair">
+  <img alt="SaaS revenue and costs" src="./assets/how_ai_changes_software_pnl/figure_1a.svg" />
+  <img alt="SaaS gross and net margin" src="./assets/how_ai_changes_software_pnl/figure_1b.svg" />
+</div>
+<p><em>Figure 1. GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
 <h3 id="aiboost-margins-for-ai-native-software">AIBoost: Margins for AI-native software</h3>
 <p><strong>Revenue</strong> AIBoost is coming into the market and has done their homework, so they know how much users are willing to pay for GainZ. AIBoost decides that even though they'll have new AI-based features, because they are new and can build more cheaply, they'll charge the same amount as GainZ. They expect that their new features will let them win customers. With this strategy, AIBoost will similarly generate annually about $120/user. At 1 million users, this also adds up to $120M in revenue.</p>
 <p><strong>Fixed costs</strong> AIBoost is counting on using the latest AI capabilities to build their product more efficiently and with fewer people. They expect that with this approach they're able to build the first version of the product for 1/10th the cost, or ~$2.5M. Even though their building cost has been decreased, they similarly have to invest more to increase adoption. We'll again assume it costs an incremental 10% each time they want to double their user base. At this scale, to reach 1 million users, AIBoost needs a fixed investment of ~$7.3M.</p>
@@ -585,8 +602,11 @@ Net margin goes beyond gross margin to include all fixed costs such as the actua
 </tbody>
 </table></div>
 <p><em>Table 2. The revenue, costs, profit, and margins for AIBoost at each order of magnitude of user growth. We also have the break-even points for both the gross margin (357 users) and net margin (339K users).</em></p>
-<p><img alt="AI revenue and cost" src="./assets/how_ai_changes_software_pnl/figure_2.svg" /><br />
-<em>Figure 2. AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<div class="figure-pair">
+  <img alt="AI revenue and costs" src="./assets/how_ai_changes_software_pnl/figure_2a.svg" />
+  <img alt="AI gross and net margin" src="./assets/how_ai_changes_software_pnl/figure_2b.svg" />
+</div>
+<p><em>Figure 2. AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
 <h3 id="handling-expensive-ai-features">Handling expensive AI features</h3>
 <p><strong>Economy of scale</strong></p>
 <p>So why is there not an economy of scale for AI features similar to traditional features? If an AI capability is just another feature in a product, why can it not be optimized similarly to a database or workflow?</p>

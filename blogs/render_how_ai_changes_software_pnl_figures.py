@@ -80,64 +80,69 @@ def save_figure(fig, out):
     print(f'wrote {out}')
 
 
+def plot_revenue_costs(ax, n_users, revenue, stack_data, stack_labels, stack_colors, be_g, be_n):
+    ax.stackplot(n_users, *stack_data, labels=stack_labels, colors=stack_colors, alpha=0.9, edgecolor=p.BG, linewidth=0.4)
+    ax.plot(n_users, revenue, color=p.CHART_REVENUE, linewidth=2.0, label='Revenue')
+    ax.axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
+    ax.axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
+    ax.set_xlabel('Users [Million]')
+    ax.set_ylabel('Revenue [Hundred-Million $]')
+    ax.set_title('Revenue & Costs')
+    place_legend(ax, ncol=3)
+    style_axis(ax)
+
+
+def plot_margins(ax, n_users, gross, net, be_g, be_n):
+    ax.plot(n_users, gross * 100, color=p.CHART_GROSS, linewidth=2.0, label='Gross margin')
+    ax.plot(n_users, net * 100, color=p.CHART_NET, linewidth=2.0, label='Net margin')
+    ax.axhline(0, color=p.CHART_ZERO_LINE, linestyle='--', linewidth=0.7)
+    ax.axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
+    ax.axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
+    ax.set_xlabel('Users [Million]')
+    ax.set_ylabel('Margin [%]')
+    ax.set_title('Gross & Net Margin')
+    ax.set_ylim(-100, 100)
+    place_legend(ax, ncol=2)
+    style_axis(ax)
+
+
+SUBFIG_SIZE = (7, 4.8)
+
+
 def render_saas():
     revenue, cogs, build_opex, gross, net, be_g, be_n = saas_series(N_USERS)
 
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4.6))
+    fig, ax = plt.subplots(figsize=SUBFIG_SIZE)
+    plot_revenue_costs(ax, N_USERS, revenue, [cogs, build_opex], ['COGS', 'Build & opex'], [p.CHART_COGS, p.CHART_OPEX], be_g, be_n)
+    save_figure(fig, OUT_DIR / 'figure_1a.svg')
 
-    axes[0].stackplot(N_USERS, cogs, build_opex, labels=['COGS', 'Build & opex'], colors=[p.CHART_COGS, p.CHART_OPEX], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
-    axes[0].plot(N_USERS, revenue, color=p.CHART_REVENUE, linewidth=2.0, label='Revenue')
-    axes[0].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
-    axes[0].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
-    axes[0].set_xlabel('Users [Million]')
-    axes[0].set_ylabel('Revenue [Hundred-Million $]')
-    axes[0].set_title('Revenue & Costs')
-    place_legend(axes[0], ncol=3)
-    style_axis(axes[0])
-
-    axes[1].plot(N_USERS, gross * 100, color=p.CHART_GROSS, linewidth=2.0, label='Gross margin')
-    axes[1].plot(N_USERS, net * 100, color=p.CHART_NET, linewidth=2.0, label='Net margin')
-    axes[1].axhline(0, color=p.CHART_ZERO_LINE, linestyle='--', linewidth=0.7)
-    axes[1].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
-    axes[1].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
-    axes[1].set_xlabel('Users [Million]')
-    axes[1].set_ylabel('Margin [%]')
-    axes[1].set_title('Gross & Net Margin')
-    axes[1].set_ylim(-100, 100)
-    place_legend(axes[1], ncol=2)
-    style_axis(axes[1])
-
-    save_figure(fig, OUT_DIR / 'figure_1.svg')
+    fig, ax = plt.subplots(figsize=SUBFIG_SIZE)
+    plot_margins(ax, N_USERS, gross, net, be_g, be_n)
+    save_figure(fig, OUT_DIR / 'figure_1b.svg')
 
 
 def render_ai():
     revenue, infra, tokens, fixed, gross, net, be_g, be_n = ai_series(N_USERS)
 
-    fig, axes = plt.subplots(1, 2, figsize=(13, 4.6))
+    fig, ax = plt.subplots(figsize=SUBFIG_SIZE)
+    plot_revenue_costs(ax, N_USERS, revenue, [infra, tokens, fixed], ['Infra COGS', 'AI tokens', 'Build & opex'], [p.CHART_COGS, p.CHART_AI_TOKENS, p.CHART_OPEX], be_g, be_n)
+    save_figure(fig, OUT_DIR / 'figure_2a.svg')
 
-    axes[0].stackplot(N_USERS, infra, tokens, fixed, labels=['Infra COGS', 'AI tokens', 'Build & opex'], colors=[p.CHART_COGS, p.CHART_AI_TOKENS, p.CHART_OPEX], alpha=0.9, edgecolor=p.BG, linewidth=0.4)
-    axes[0].plot(N_USERS, revenue, color=p.CHART_REVENUE, linewidth=2.0, label='Revenue')
-    axes[0].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
-    axes[0].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
-    axes[0].set_xlabel('Users [Million]')
-    axes[0].set_ylabel('Revenue [Hundred-Million $]')
-    axes[0].set_title('Revenue & Costs')
-    place_legend(axes[0], ncol=3)
-    style_axis(axes[0])
+    fig, ax = plt.subplots(figsize=SUBFIG_SIZE)
+    plot_margins(ax, N_USERS, gross, net, be_g, be_n)
+    save_figure(fig, OUT_DIR / 'figure_2b.svg')
 
-    axes[1].plot(N_USERS, gross * 100, color=p.CHART_GROSS, linewidth=2.0, label='Gross margin')
-    axes[1].plot(N_USERS, net * 100, color=p.CHART_NET, linewidth=2.0, label='Net margin')
-    axes[1].axhline(0, color=p.CHART_ZERO_LINE, linestyle='--', linewidth=0.7)
-    axes[1].axvline(be_g, color=p.CHART_GROSS_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Gross Break-even: {be_g:.0f} users')
-    axes[1].axvline(be_n, color=p.CHART_NET_BREAKEVEN, linestyle=':', linewidth=1.4, label=f'Net Break-even: {be_n / 1e3:.0f}K users')
-    axes[1].set_xlabel('Users [Million]')
-    axes[1].set_ylabel('Margin [%]')
-    axes[1].set_title('Gross & Net Margin')
-    axes[1].set_ylim(-100, 100)
-    place_legend(axes[1], ncol=2)
-    style_axis(axes[1])
 
-    save_figure(fig, OUT_DIR / 'figure_2.svg')
+def render_social():
+    revenue, infra, tokens, fixed, gross, net, be_g, be_n = ai_series(N_USERS)
+    fig, ax = plt.subplots(figsize=(12, 6.3))
+    plot_revenue_costs(ax, N_USERS, revenue, [infra, tokens, fixed], ['Infra COGS', 'AI tokens', 'Build & opex'], [p.CHART_COGS, p.CHART_AI_TOKENS, p.CHART_OPEX], be_g, be_n)
+    fig.tight_layout()
+    fig.subplots_adjust(bottom=0.22)
+    out = OUT_DIR / 'figure_2a.png'
+    fig.savefig(out, format='png', facecolor=p.BG, dpi=100)
+    plt.close(fig)
+    print(f'wrote {out}')
 
 
 def main():
@@ -145,6 +150,7 @@ def main():
     plt.rcParams.update(p.matplotlib_rc())
     render_saas()
     render_ai()
+    render_social()
 
 
 if __name__ == '__main__':

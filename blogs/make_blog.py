@@ -233,6 +233,13 @@ TEMPLATE = '''<!doctype html>
     }}
     article pre code{{background: none; color: var(--ink); padding: 0}}
     article img{{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}}
+    article .figure-pair{{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }}
+    article .figure-pair img{{width: 100%; margin: 0}}
     .lightbox{{
       position: fixed;
       inset: 0;

@@ -48,7 +48,11 @@ While the margin seems to be growing fast once the break-even points are reached
 
 *Table 1. The revenue, costs, profit, and margins for GainZ at each order of magnitude of user growth. We also have the break-even points for both the gross margin (58 users) and net margin (758K users).*
 
-![SaaS revenue and cost](./assets/how_ai_changes_software_pnl/figure_1.svg)
+<div class='figure-pair'>
+  <img alt='SaaS revenue and costs' src='./assets/how_ai_changes_software_pnl/figure_1a.svg' />
+  <img alt='SaaS gross and net margin' src='./assets/how_ai_changes_software_pnl/figure_1b.svg' />
+</div>
+
 *Figure 1. GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.*
 
 ### AIBoost: Margins for AI-native software
@@ -79,7 +83,11 @@ In *Table 2*, we can see that the gross and net margins are significantly closer
 
 *Table 2. The revenue, costs, profit, and margins for AIBoost at each order of magnitude of user growth. We also have the break-even points for both the gross margin (357 users) and net margin (339K users).*
 
-![AI revenue and cost](./assets/how_ai_changes_software_pnl/figure_2.svg)
+<div class='figure-pair'>
+  <img alt='AI revenue and costs' src='./assets/how_ai_changes_software_pnl/figure_2a.svg' />
+  <img alt='AI gross and net margin' src='./assets/how_ai_changes_software_pnl/figure_2b.svg' />
+</div>
+
 *Figure 2. AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.*
 
 ### Handling expensive AI features
