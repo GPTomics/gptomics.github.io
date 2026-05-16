@@ -254,6 +254,30 @@
     }
     .lightbox-close:hover{color: #fff}
     article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article a.discuss-box{
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 40px 0 8px;
+      padding: 9px 16px;
+      border: 1px solid var(--brand-edge);
+      border-radius: 10px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
+    }
+    article a.discuss-box:hover{
+      background: rgba(93,68,168,0.13);
+      border-color: var(--brand);
+      text-decoration: none;
+    }
+    article a.discuss-box:active{transform: translateY(1px)}
+    article a.discuss-box svg{width: 15px; height: 15px; flex: 0 0 auto; color: currentColor}
+    article a.discuss-box .arrow{color: currentColor; opacity: 0.7; font-weight: 500}
     article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
     article .katex-display > .katex{white-space: nowrap}
     @media (max-width: 700px){
@@ -393,6 +417,7 @@
 <h2 id="lets-not">Let's not</h2>
 <p>PMs are currently rewarded for getting things built. As shipping gets easier, success as a PM will shift. The job will become less about generating motion and more about deciding what deserves to exist, what must be measured, what must be constrained, and what should never ship. The best PMs will not be the ones with the most ideas or the cleanest process. They will be the ones who can keep the product coherent and the team aligned while everyone around them can generate software quickly and cheaply.</p>
 <p>That brings the role back to where we started. Product management was created to know your user well enough to make judgment calls under delivery constraint. That constraint is changing, but the need for judgment and user understanding is only increasing. In an age of abundance, product judgment will come down to preserving coherence and knowing, when asked to add a feature, when to say clearly, “let's not.”</p>
+        <a class='discuss-box' href='https://x.com/gptomics/status/2044441016753689012' target='_blank' rel='noopener'><svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg><span>Discuss on X/Twitter</span><span class='arrow' aria-hidden='true'>&rarr;</span></a>
       </article>
     </main>
 

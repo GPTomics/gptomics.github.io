@@ -267,6 +267,30 @@ TEMPLATE = '''<!doctype html>
     }}
     .lightbox-close:hover{{color: #fff}}
     article hr{{border: none; border-top: 1px solid var(--border); margin: 32px 0}}
+    article a.discuss-box{{
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 40px 0 8px;
+      padding: 9px 16px;
+      border: 1px solid var(--brand-edge);
+      border-radius: 10px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
+    }}
+    article a.discuss-box:hover{{
+      background: rgba(93,68,168,0.13);
+      border-color: var(--brand);
+      text-decoration: none;
+    }}
+    article a.discuss-box:active{{transform: translateY(1px)}}
+    article a.discuss-box svg{{width: 15px; height: 15px; flex: 0 0 auto; color: currentColor}}
+    article a.discuss-box .arrow{{color: currentColor; opacity: 0.7; font-weight: 500}}
     article .katex-display{{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}}
     article .katex-display > .katex{{white-space: nowrap}}
     @media (max-width: 700px){{
@@ -374,6 +398,7 @@ TEMPLATE = '''<!doctype html>
         <h1>{title_html}</h1>
         <p class='byline'>{author_html}</p>
         {body_html}
+        {discuss_html}
       </article>
     </main>
 
@@ -473,13 +498,18 @@ def save_manifest(entries):
     MANIFEST.write_text(json.dumps(entries_sorted, indent=2) + '\n')
 
 
-def upsert_manifest(manifest, file_name, iso_date, title, author):
+def upsert_manifest(manifest, file_name, iso_date, title, author, discuss_url):
     for entry in manifest:
         if entry['file'] == file_name:
             entry['title'] = title
             entry['author'] = author
+            if discuss_url is not None:
+                entry['discuss_url'] = discuss_url
             return manifest
-    manifest.append({'file': file_name, 'date': iso_date, 'title': title, 'author': author})
+    new_entry = {'file': file_name, 'date': iso_date, 'title': title, 'author': author}
+    if discuss_url:
+        new_entry['discuss_url'] = discuss_url
+    manifest.append(new_entry)
     return manifest
 
 
@@ -487,7 +517,18 @@ def parse_args():
     p = argparse.ArgumentParser(description='Generate a blog post HTML page from markdown.')
     p.add_argument('markdown', help='path to the .md post')
     p.add_argument('--author', required=True, nargs='+', help='one or more authors (space-separated, quote multi-word names); homepage URLs come from blogs/authors.json')
+    p.add_argument('--discuss-url', default=None, help='URL of the X/Twitter post to link at the end of the article (also stored in blogs.json for future re-runs)')
     return p.parse_args()
+
+
+X_ICON_SVG = "<svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>"
+
+
+def render_discuss(discuss_url):
+    if not discuss_url:
+        return ''
+    return (f"<a class='discuss-box' href='{html.escape(discuss_url)}' target='_blank' rel='noopener'>"
+            f"{X_ICON_SVG}<span>Discuss on X/Twitter</span><span class='arrow' aria-hidden='true'>&rarr;</span></a>")
 
 
 def main():
@@ -518,7 +559,8 @@ def main():
     manifest = load_manifest()
     existing = next((e for e in manifest if e['file'] == md_dest.name), None)
     iso_date = existing['date'] if existing else date.today().isoformat()
-    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field)
+    discuss_url = args.discuss_url if args.discuss_url is not None else (existing.get('discuss_url') if existing else None)
+    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field, args.discuss_url)
     save_manifest(manifest)
 
     authors_map = load_authors()
@@ -568,6 +610,7 @@ def main():
         display_date=format_date(iso_date),
         year=date.today().year,
         body_html=body_html,
+        discuss_html=render_discuss(discuss_url),
         SITE_URL=SITE_URL,
         GA_ID=GA_ID,
     )
