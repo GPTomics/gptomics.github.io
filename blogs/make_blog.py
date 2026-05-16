@@ -31,7 +31,7 @@ TEMPLATE = '''<!doctype html>
   <meta property='og:description' content='{description}' />
   <meta property='og:url' content='{url}' />
   <meta property='og:type' content='article' />
-  <meta property='article:author' content='{author}' />
+  {article_author_meta}
   <meta property='article:published_time' content='{iso_date}' />
   <meta name='twitter:card' content='summary' />
   <meta name='twitter:site' content='@gptomics' />
@@ -58,10 +58,7 @@ TEMPLATE = '''<!doctype html>
     "description": "{description}",
     "datePublished": "{iso_date}",
     "dateModified": "{iso_date}",
-    "author": {{
-      "@type": "Person",
-      "name": "{author}"
-    }},
+    "author": {author_jsonld},
     "publisher": {{
       "@type": "Organization",
       "name": "GPTomics",
@@ -489,7 +486,7 @@ def upsert_manifest(manifest, file_name, iso_date, title, author):
 def parse_args():
     p = argparse.ArgumentParser(description='Generate a blog post HTML page from markdown.')
     p.add_argument('markdown', help='path to the .md post')
-    p.add_argument('--author', required=True, help='author first and last name; homepage URL comes from blogs/authors.json')
+    p.add_argument('--author', required=True, nargs='+', help='one or more authors (space-separated, quote multi-word names); homepage URLs come from blogs/authors.json')
     return p.parse_args()
 
 
@@ -515,19 +512,44 @@ def main():
     body_md = strip_title(md_text)
     description = extract_description(body_md)
 
+    author_names = args.author
+    author_field = author_names[0] if len(author_names) == 1 else author_names
+
     manifest = load_manifest()
     existing = next((e for e in manifest if e['file'] == md_dest.name), None)
     iso_date = existing['date'] if existing else date.today().isoformat()
-    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, args.author)
+    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field)
     save_manifest(manifest)
 
-    authors = load_authors()
-    author_url = authors.get(args.author)
-    author_escaped = html.escape(args.author)
-    if author_url:
-        author_html = f'<a href="{html.escape(author_url)}" target="_blank" rel="noopener">{author_escaped}</a>'
+    authors_map = load_authors()
+    author_pairs = [(name, authors_map.get(name)) for name in author_names]
+
+    def author_link(name, url):
+        n = html.escape(name)
+        if url:
+            return f'<a href="{html.escape(url)}" target="_blank" rel="noopener">{n}</a>'
+        return n
+
+    links = [author_link(n, u) for n, u in author_pairs]
+    if len(links) == 1:
+        author_html = links[0]
+    elif len(links) == 2:
+        author_html = f'{links[0]} and {links[1]}'
     else:
-        author_html = author_escaped
+        author_html = ', '.join(links[:-1]) + f', and {links[-1]}'
+
+    article_author_meta = '\n  '.join(f"<meta property='article:author' content='{html.escape(n)}' />" for n in author_names)
+
+    def author_jsonld_entry(name, url):
+        obj = {'@type': 'Person', 'name': name}
+        if url:
+            obj['url'] = url
+        return json.dumps(obj)
+
+    if len(author_pairs) == 1:
+        author_jsonld = author_jsonld_entry(*author_pairs[0])
+    else:
+        author_jsonld = '[' + ', '.join(author_jsonld_entry(n, u) for n, u in author_pairs) + ']'
 
     body_html = markdown.markdown(body_md, extensions=['extra', 'sane_lists', 'nl2br', 'toc'])
     body_html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', body_html, flags=re.DOTALL)
@@ -537,8 +559,10 @@ def main():
         title=html.escape(title),
         title_html=html.escape(title),
         description=html.escape(description),
-        author=author_escaped,
+        author=html.escape(', '.join(author_names)),
         author_html=author_html,
+        article_author_meta=article_author_meta,
+        author_jsonld=author_jsonld,
         url=url,
         iso_date=iso_date,
         display_date=format_date(iso_date),
@@ -549,7 +573,7 @@ def main():
     )
     html_dest.write_text(page)
     print(f'wrote blog/{html_dest.name}')
-    print(f'manifest: {md_dest.name} @ {iso_date} by {args.author}')
+    print(f"manifest: {md_dest.name} @ {iso_date} by {', '.join(author_names)}")
 
 
 if __name__ == '__main__':

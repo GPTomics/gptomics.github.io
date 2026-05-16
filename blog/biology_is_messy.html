@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='Biology is messy because it lacks reductionist theories that scale, not because biologists lack rigor. AI tools risk reinforcing the mess.' />
+  <title>Biology is messy | GPTomics</title>
+  <meta property='og:site_name' content='GPTomics' />
+  <meta property='og:title' content='Biology is messy' />
+  <meta property='og:description' content='Biology is messy because it lacks reductionist theories that scale, not because biologists lack rigor. AI tools risk reinforcing the mess.' />
+  <meta property='og:url' content='https://www.gptomics.com/blog/biology_is_messy.html' />
+  <meta property='og:type' content='article' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:image' content='https://www.gptomics.com/blog/assets/biology_is_messy/xkcd_1520.png' />
+  <meta property='og:image:width' content='1203' />
+  <meta property='og:image:height' content='1144' />
+  <meta property='og:image:alt' content='xkcd 1520: Degree-Off' />
+  <meta property='article:author' content='Jason Chin' />
+  <meta property='article:author' content='Domen Jemec' />
+  <meta property='article:published_time' content='2026-05-18T08:00:00-07:00' />
+  <meta property='article:modified_time' content='2026-05-18T08:00:00-07:00' />
+  <meta property='article:section' content='Biology' />
+  <meta property='article:tag' content='biology' />
+  <meta property='article:tag' content='reductionism' />
+  <meta property='article:tag' content='AI' />
+  <meta property='article:tag' content='AI for biology' />
+  <meta property='article:tag' content='philosophy of science' />
+  <meta property='article:tag' content='scientific theory' />
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@gptomics' />
+  <meta name='twitter:creator' content='@gptomics' />
+  <meta name='twitter:title' content='Biology is messy' />
+  <meta name='twitter:description' content='Biology is messy because it lacks reductionist theories that scale, not because biologists lack rigor. AI tools risk reinforcing the mess.' />
+  <meta name='twitter:image' content='https://www.gptomics.com/blog/assets/biology_is_messy/xkcd_1520.png' />
+  <meta name='twitter:image:alt' content='xkcd 1520: Degree-Off' />
+  <link rel='canonical' href='https://www.gptomics.com/blog/biology_is_messy.html' />
+  <link rel='icon' type='image/svg+xml' href='../resources/logo.svg' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
+  <link rel='preconnect' href='https://www.googletagmanager.com' />
+  <meta name='author' content='Jason Chin, Domen Jemec' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Biology is messy",
+    "description": "Biology is messy because it lacks reductionist theories that scale, not because biologists lack rigor. AI tools risk reinforcing the mess.",
+    "datePublished": "2026-05-18T08:00:00-07:00",
+    "dateModified": "2026-05-18T08:00:00-07:00",
+    "wordCount": 1411,
+    "articleSection": "Biology",
+    "keywords": "biology, reductionism, AI, AI for biology, philosophy of science, scientific theory, biology vs physics, rules of life",
+    "image": "https://www.gptomics.com/blog/assets/biology_is_messy/xkcd_1520.png",
+    "author": [{"@type": "Person", "name": "Jason Chin", "url": "https://x.com/infoecho/"}, {"@type": "Person", "name": "Domen Jemec", "url": "https://domenjemec.com/"}],
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo_square.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.gptomics.com/blog/biology_is_messy.html"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg: #fbfafe;
+      --bg2: #ffffff;
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
+      --radius: 14px;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a{color: var(--editorial); text-decoration:none}
+    a:hover{text-decoration: underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:0;
+      margin:0 0 22px 0;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:10px;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: var(--brand-tint);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--brand)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color: var(--muted);
+      font-size:13.5px;
+      margin-bottom: 22px;
+    }
+    .back-link:hover{color: var(--brand)}
+    .back-link svg{width:12px; height:12px}
+
+    article .post-date{
+      font-size:13px;
+      color: var(--editorial);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    article h1{
+      margin:0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-0.2px;
+      color: var(--ink);
+    }
+    article .byline{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+    article .byline a{color: inherit; text-decoration: underline; text-underline-offset: 3px}
+    article .byline a:hover{color: var(--brand); text-decoration: none}
+    article h2{
+      margin: 36px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      color: var(--ink);
+    }
+    article h3{
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    article p{
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    article a{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}
+    article a:hover{text-decoration: none}
+    article ul, article ol{
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+    article li{margin-bottom: 6px}
+    article blockquote{
+      border-left: 3px solid var(--spark);
+      padding-left: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    article .hl{background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone}
+    article code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    article pre{
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    article pre code{background: none; color: var(--ink); padding: 0}
+    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    article .figure-pair{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    article .figure-pair img{width: 100%; margin: 0}
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 18, 46, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
+    article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
+    article .katex-display > .katex{white-space: nowrap}
+    @media (max-width: 700px){
+      article .katex-display .katex{font-size: 0.85em}
+    }
+    @media (max-width: 480px){
+      article .katex-display .katex{font-size: 0.72em}
+    }
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(0,183,243,0.10)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--editorial)}
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--brand)}
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+  </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</head>
+<body id='top'>
+  <div class='wrap'>
+    <header>
+      <div class='brand'>
+        <a class='brand-link' href='../index.html'>
+          <img class='logo' src='../resources/logo.svg' alt='GPTomics logo' />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label='Primary'>
+        <a href='../blog.html' class='active'>Blog</a>
+        <a href='../index.html#contact'>Contact</a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'>
+          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>
+        </a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'>
+          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <a class='back-link' href='../blog.html'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
+        All posts
+      </a>
+      <article>
+        <div class='post-date'>MAY 18, 2026</div>
+        <h1>Biology is messy</h1>
+        <p class='byline'><a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a> and <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
+        <p>Biology is not messy because biologists lack rigor. Despite being one of the few truly falsifiable sciences, it is messy because it still lacks many reductionist theories that work across scales. Falsifiability only tells us that a claim can be tested and potentially proven wrong. In biology, we see falsifiability constantly, but the issue is that the claims posited from the research hold only within tight constraints. Once the underlying context changes, the theory crumbles. This is what separates biology from the physical sciences. Physics and chemistry are cleaner not because they are simple, but because their core theories can absorb complexity without losing predictive power. Biology has plenty of facts, mechanisms, and experimentally defensible theories, but much of it remains localized. The theories can be tested and used, but they fail once moved outside the system where they were discovered.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p><img alt="xkcd 1520: Degree-Off" src="./assets/biology_is_messy/xkcd_1520.png" /></p>
+<p><em>source: <a href="https://xkcd.com/1520/">https://xkcd.com/1520/</a></em></p>
+<h2 id="reductionist-theory">Reductionist theory</h2>
+<p>Reductionist theories enable scientists to explain complex systems from lower-level models while limiting how much error is introduced as the theory scales upward. Physics has the most developed version of this. Newtonian gravity compresses a wide range of phenomena into a compact mathematical equation that can describe falling objects, planetary motion, tides, and satellite dynamics without requiring major changes for each case. General relativity goes further and has held up across solar-system, gravitational-wave, and cosmological regimes.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> Chemistry, while messier, has a similar advantage. Its theoretical base connects what happens between a few molecules with what happens in bulk matter. Quantum mechanics explains bonding and molecular stability at small scales. Statistical mechanics and thermodynamics then translate those interactions into ensemble behavior, while kinetics adds a way to reason about how fast those transformations occur. Density functional theory and multiscale modeling show how chemical theory can move between simulation and experiment across different levels of organization.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> Physics and chemistry are not finished, but they maintain a theory-based reductionist core to continue correcting and expanding from.</p>
+<h2 id="biology-is-different">Biology is different</h2>
+<p>Biology also has central theories with explanatory power such as theories for evolution and heredity. The issue is that these theories do not scale with the same precision, either on their own or when layered across levels of organization. The central dogma describes the directional flow of genetic information from DNA to RNA to protein, but it is not reductionist since it cannot be used beyond that flow for questions like whether a cell will show a phenotype. Mendelian inheritance gives rigorous predictions for certain traits, but those traits must be in the rare few that qualify as Mendelian traits. The problem is that these and most biological theories become conditional quickly.<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> This is also why simply saying biology reduces to physics does not solve the problem. Biology still operates within the same physical and chemical constraints as the rest of the natural world, but direct physical reduction loses practical value once the system has the properties of life. A cell is not just a large chemical mixture. It is a non-equilibrium system that maintains itself and carries inherited information through a history of selection. The physics and chemistry are still there, but they are embedded inside a system whose behavior depends on biological context and prior state.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></p>
+<p>Another huge reason we do not see a large push for reductionist theory in biology is incentives. Biological research is heavily shaped by applied problems, especially human health. The NIH's mission reflects this directly. It combines fundamental knowledge about living systems with the goal of improving health, and its funding categories organize much of that work around diseases and conditions.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> Structures like this pull the field toward exception-understanding. For example, in oncology, one of the best-funded research areas, researchers are rewarded for explaining why a tumor that should respond to treatment does not. Narrow focuses like this train the field to think in local systems rather than general principles. Over time, biological knowledge accumulates around narrower contexts. Local knowledge often works in biology and solves the targeted problem, but a field organized around local exceptions should not be expected to produce general theories easily.</p>
+<h2 id="why-this-matters-now">Why this matters now</h2>
+<p>It would be wrong to say biology has no theory. Darwin was trying to explain the general mechanism behind adaptation and biological change. Mendel was trying to extract general rules of inheritance from a narrow experimental system. Biology was built on the same theoretical impulse as the physical sciences, and there are still parts of the field where theory does serious work.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> The issue is that, over time, theory stopped being the organizing spine of biology in the way it remains for physics and chemistry. The creation of new institutions focused on theory and mathematics in biology is a positive sign, but it also proves the point. If theory were already central to biology, the field would not need a special institutional push to build a community around uncovering the rules of life.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>Physics and chemistry are closer to forward-engineering sciences because their theories often start from lower-level principles and still remain accurate at higher levels. Biology is not there. It remains much more inductive and relies on reverse engineering from observation. This is another reason why those entering the field because of AI and computational advances need to be careful. Many of the people entering biology are used to domains where reductionist theories and first-principle foundations scale cleanly. That expectation will break quickly here and will not change quickly. Biology’s incentives will ensure the field keeps producing data around local deviations, and AI advances will similarly get pulled into that pattern. AI tools can help accelerate the search for reductionist theories, but only if they are used to test which local mechanisms generalize. If AI tools are only used to model each local system better, they will reinforce the incentives that keep biology fragmented instead of helping make the field more reductive.</p>
+<p>The important question is whether the wide breadth of inductive observation and the latest AI advances can be combined to start discovering enough reductionist theories to make forward engineering in biology realistic. We are not there yet, and the answer is not to collect more localized data and train models that overfit it.</p>
+<p>A path to breaking through is to design experiments that reveal which local mechanisms generalize. AI can help with this, but it is not a replacement for identifying core theories. Anyone entering biology who expects to rely on reductionist theory should expect to fight the field’s drift toward fragmentation. To become a less messy, reductive science, biology does not need more disconnected facts. It needs more reductionist theories that scale precisely.</p>
+<h2 id="endnotes">Endnotes</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Karl Popper's falsifiability criterion is useful here because it separates scientific testability from verification or theoretical maturity. A universal claim can be logically falsified by a genuine counterexample, but in practice scientific theories can still be retained amid anomalies, measurement complications, and auxiliary assumptions. <a href="https://plato.stanford.edu/entries/popper/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/popper/</a></p>
+</li>
+<li id="fn:2">
+<p>Newtonian gravity remains a canonical example of a compact physical law with wide portability, while general relativity has been tested across solar-system and cosmological regimes. <a href="https://pwg.gsfc.nasa.gov/stargaze/Sgravity.htm" target="_blank" rel="noopener">https://pwg.gsfc.nasa.gov/stargaze/Sgravity.htm</a></p>
+</li>
+<li id="fn:3">
+<p>The 1998 Nobel Prize in Chemistry recognized density functional theory and quantum-chemical computational methods; the 2013 prize recognized multiscale models for complex chemical systems and noted that computer simulations had become crucial to modern chemistry. <a href="https://www.nobelprize.org/prizes/chemistry/1998/press-release/" target="_blank" rel="noopener">https://www.nobelprize.org/prizes/chemistry/1998/press-release/</a> and <a href="https://www.nobelprize.org/prizes/chemistry/2013/press-release/" target="_blank" rel="noopener">https://www.nobelprize.org/prizes/chemistry/2013/press-release/</a></p>
+</li>
+<li id="fn:4">
+<p>A recent review-style perspective explicitly contrasts universal principles in physics and chemistry with the still-contested search for governing principles unique to biology. <a href="https://www.frontiersin.org/journals/synthetic-biology/articles/10.3389/fsybi.2023.1296513/full" target="_blank" rel="noopener">https://www.frontiersin.org/journals/synthetic-biology/articles/10.3389/fsybi.2023.1296513/full</a></p>
+</li>
+<li id="fn:5">
+<p>Mayr's "autonomy of biology" argument is useful because it preserves physical law while emphasizing that living systems also involve genetic programs, historical explanation, population thinking, and context-dependent organization. Stanford's overview of reductionism in biology also frames why deducing higher-level biological properties from lower-level descriptions remains philosophically and scientifically contested. <a href="https://s10.lite.msu.edu/res/msu/botonl/b_online/e01_2/autonomy.htm" target="_blank" rel="noopener">https://s10.lite.msu.edu/res/msu/botonl/b_online/e01_2/autonomy.htm</a> and <a href="https://plato.stanford.edu/entries/reduction-biology/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/reduction-biology/</a></p>
+</li>
+<li id="fn:6">
+<p>NIH describes its mission as both seeking fundamental knowledge about living systems and applying that knowledge to improve health; its RCDC system publicly reports funding through research, condition, and disease categories. <a href="https://www.nih.gov/about-nih/mission-goals" target="_blank" rel="noopener">https://www.nih.gov/about-nih/mission-goals</a> and <a href="https://report.nih.gov/funding/categorical-spending" target="_blank" rel="noopener">https://report.nih.gov/funding/categorical-spending</a></p>
+</li>
+<li id="fn:7">
+<p>Shou, Bergstrom, Chakraborty, and Skinner argue in eLife that theory has a rich history in biology, but also note the persistent divide between theoretical and empirical biology and the special difficulty created by biological heterogeneity and multiscale interactions. <a href="https://elifesciences.org/articles/07158" target="_blank" rel="noopener">https://elifesciences.org/articles/07158</a></p>
+</li>
+<li id="fn:8">
+<p>The NSF-Simons National Institute for Theory and Mathematics in Biology describes its mission as integrating mathematics and biology to uncover "rules of life," which is a positive signal but also evidence that this theoretical infrastructure is still being built. <a href="https://www.nitmb.org/" target="_blank" rel="noopener">https://www.nitmb.org/</a></p>
+</li>
+</ol>
+</div>
+      </article>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 GPTomics. Just figure things out.</div>
+      <div><a href='#top'>I'm lazy, take me to the top</a></div>
+    </footer>
+  </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
+</body>
+</html>
