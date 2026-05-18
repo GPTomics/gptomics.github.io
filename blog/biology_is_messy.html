@@ -266,35 +266,6 @@
     }
     .lightbox-close:hover{color: #fff}
     article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
-    article .discuss-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 40px 0 8px;
-    }
-    article a.discuss-box{
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 9px 16px;
-      border: 1px solid var(--brand-edge);
-      border-radius: 10px;
-      background: var(--brand-tint);
-      color: var(--brand);
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 600;
-      letter-spacing: 0.1px;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
-    }
-    article a.discuss-box:hover{
-      background: rgba(93,68,168,0.13);
-      border-color: var(--brand);
-      text-decoration: none;
-    }
-    article a.discuss-box:active{transform: translateY(1px)}
-    article a.discuss-box svg{width: 15px; height: 15px; flex: 0 0 auto; color: currentColor}
-    article a.discuss-box .arrow{color: currentColor; opacity: 0.7; font-weight: 500}
     article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
     article .katex-display > .katex{white-space: nowrap}
     @media (max-width: 700px){
@@ -401,7 +372,7 @@
         <div class='post-date'>MAY 18, 2026</div>
         <h1>Biology is messy</h1>
         <p class='byline'><a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a> and <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
-        <p>Biology is not messy because biologists lack rigor. Despite being one of the few truly falsifiable sciences, it is messy because it still lacks many reductionist theories that work across scales. Falsifiability only tells us that a claim can be tested and potentially proven wrong. In biology, we see falsifiability constantly, but the issue is that the claims posited from the research hold only within tight constraints. Once the underlying context changes, the theory crumbles. This is what separates biology from the physical sciences. Physics and chemistry are cleaner not because they are simple, but because their core theories can absorb complexity without losing predictive power. Biology has plenty of facts, mechanisms, and experimentally defensible theories, but much of it remains localized. The theories can be tested and used, but they fail once moved outside the system where they were discovered.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+        <p>Biology is not messy because biologists lack rigor. Despite being one of the few truly falsifiable sciences, it is messy because it still lacks many reductionist theories that work across scales. Falsifiability only tells us that a claim can be tested and potentially proven wrong. In biology, we see falsifiability constantly, but the issue is that the claims posited from the research hold only within tight constraints. Once the underlying context changes, the theory crumbles. This is what separates biology from the physical sciences. Physics and chemistry are cleaner not because they are simple, but because their core theories can absorb complexity without losing predictive power. Biology has plenty of facts, mechanisms, and experimentally defensible theories, but much of it is phenomenological rather than reductionist. The theories describe patterns within a regime without deriving them from underlying principles. They can be tested and used, but they fail once moved outside the system where they were discovered.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <p><img alt="xkcd 1520: Degree-Off" src="./assets/biology_is_messy/xkcd_1520.png" /></p>
 <p><em>source: <a href="https://xkcd.com/1520/">https://xkcd.com/1520/</a></em></p>
 <h2 id="reductionist-theory">Reductionist theory</h2>
@@ -411,10 +382,9 @@
 <p>Another huge reason we do not see a large push for reductionist theory in biology is incentives. Biological research is heavily shaped by applied problems, especially human health. The NIH's mission reflects this directly. It combines fundamental knowledge about living systems with the goal of improving health, and its funding categories organize much of that work around diseases and conditions.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> Structures like this pull the field toward exception-understanding. For example, in oncology, one of the best-funded research areas, researchers are rewarded for explaining why a tumor that should respond to treatment does not. Narrow focuses like this train the field to think in local systems rather than general principles. Over time, biological knowledge accumulates around narrower contexts. Local knowledge often works in biology and solves the targeted problem, but a field organized around local exceptions should not be expected to produce general theories easily.</p>
 <h2 id="why-this-matters-now">Why this matters now</h2>
 <p>It would be wrong to say biology has no theory. Darwin was trying to explain the general mechanism behind adaptation and biological change. Mendel was trying to extract general rules of inheritance from a narrow experimental system. Biology was built on the same theoretical impulse as the physical sciences, and there are still parts of the field where theory does serious work.<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> The issue is that, over time, theory stopped being the organizing spine of biology in the way it remains for physics and chemistry. The creation of new institutions focused on theory and mathematics in biology is a positive sign, but it also proves the point. If theory were already central to biology, the field would not need a special institutional push to build a community around uncovering the rules of life.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
-<p>Physics and chemistry are closer to forward-engineering sciences because their theories often start from lower-level principles and still remain accurate at higher levels. Biology is not there. It remains much more inductive and relies on reverse engineering from observation. This is another reason why those entering the field because of AI and computational advances need to be careful. Many of the people entering biology are used to domains where reductionist theories and first-principle foundations scale cleanly. That expectation will break quickly here and will not change quickly. Biology's incentives will ensure the field keeps producing data around local deviations, and AI advances will similarly get pulled into that pattern. AI tools can help accelerate the search for reductionist theories, but only if they are used to test which local mechanisms generalize. If AI tools are only used to model each local system better, they will reinforce the incentives that keep biology fragmented instead of helping make the field more reductive.</p>
+<p>Physics and chemistry are closer to forward-engineering sciences because their theories often start from lower-level principles and still remain accurate at higher levels. Biology is not there. It remains much more inductive and relies on reverse engineering from observation. This is another reason why those entering the field because of AI and computational advances need to be careful. Many of the people entering biology are used to domains where reductionist theories and first-principle foundations scale cleanly. That expectation will break quickly here and will not change quickly. Biology's incentives will ensure the field keeps producing data around local deviations, and AI advances will similarly get pulled into that pattern. AI tools can help accelerate the search for reductionist theories, but only if they are used to test which local mechanisms generalize. If AI tools are only used to fit each local system more precisely, they will scale phenomenology instead of producing reduction. That reinforces the incentives that keep biology fragmented.</p>
 <p>The important question is whether the wide breadth of inductive observation and the latest AI advances can be combined to start discovering enough reductionist theories to make forward engineering in biology realistic. We are not there yet, and the answer is not to collect more localized data and train models that overfit it.</p>
 <p>A path to breaking through is to design experiments that reveal which local mechanisms generalize. AI can help with this, but it is not a replacement for identifying core theories. Anyone entering biology who expects to rely on reductionist theory should expect to fight the field's drift toward fragmentation. To become a less messy, reductive science, biology does not need more disconnected facts. It needs more reductionist theories that scale precisely.</p>
-<div class='discuss-actions'><a class='discuss-box' href='https://x.com/gptomics/status/2056385495370747982' target='_blank' rel='noopener'><svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg><span>Discuss on X/Twitter</span><span class='arrow' aria-hidden='true'>&rarr;</span></a><a class='discuss-box' href='https://www.linkedin.com/posts/domenjemec_ai-advances-are-pulling-a-lot-of-new-people-share-7462154158687686657-3nbr' target='_blank' rel='noopener'><svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/></svg><span>Discuss on LinkedIn</span><span class='arrow' aria-hidden='true'>&rarr;</span></a></div>
 <h2 id="endnotes">Endnotes</h2>
 <div class="footnote">
 <hr />

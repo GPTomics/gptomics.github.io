@@ -267,35 +267,6 @@ TEMPLATE = '''<!doctype html>
     }}
     .lightbox-close:hover{{color: #fff}}
     article hr{{border: none; border-top: 1px solid var(--border); margin: 32px 0}}
-    article .discuss-actions{{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 40px 0 8px;
-    }}
-    article a.discuss-box{{
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 9px 16px;
-      border: 1px solid var(--brand-edge);
-      border-radius: 10px;
-      background: var(--brand-tint);
-      color: var(--brand);
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 600;
-      letter-spacing: 0.1px;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
-    }}
-    article a.discuss-box:hover{{
-      background: rgba(93,68,168,0.13);
-      border-color: var(--brand);
-      text-decoration: none;
-    }}
-    article a.discuss-box:active{{transform: translateY(1px)}}
-    article a.discuss-box svg{{width: 15px; height: 15px; flex: 0 0 auto; color: currentColor}}
-    article a.discuss-box .arrow{{color: currentColor; opacity: 0.7; font-weight: 500}}
     article .katex-display{{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}}
     article .katex-display > .katex{{white-space: nowrap}}
     @media (max-width: 700px){{
@@ -403,7 +374,6 @@ TEMPLATE = '''<!doctype html>
         <h1>{title_html}</h1>
         <p class='byline'>{author_html}</p>
         {body_html}
-        {discuss_html}
       </article>
     </main>
 
@@ -503,22 +473,13 @@ def save_manifest(entries):
     MANIFEST.write_text(json.dumps(entries_sorted, indent=2) + '\n')
 
 
-def upsert_manifest(manifest, file_name, iso_date, title, author, discuss_url, linkedin_url):
+def upsert_manifest(manifest, file_name, iso_date, title, author):
     for entry in manifest:
         if entry['file'] == file_name:
             entry['title'] = title
             entry['author'] = author
-            if discuss_url is not None:
-                entry['discuss_url'] = discuss_url
-            if linkedin_url is not None:
-                entry['linkedin_url'] = linkedin_url
             return manifest
-    new_entry = {'file': file_name, 'date': iso_date, 'title': title, 'author': author}
-    if discuss_url:
-        new_entry['discuss_url'] = discuss_url
-    if linkedin_url:
-        new_entry['linkedin_url'] = linkedin_url
-    manifest.append(new_entry)
+    manifest.append({'file': file_name, 'date': iso_date, 'title': title, 'author': author})
     return manifest
 
 
@@ -526,26 +487,7 @@ def parse_args():
     p = argparse.ArgumentParser(description='Generate a blog post HTML page from markdown.')
     p.add_argument('markdown', help='path to the .md post')
     p.add_argument('--author', required=True, nargs='+', help='one or more authors (space-separated, quote multi-word names); homepage URLs come from blogs/authors.json')
-    p.add_argument('--discuss-url', default=None, help='URL of the X/Twitter post to link at the end of the article (stored in blogs.json for future re-runs)')
-    p.add_argument('--linkedin-url', default=None, help='URL of the LinkedIn post to link at the end of the article (stored in blogs.json for future re-runs)')
     return p.parse_args()
-
-
-X_ICON_SVG = "<svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>"
-LINKEDIN_ICON_SVG = "<svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/></svg>"
-
-
-def render_discuss(discuss_url, linkedin_url):
-    buttons = []
-    if discuss_url:
-        buttons.append(f"<a class='discuss-box' href='{html.escape(discuss_url)}' target='_blank' rel='noopener'>"
-                       f"{X_ICON_SVG}<span>Discuss on X/Twitter</span><span class='arrow' aria-hidden='true'>&rarr;</span></a>")
-    if linkedin_url:
-        buttons.append(f"<a class='discuss-box' href='{html.escape(linkedin_url)}' target='_blank' rel='noopener'>"
-                       f"{LINKEDIN_ICON_SVG}<span>Discuss on LinkedIn</span><span class='arrow' aria-hidden='true'>&rarr;</span></a>")
-    if not buttons:
-        return ''
-    return "<div class='discuss-actions'>" + ''.join(buttons) + "</div>"
 
 
 def main():
@@ -576,9 +518,7 @@ def main():
     manifest = load_manifest()
     existing = next((e for e in manifest if e['file'] == md_dest.name), None)
     iso_date = existing['date'] if existing else date.today().isoformat()
-    discuss_url = args.discuss_url if args.discuss_url is not None else (existing.get('discuss_url') if existing else None)
-    linkedin_url = args.linkedin_url if args.linkedin_url is not None else (existing.get('linkedin_url') if existing else None)
-    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field, args.discuss_url, args.linkedin_url)
+    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field)
     save_manifest(manifest)
 
     authors_map = load_authors()
@@ -628,7 +568,6 @@ def main():
         display_date=format_date(iso_date),
         year=date.today().year,
         body_html=body_html,
-        discuss_html=render_discuss(discuss_url, linkedin_url),
         SITE_URL=SITE_URL,
         GA_ID=GA_ID,
     )
