@@ -75,10 +75,12 @@
       --editorial: #c2483a;
       --spark: #00b7f3;
       --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
-      --radius: 14px;
+      --radius: 0;
       --maxw: 1280px;
     }
     *{box-sizing:border-box}
+    ::selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    ::-moz-selection{background:rgba(0,183,243,0.30); color:var(--ink)}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -136,7 +138,7 @@
     nav a{
       font-size:13.8px;
       padding:7px 10px;
-      border-radius:10px;
+      border-radius:0;
       border:1px solid transparent;
       color: var(--ink);
     }
@@ -165,10 +167,10 @@
     }
     .summary p:last-child{margin-bottom:0}
 
-    .projects{
+    .latest, .research{
       margin: 0 0 26px 0;
     }
-    .projects h3{
+    .latest h3, .research h3{
       margin:0 0 12px;
       font-size:16px;
       font-weight:800;
@@ -179,6 +181,9 @@
       display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap:14px;
+    }
+    .grid-stacked{
+      grid-template-columns: 1fr;
     }
     @media (max-width: 720px){
       .grid{grid-template-columns: 1fr;}
@@ -218,10 +223,9 @@
     .badge{
       font-size:12px;
       color: var(--brand);
-      border:1px solid var(--brand-edge);
       background: var(--brand-tint);
       padding:3px 8px;
-      border-radius:999px;
+      border-radius:0;
       white-space:nowrap;
     }
     .tile p{
@@ -292,15 +296,16 @@
         </p>
       </section>
 
-      <section class="projects" id="projects" aria-label="Projects">
+      <section class="latest" id="latest" aria-label="Latest">
+        <h3>Latest</h3>
         <div class="grid">
-          <a class="tile" href="https://github.com/GPTomics/bioTaskBench" target="_blank" rel="noopener">
+          <a class="tile" href="blog/biology_is_messy.html">
             <div class="kicker">
-              <h4>Bio-Task Bench</h4>
-              <span class="badge">GitHub</span>
+              <h4>Biology is messy</h4>
+              <span class="badge">Blog</span>
             </div>
             <p>
-              Bio-Task Bench is both a benchmark and evaluation tool for evaluating how well AI coding agents perform bioinformatics tasks. It includes 33 original tests across 10 domains, a deterministic grading harness, and adapters for running external bioinformatics benchmarks under the same CLI.
+              Biology is messy not because biologists lack rigor, but because the field still lacks reductionist theories that hold up across scales. Without that scaling backbone, biology will remain phenomenological, and AI risks reinforcing that pattern instead of breaking it.
             </p>
           </a>
           <a class="tile" href="https://github.com/GPTomics/biojepa/blob/main/docs/biojepa_ac_technical_report_v0_6.pdf" target="_blank" rel="noopener">
@@ -312,6 +317,12 @@
               This report presents v0.6 of BioJEPA-AC (Biological Joint-Embedding Predictive Architecture — Action Conditioned), a joint-embedding predictive architecture that uses a shared latent space to learn cell dynamics and perturbation response.
             </p>
           </a>
+        </div>
+      </section>
+
+      <section class="research" id="research" aria-label="Research">
+        <h3>Research</h3>
+        <div class="grid grid-stacked">
           <a class="tile" href="https://github.com/GPTomics/biojepa" target="_blank" rel="noopener">
             <div class="kicker">
               <h4>BioJEPA</h4>
@@ -328,6 +339,15 @@
             </div>
             <p>
               A collection of skills that guide AI coding agents (Claude Code, Codex, Gemini) through common bioinformatics tasks, with code patterns, best practices, and examples across analyses from sequence work to single-cell and population genetics.
+            </p>
+          </a>
+          <a class="tile" href="https://github.com/GPTomics/bioTaskBench" target="_blank" rel="noopener">
+            <div class="kicker">
+              <h4>Bio-Task Bench</h4>
+              <span class="badge">GitHub</span>
+            </div>
+            <p>
+              Bio-Task Bench is both a benchmark and evaluation tool for evaluating how well AI coding agents perform bioinformatics tasks. It includes 33 original tests across 10 domains, a deterministic grading harness, and adapters for running external bioinformatics benchmarks under the same CLI.
             </p>
           </a>
         </div>

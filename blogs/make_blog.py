@@ -93,6 +93,8 @@ TEMPLATE = '''<!doctype html>
       --maxw: 1280px;
     }}
     *{{box-sizing:border-box}}
+    ::selection{{background:rgba(0,183,243,0.30); color:var(--ink)}}
+    ::-moz-selection{{background:rgba(0,183,243,0.30); color:var(--ink)}}
     body{{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
@@ -122,7 +124,7 @@ TEMPLATE = '''<!doctype html>
     nav a{{
       font-size:13.8px;
       padding:7px 10px;
-      border-radius:10px;
+      border-radius:0;
       border:1px solid transparent;
       color: var(--ink);
     }}
