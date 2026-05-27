@@ -1,5 +1,15 @@
 [
   {
+    "file": "conway_law_genomics.md",
+    "date": "2026-05-27",
+    "title": "Conway's Law and the Shape of Computational Genomics Software",
+    "author": [
+      "Jason Chin",
+      "Domen Jemec",
+      "Anthropic Claude"
+    ]
+  },
+  {
     "file": "biology_is_messy.md",
     "date": "2026-05-18",
     "title": "Biology is messy",

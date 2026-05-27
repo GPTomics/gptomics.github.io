@@ -104,15 +104,19 @@ TEMPLATE = '''<!doctype html>
     }}
     a{{color: var(--editorial); text-decoration:none}}
     a:hover{{text-decoration: underline}}
-    .wrap{{max-width:var(--maxw); margin:0 auto; padding:30px 18px 46px}}
+    .wrap{{max-width:var(--maxw); margin:0 auto; padding:0 18px 46px}}
 
     header{{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      padding:0;
+      padding:18px 0 14px;
       margin:0 0 22px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
     }}
     .brand{{display:flex; align-items:flex-start; gap:14px; min-width:0}}
     .brand a.brand-link{{display:flex; align-items:flex-start; gap:14px; color:inherit}}
@@ -308,6 +312,41 @@ TEMPLATE = '''<!doctype html>
     article td[style*='right']{{text-align: right}}
     article table a{{color: var(--editorial)}}
 
+    .toc{{
+      position: fixed;
+      top: 120px;
+      left: calc(50% - 620px);
+      width: 200px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding-right: 10px;
+      z-index: 5;
+    }}
+    .toc-title{{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }}
+    .toc ol{{list-style: none; padding: 0; margin: 0}}
+    .toc li{{margin: 0}}
+    .toc a{{
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid var(--border);
+      text-decoration: none;
+    }}
+    .toc a:hover{{color: var(--ink); border-left-color: var(--brand-edge); text-decoration: none}}
+    .toc a.is-active{{color: var(--brand); border-left-color: var(--brand)}}
+    @media (max-width: 1259px){{
+      .toc{{display: none}}
+    }}
+
     html{{scroll-behavior:smooth}}
     footer{{
       margin-top:40px;
@@ -366,6 +405,11 @@ TEMPLATE = '''<!doctype html>
       </nav>
     </header>
 
+    <aside class='toc' aria-label='Table of contents'>
+      <div class='toc-title'>On this page</div>
+      <ol id='toc-list'></ol>
+    </aside>
+
     <main>
       <a class='back-link' href='../blog.html'>
         <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
@@ -410,6 +454,39 @@ TEMPLATE = '''<!doctype html>
       }});
       box.addEventListener('click', close);
       document.addEventListener('keydown', function(e){{ if(e.key === 'Escape') close(); }});
+    }})();
+  </script>
+  <script>
+    (function(){{
+      var list = document.getElementById('toc-list');
+      var toc = document.querySelector('.toc');
+      if(!list || !toc) return;
+      var headings = document.querySelectorAll('article h2');
+      if(!headings.length){{ toc.style.display = 'none'; return; }}
+      var links = {{}};
+      headings.forEach(function(h){{
+        if(!h.id) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+        links[h.id] = a;
+      }});
+      if('IntersectionObserver' in window){{
+        var current = null;
+        var io = new IntersectionObserver(function(entries){{
+          entries.forEach(function(e){{
+            if(e.isIntersecting){{
+              if(current) current.classList.remove('is-active');
+              current = links[e.target.id];
+              if(current) current.classList.add('is-active');
+            }}
+          }});
+        }}, {{rootMargin: '-80px 0px -70% 0px'}});
+        headings.forEach(function(h){{ if(h.id) io.observe(h); }});
+      }}
     }})();
   </script>
 </body>

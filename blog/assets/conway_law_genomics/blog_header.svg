@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 480" role="img" aria-labelledby="title desc" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="title">Three lab structures, three kinds of code</title>
+  <desc id="desc">Three side-by-side academic-lab organizational diagrams comparing how communication structures shape software. Left: a hands-on PI surrounded by students, connected to a single shared codebase. Middle: a managerial PI focused outward on grants, talks, and hiring, with students producing fragmented per-paper code below. Right: a flat peer network — three hands-on PIs and a student-as-peer at the top, each with an AI agent, with PI-to-PI and agent-to-agent links, and a mix of shared and per-lab code modules at the bottom.</desc>
+
+  <style>
+    .title { fill: #16122e; font-size: 20px; font-weight: 500; }
+    .subtitle { fill: #4d4666; font-size: 13px; font-weight: 400; }
+    .colheader { fill: #16122e; font-size: 14px; font-weight: 500; }
+    .colsub { fill: #4d4666; font-size: 11px; font-weight: 400; }
+    .caption { fill: #4d4666; font-size: 12px; font-weight: 400; }
+    .source { fill: #4d4666; font-size: 11px; font-weight: 400; }
+    .ext-label { fill: #4d4666; font-size: 10px; font-weight: 400; }
+    .role-label { fill: #4d4666; font-size: 9px; font-weight: 400; font-style: italic; }
+    .code-label { fill: #4d4666; font-size: 9px; font-weight: 400; }
+    .legend { fill: #4d4666; font-size: 11px; font-weight: 400; }
+    .nl { fill: #ffffff; font-size: 11px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+    .nl-sm { fill: #ffffff; font-size: 10px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+    .nl-xs { fill: #ffffff; font-size: 8px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+    .nl-code { fill: #ffffff; font-size: 11px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+    .nl-code-sm { fill: #ffffff; font-size: 9px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+    .node-pi { fill: #5d44a8; stroke: #3d2c70; stroke-width: 1; }
+    .node-st { fill: #a89ec0; stroke: #6d6296; stroke-width: 1; }
+    .node-ag { fill: #c2483a; stroke: #8c2e23; stroke-width: 1; }
+    .code-box { fill: #16122e; stroke: #16122e; }
+    .code-frag { fill: #4d4666; }
+    .edge-s { stroke: #16122e; stroke-width: 1.8; fill: none; }
+    .edge-m { stroke: #16122e; stroke-width: 1.5; fill: none; }
+    .edge-w { stroke: #b3a8c8; stroke-width: 0.6; fill: none; }
+    .edge-ext { stroke: #4d4666; stroke-width: 0.8; fill: none; stroke-dasharray: 3,3; }
+    .col-divider { stroke: #e4dff0; stroke-width: 0.5; stroke-dasharray: 2,4; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#4d4666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="42" text-anchor="middle" class="title">Three lab structures, three kinds of code</text>
+  <text x="340" y="66" text-anchor="middle" class="subtitle">Conway's law: same problem, different communication graphs, different software</text>
+
+  <line x1="246" y1="92" x2="246" y2="404" class="col-divider"/>
+  <line x1="446" y1="92" x2="446" y2="404" class="col-divider"/>
+
+  <text x="140" y="108" text-anchor="middle" class="colheader">Hands-on PI</text>
+  <text x="140" y="124" text-anchor="middle" class="colsub">1990s pattern, surviving in pockets</text>
+  <line x1="140" y1="198" x2="80" y2="158" class="edge-s"/>
+  <line x1="140" y1="198" x2="200" y2="158" class="edge-s"/>
+  <line x1="140" y1="198" x2="92" y2="252" class="edge-s"/>
+  <line x1="140" y1="198" x2="188" y2="252" class="edge-s"/>
+  <line x1="140" y1="217" x2="140" y2="288" class="edge-s"/>
+  <line x1="72" y1="152" x2="60" y2="148" class="edge-w"/>
+  <line x1="208" y1="152" x2="220" y2="148" class="edge-w"/>
+  <line x1="84" y1="258" x2="60" y2="266" class="edge-w"/>
+  <line x1="196" y1="258" x2="220" y2="266" class="edge-w"/>
+  <rect x="48" y="142" width="20" height="12" rx="2" class="code-frag"/>
+  <rect x="216" y="142" width="20" height="12" rx="2" class="code-frag"/>
+  <rect x="48" y="262" width="20" height="12" rx="2" class="code-frag"/>
+  <rect x="216" y="262" width="20" height="12" rx="2" class="code-frag"/>
+  <circle cx="80" cy="158" r="11" class="node-st"/>
+  <circle cx="200" cy="158" r="11" class="node-st"/>
+  <circle cx="92" cy="252" r="11" class="node-st"/>
+  <circle cx="188" cy="252" r="11" class="node-st"/>
+  <circle cx="140" cy="198" r="19" class="node-pi"/>
+  <text x="140" y="198" class="nl">PI</text>
+  <text x="80" y="158" class="nl-xs">S</text>
+  <text x="200" y="158" class="nl-xs">S</text>
+  <text x="92" y="252" class="nl-xs">S</text>
+  <text x="188" y="252" class="nl-xs">S</text>
+  <rect x="113" y="288" width="54" height="22" rx="3" class="code-box"/>
+  <text x="140" y="299" class="nl-code">main code</text>
+  <text x="140" y="345" text-anchor="middle" class="caption">PI writes the main code;</text>
+  <text x="140" y="361" text-anchor="middle" class="caption">students have their own pieces.</text>
+  <text x="140" y="385" text-anchor="middle" class="source">Sanger/Staden,</text>
+  <text x="140" y="399" text-anchor="middle" class="source">Heng Li's group.</text>
+
+  <text x="346" y="108" text-anchor="middle" class="colheader">Managerial PI</text>
+  <text x="346" y="124" text-anchor="middle" class="colsub">2020s typical academic lab</text>
+  <text x="346" y="153" text-anchor="middle" class="ext-label">grants</text>
+  <line x1="346" y1="156" x2="346" y2="172" class="edge-ext" marker-end="url(#arrow)"/>
+  <text x="402" y="190" text-anchor="start" class="ext-label">talks</text>
+  <line x1="372" y1="190" x2="396" y2="190" class="edge-ext" marker-end="url(#arrow)"/>
+  <text x="290" y="190" text-anchor="end" class="ext-label">hiring</text>
+  <line x1="320" y1="190" x2="296" y2="190" class="edge-ext" marker-end="url(#arrow)"/>
+  <text x="402" y="215" text-anchor="start" class="ext-label">committees</text>
+  <line x1="372" y1="212" x2="396" y2="212" class="edge-ext" marker-end="url(#arrow)"/>
+  <circle cx="346" cy="190" r="19" class="node-pi"/>
+  <text x="346" y="190" class="nl">PI</text>
+  <line x1="346" y1="209" x2="282" y2="246" class="edge-w"/>
+  <line x1="346" y1="209" x2="324" y2="246" class="edge-w"/>
+  <line x1="346" y1="209" x2="366" y2="246" class="edge-w"/>
+  <line x1="346" y1="209" x2="408" y2="246" class="edge-w"/>
+  <circle cx="282" cy="250" r="9" class="node-st"/>
+  <circle cx="324" cy="250" r="9" class="node-st"/>
+  <circle cx="366" cy="250" r="9" class="node-st"/>
+  <circle cx="408" cy="250" r="9" class="node-st"/>
+  <text x="282" y="250" class="nl-xs">S</text>
+  <text x="324" y="250" class="nl-xs">S</text>
+  <text x="366" y="250" class="nl-xs">S</text>
+  <text x="408" y="250" class="nl-xs">S</text>
+  <line x1="282" y1="259" x2="282" y2="290" class="edge-w"/>
+  <line x1="324" y1="259" x2="324" y2="290" class="edge-w"/>
+  <line x1="366" y1="259" x2="366" y2="290" class="edge-w"/>
+  <line x1="408" y1="259" x2="408" y2="290" class="edge-w"/>
+  <rect x="270" y="290" width="24" height="16" rx="2" class="code-frag"/>
+  <rect x="312" y="290" width="24" height="16" rx="2" class="code-frag"/>
+  <rect x="354" y="290" width="24" height="16" rx="2" class="code-frag"/>
+  <rect x="396" y="290" width="24" height="16" rx="2" class="code-frag"/>
+  <text x="346" y="345" text-anchor="middle" class="caption">PI looks outward.</text>
+  <text x="346" y="361" text-anchor="middle" class="caption">Code fragments per student.</text>
+  <text x="346" y="385" text-anchor="middle" class="source">Most modern labs.</text>
+  <text x="346" y="399" text-anchor="middle" class="source">Pre-agent era.</text>
+
+  <text x="550" y="108" text-anchor="middle" class="colheader">Peer network with agents</text>
+  <text x="550" y="124" text-anchor="middle" class="colsub">2026 flat federated pattern</text>
+  <line x1="493" y1="172" x2="512" y2="172" class="edge-s"/>
+  <line x1="538" y1="172" x2="557" y2="172" class="edge-s"/>
+  <line x1="583" y1="172" x2="602" y2="172" class="edge-s"/>
+  <path d="M 493 165 Q 525 138 557 165" class="edge-s"/>
+  <path d="M 538 165 Q 570 138 602 165" class="edge-s"/>
+  <circle cx="480" cy="172" r="13" class="node-pi"/>
+  <circle cx="525" cy="172" r="13" class="node-pi"/>
+  <circle cx="570" cy="172" r="13" class="node-pi"/>
+  <circle cx="615" cy="172" r="13" class="node-st"/>
+  <text x="480" y="172" class="nl-sm">PI</text>
+  <text x="525" y="172" class="nl-sm">PI</text>
+  <text x="570" y="172" class="nl-sm">PI</text>
+  <text x="615" y="172" class="nl-sm">S</text>
+  <text x="615" y="155" text-anchor="middle" class="role-label">domain</text>
+  <line x1="480" y1="185" x2="480" y2="218" class="edge-s"/>
+  <line x1="525" y1="185" x2="525" y2="218" class="edge-s"/>
+  <line x1="570" y1="185" x2="570" y2="218" class="edge-s"/>
+  <line x1="615" y1="185" x2="615" y2="218" class="edge-s"/>
+  <line x1="492" y1="230" x2="513" y2="230" class="edge-m"/>
+  <line x1="537" y1="230" x2="558" y2="230" class="edge-m"/>
+  <line x1="582" y1="230" x2="603" y2="230" class="edge-m"/>
+  <rect x="468" y="218" width="24" height="24" rx="4" class="node-ag"/>
+  <rect x="513" y="218" width="24" height="24" rx="4" class="node-ag"/>
+  <rect x="558" y="218" width="24" height="24" rx="4" class="node-ag"/>
+  <rect x="603" y="218" width="24" height="24" rx="4" class="node-ag"/>
+  <text x="480" y="230" class="nl-xs">agent</text>
+  <text x="525" y="230" class="nl-xs">agent</text>
+  <text x="570" y="230" class="nl-xs">agent</text>
+  <text x="615" y="230" class="nl-xs">agent</text>
+  <line x1="478" y1="242" x2="488" y2="280" class="edge-m"/>
+  <line x1="483" y1="242" x2="525" y2="280" class="edge-m"/>
+  <line x1="525" y1="242" x2="540" y2="280" class="edge-m"/>
+  <line x1="570" y1="242" x2="560" y2="280" class="edge-m"/>
+  <line x1="572" y1="242" x2="600" y2="280" class="edge-m"/>
+  <line x1="615" y1="242" x2="610" y2="280" class="edge-m"/>
+  <rect x="470" y="280" width="40" height="20" rx="3" class="code-box"/>
+  <text x="490" y="290" class="nl-code-sm">module A</text>
+  <rect x="518" y="280" width="64" height="20" rx="3" class="code-box"/>
+  <text x="550" y="290" class="nl-code-sm">shared core</text>
+  <rect x="590" y="280" width="40" height="20" rx="3" class="code-box"/>
+  <text x="610" y="290" class="nl-code-sm">module B</text>
+  <text x="550" y="320" text-anchor="middle" class="code-label">shared and per-lab modules</text>
+  <text x="550" y="345" text-anchor="middle" class="caption">PIs direct, students bring data,</text>
+  <text x="550" y="361" text-anchor="middle" class="caption">agents implement across modules.</text>
+  <text x="550" y="385" text-anchor="middle" class="source">Federated, with shared and</text>
+  <text x="550" y="399" text-anchor="middle" class="source">per-lab code, post-2026.</text>
+
+  <g transform="translate(40, 432)">
+    <circle cx="6" cy="6" r="6" class="node-pi"/>
+    <text x="20" y="9" class="legend">PI</text>
+    <circle cx="56" cy="6" r="6" class="node-st"/>
+    <text x="68" y="9" class="legend">student / postdoc</text>
+    <rect x="172" y="0" width="12" height="12" rx="2" class="node-ag"/>
+    <text x="190" y="9" class="legend">AI agent</text>
+    <rect x="248" y="0" width="14" height="12" rx="2" class="code-box"/>
+    <text x="268" y="9" class="legend">code (thick line = strong link, thin = weak)</text>
+  </g>
+</svg>
