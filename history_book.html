@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#5d44a8" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time." />
+  <meta name="author" content="GPTomics" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>A history of modern computational biology | GPTomics</title>
+
+  <link rel="canonical" href="https://www.gptomics.com/history_book.html" />
+  <link rel="icon" type="image/svg+xml" href="resources/logo.svg" />
+  <link rel="icon" href="resources/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="resources/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="resources/favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png" />
+  <link rel="manifest" href="resources/site.webmanifest" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+  <meta property="og:site_name" content="GPTomics" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="A historical overview of modern computational biology" />
+  <meta property="og:description" content="A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.gptomics.com/history_book.html" />
+  <meta property="og:image" content="https://www.gptomics.com/resources/logo_square.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="1000" />
+  <meta property="og:image:alt" content="GPTomics logo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gptomics" />
+  <meta name="twitter:creator" content="@gptomics" />
+  <meta name="twitter:title" content="A historical overview of modern computational biology" />
+  <meta name="twitter:description" content="A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time." />
+  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo_square.png" />
+  <meta name="twitter:image:alt" content="GPTomics logo" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://www.gptomics.com/history_book.html#blog",
+    "name": "A historical overview of modern computational biology",
+    "alternateName": "History Book",
+    "description": "A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time.",
+    "url": "https://www.gptomics.com/history_book.html",
+    "mainEntityOfPage": "https://www.gptomics.com/history_book.html",
+    "inLanguage": "en",
+    "datePublished": "2026-06-23T12:00:00-07:00",
+    "dateModified": "2026-06-23T12:00:00-07:00",
+    "keywords": "computational biology history, bioinformatics history, history of science, biometry, statistical genetics, Mendel, Galton",
+    "image": "https://www.gptomics.com/resources/logo_square.png",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com"
+    },
+    "author": [
+      {"@type": "Person", "name": "Domen Jemec", "url": "https://domenjemec.com/"},
+      {"@type": "Person", "name": "Jason Chin", "url": "https://x.com/infoecho/"},
+      {"@type": "Person", "name": "Bianca Lauro", "url": "https://www.linkedin.com/in/biancamlauro/"}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo_square.png"
+      },
+      "sameAs": [
+        "https://github.com/GPTomics",
+        "https://x.com/gptomics"
+      ]
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Era 0, Part I: Heredity observed from variation",
+        "url": "https://www.gptomics.com/history_book/era0_part1.html",
+        "datePublished": "2026-06-23T12:00:00-07:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #fbfafe;
+      --bg2: #ffffff;
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
+      --radius: 0;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    ::selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    ::-moz-selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background: var(--bg);
+      line-height:1.6;
+    }
+    a{color:var(--editorial); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:18px 0 14px;
+      margin:0 0 22px 0;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; border-radius:0; border:0; background:transparent; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:0;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: var(--brand-tint);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--brand)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    .summary{margin: 6px 0 32px 0}
+    .summary h2{margin:0 0 12px; font-size:20px; font-weight:800; letter-spacing:0.15px; line-height:1.25}
+    .summary p{margin:0 0 12px; color: var(--muted); font-size:15px}
+    .summary p:last-child{margin-bottom:0}
+    .series-authors{margin:0 0 18px; color: var(--muted); font-size:15px; font-style:italic}
+    .series-authors a{color: inherit; text-decoration:underline; text-underline-offset:3px}
+    .series-authors a:hover{color: var(--brand); text-decoration:none}
+
+    /*
+      Time-based timeline. Vertical position maps to year:
+        top(year) = 6 + (year - 1830) * 2   (px)
+      Spine runs 1830 (top) to ~2025 (bottom). Era boxes sit left of the spine;
+      each box's `top` is set to (span-midpoint - ~half box height) so it reads
+      as centered on its span without a rest-state transform (transforms shift
+      sub-pixel/AA rendering and dim the box vs index.html). The year scale sits
+      right of the spine. Each box is followed by an .hspan whose top/height mark
+      its true range, revealed on hover. Below 720px this collapses to a
+      left-rail stack and the scale is dropped.
+    */
+    .timeline{position:relative; min-height:410px; margin:10px 0 0}
+    .timeline::before{
+      content:'';
+      position:absolute;
+      top:6px; height:390px;
+      left:50%; margin-left:-1px;
+      width:2px;
+      background:var(--border);
+    }
+    .coverage{
+      position:absolute;
+      left:50%; margin-left:-2px;
+      width:4px;
+      background:var(--brand-pale);
+    }
+    .tick{
+      position:absolute;
+      left:50%; width:calc(50% - 18px);
+      padding-left:18px;
+      text-align:left;
+      color:var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size:12px;
+    }
+    .tick::after{
+      content:'';
+      position:absolute;
+      left:2px; top:9px;
+      width:9px; height:1px;
+      background:var(--border);
+    }
+
+    .era{display:contents}
+    .era-title{
+      position:absolute;
+      left:0; width:calc(50% - 30px);
+      margin:0;
+      font-size:16px; font-weight:800; letter-spacing:0.15px;
+    }
+    .part-box{
+      position:absolute;
+      left:0; width:calc(50% - 30px);
+      display:block;
+      padding:14px 14px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.70));
+      box-shadow: var(--shadow);
+      transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+      color: inherit;
+    }
+    a.part-box:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(0,183,243,0.28), 0 4px 12px rgba(0,183,243,0.12);
+      border-color: var(--brand-pale);
+      text-decoration:none;
+    }
+    a.part-box:hover .ptitle{color: var(--brand)}
+    .part-top{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:4px;
+    }
+    .plabel{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size:11px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-weight:700;
+      color: var(--muted);
+    }
+    .pnote{
+      margin-left:7px;
+      text-transform:none;
+      letter-spacing:normal;
+      font-weight:700;
+      color: var(--brand);
+    }
+    .pyears{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size:12px;
+      color: var(--editorial);
+      white-space:nowrap;
+    }
+    .ptitle{font-size:15.5px; font-weight:800; color: var(--ink); transition: color 120ms ease}
+    .pnames{margin-top:3px; color: var(--muted); font-size:14px}
+    .part-box.upcoming{opacity:.66}
+    .part-box.upcoming .pyears{color: var(--muted)}
+
+    /* Hover-reveal: a bright span on the spine showing the box's time coverage. */
+    .hspan{
+      position:absolute;
+      left:50%; margin-left:-2px;
+      width:4px;
+      background:var(--spark);
+      border-radius:2px;
+      box-shadow:0 0 8px rgba(0,183,243,0.65);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity 120ms ease;
+    }
+    a.part-box:hover + .hspan{opacity:1}
+
+    @media (max-width: 720px){
+      .timeline{min-height:0}
+      .timeline::before{left:7px; margin-left:0; top:6px; height:auto; bottom:24px}
+      .coverage, .tick, .hspan{display:none}
+      .era-title{position:static; width:auto; top:auto !important; margin:0 0 12px; padding-left:30px}
+      .part-box{position:static; width:auto; top:auto !important; transform:none; margin:0 0 12px 30px}
+      a.part-box:hover{transform:none}
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+
+    footer{
+      margin-top:30px;
+      padding-top:14px;
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
+      font-size:12.5px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <a class="brand-link" href="index.html">
+          <img class="logo" src="resources/logo.svg" alt="GPTomics logo" />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label="Primary">
+        <a href="blog.html">Blog</a>
+        <a href="history_book.html" class="active">History Book</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="icon" href="https://github.com/GPTomics" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="icon" href="https://x.com/gptomics" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="summary" aria-label="About">
+        <hr>
+        <h2>A historical overview of modern computational biology</h2>
+        <p class="series-authors">
+          Series co-authors:
+          <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a>,
+          <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>, and
+          <a href="https://www.linkedin.com/in/biancamlauro/" target="_blank" rel="noopener">Bianca Lauro</a>
+        </p>
+        <p>
+          This is a somewhat chronological series of medium-depth essays on the history of studying biology through a computational lens. Biology has had quantitative roots for centuries, but we focus on the run-up to computing in biology and the application of computers to biological problems. Expect that, as we get closer to the present, the essays will go deeper.
+        </p>
+        <p>
+          We'll release one essay at a time as we develop the series. Please reach out if you spot anything we should correct or add.
+        </p>
+      </section>
+
+      <div class="timeline">
+        <!-- Year scale (right of spine). top(year) = 6 + (year - 1830) * 2 -->
+        <span class="tick" style="top:46px">1850</span>
+        <span class="tick" style="top:146px">1900</span>
+        <span class="tick" style="top:246px">1950</span>
+        <span class="tick" style="top:346px">... (more to come)</span>
+
+        <!-- Era 0 total coverage on the spine: 1830 (top 6) to 1960 (height 260) -->
+        <span class="coverage" style="top:6px; height:260px" aria-hidden="true"></span>
+
+        <section class="era" aria-label="Era 0">
+          <h3 class="era-title" style="top:6px">Era 0 &middot; Quantitative foundations</h3>
+
+          <!-- Part 1, box centered on its 1874 span midpoint (top 94 - ~50 half height = 44); hover span 1830-1918 (top 6, height 176) -->
+          <a class="part-box" style="top:44px" href="history_book/era0_part1.html">
+            <div class="part-top">
+              <span class="plabel">Part 1</span>
+              <span class="pyears">1830&ndash;1918</span>
+            </div>
+            <div class="ptitle">Heredity observed from variation</div>
+            <div class="pnames">Mendel, Galton, Pearson, Fisher</div>
+          </a>
+          <span class="hspan" style="top:6px; height:176px" aria-hidden="true"></span>
+
+          <!-- Part 2, box centered on its 1935 span midpoint (top 216 - ~50 half height = 166); hover span 1910-1960 (top 166, height 100) -->
+          <div class="part-box upcoming" style="top:166px">
+            <div class="part-top">
+              <span class="plabel">Part 2 <span class="pnote">Coming next</span></span>
+              <span class="pyears">1910&ndash;1960</span>
+            </div>
+            <div class="ptitle">Computing mechanism before anyone could see it</div>
+            <div class="pnames">Michaelis, Hodgkin, Huxley, Turing, Kendrew</div>
+          </div>
+          <span class="hspan" style="top:166px; height:100px" aria-hidden="true"></span>
+        </section>
+
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> GPTomics. Just figure things out.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</body>
+</html>

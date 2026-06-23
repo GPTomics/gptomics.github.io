@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='How Galton, Pearson, and Fisher learned to infer hidden heredity from measured variation, building the statistical foundation of computational biology.' />
+  <title>Era 0, Part I: Heredity observed from variation | GPTomics</title>
+  <meta property='og:site_name' content='GPTomics' />
+  <meta property='og:title' content='Era 0, Part I: Heredity observed from variation' />
+  <meta property='og:description' content='How Galton, Pearson, and Fisher learned to infer hidden heredity from measured variation, building the statistical foundation of computational biology.' />
+  <meta property='og:url' content='https://www.gptomics.com/history_book/era0_part1.html' />
+  <meta property='og:type' content='article' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:image' content='https://www.gptomics.com/history_book/assets/era0_part1/bateson-cimbex-fig16.jpg' />
+  <meta property='og:image:width' content='1191' />
+  <meta property='og:image:height' content='764' />
+  <meta property='og:image:alt' content="Bateson's Fig. 16: a sawfly with one normal antenna and one antenna bearing a foot-like structure." />
+  <meta property='article:author' content='Domen Jemec' />
+  <meta property='article:author' content='Jason Chin' />
+  <meta property='article:author' content='Bianca Lauro' />
+  <meta property='article:published_time' content='2026-06-23T12:00:00-07:00' />
+  <meta property='article:modified_time' content='2026-06-23T12:00:00-07:00' />
+  <meta property='article:section' content='History of computational biology' />
+  <meta property='article:tag' content='computational biology history' />
+  <meta property='article:tag' content='biometry' />
+  <meta property='article:tag' content='statistical genetics' />
+  <meta property='article:tag' content='Mendel' />
+  <meta property='article:tag' content='heredity' />
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@gptomics' />
+  <meta name='twitter:creator' content='@gptomics' />
+  <meta name='twitter:title' content='Era 0, Part I: Heredity observed from variation' />
+  <meta name='twitter:description' content='How Galton, Pearson, and Fisher learned to infer hidden heredity from measured variation, building the statistical foundation of computational biology.' />
+  <meta name='twitter:image' content='https://www.gptomics.com/history_book/assets/era0_part1/bateson-cimbex-fig16.jpg' />
+  <meta name='twitter:image:alt' content="Bateson's Fig. 16: a sawfly with one normal antenna and one antenna bearing a foot-like structure." />
+  <link rel='canonical' href='https://www.gptomics.com/history_book/era0_part1.html' />
+  <link rel='icon' type='image/svg+xml' href='../resources/logo.svg' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
+  <link rel='preconnect' href='https://www.googletagmanager.com' />
+  <meta name='author' content='Domen Jemec, Jason Chin, Bianca Lauro' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Era 0, Part I: Heredity observed from variation",
+    "description": "How Galton, Pearson, and Fisher learned to infer hidden heredity from measured variation, building the statistical foundation of computational biology.",
+    "image": "https://www.gptomics.com/history_book/assets/era0_part1/bateson-cimbex-fig16.jpg",
+    "datePublished": "2026-06-23T12:00:00-07:00",
+    "dateModified": "2026-06-23T12:00:00-07:00",
+    "wordCount": 3671,
+    "articleSection": "History of computational biology",
+    "keywords": "computational biology history, biometry, statistical genetics, Mendel, Galton, Pearson, Fisher, heredity",
+    "author": [{"@type": "Person", "name": "Domen Jemec", "url": "https://domenjemec.com/"}, {"@type": "Person", "name": "Jason Chin", "url": "https://x.com/infoecho/"}, {"@type": "Person", "name": "Bianca Lauro", "url": "https://www.linkedin.com/in/biancamlauro/"}],
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo_square.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.gptomics.com/history_book/era0_part1.html"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg: #fbfafe;
+      --bg2: #ffffff;
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
+      --radius: 14px;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    ::selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    ::-moz-selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a{color: var(--editorial); text-decoration:none}
+    a:hover{text-decoration: underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:18px 0 14px;
+      margin:0 0 22px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:0;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: var(--brand-tint);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--brand)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color: var(--muted);
+      font-size:13.5px;
+      margin-bottom: 22px;
+    }
+    .back-link:hover{color: var(--brand)}
+    .back-link svg{width:12px; height:12px}
+
+    article .post-date{
+      font-size:13px;
+      color: var(--editorial);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    article h1{
+      margin:0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-0.2px;
+      color: var(--ink);
+    }
+    article .byline{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+    article .byline a{color: inherit; text-decoration: underline; text-underline-offset: 3px}
+    article .byline a:hover{color: var(--brand); text-decoration: none}
+    article h2{
+      margin: 36px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      color: var(--ink);
+      scroll-margin-top: 96px;
+    }
+    article h3{
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    article p{
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    article a{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}
+    article a:hover{text-decoration: none}
+    article sup a.footnote-ref{text-decoration: none; font-weight: 600}
+    article sup a.footnote-ref:hover{text-decoration: underline}
+    article sup + sup::before{content: ","; color: var(--muted); font-weight: 400}
+    article .footnote li{scroll-margin-top: 96px}
+    article ul, article ol{
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+    article li{margin-bottom: 6px}
+    article blockquote{
+      border-left: 3px solid var(--spark);
+      padding-left: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    article .hl{background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone}
+    article code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    article pre{
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    article pre code{background: none; color: var(--ink); padding: 0}
+    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    article .figure-pair{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    article .figure-pair img{width: 100%; margin: 0}
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 18, 46, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
+    article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
+    article .katex-display > .katex{white-space: nowrap}
+    @media (max-width: 700px){
+      article .katex-display .katex{font-size: 0.85em}
+    }
+    @media (max-width: 480px){
+      article .katex-display .katex{font-size: 0.72em}
+    }
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(0,183,243,0.10)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--editorial)}
+
+    .toc{
+      position: fixed;
+      top: 120px;
+      left: calc(50% - 620px);
+      width: 200px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding-right: 10px;
+      z-index: 5;
+    }
+    .toc-title{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .toc ol{list-style: none; padding: 0; margin: 0}
+    .toc li{margin: 0}
+    .toc a{
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid var(--border);
+      text-decoration: none;
+    }
+    .toc a:hover{color: var(--ink); border-left-color: var(--brand-edge); text-decoration: none}
+    .toc a.is-active{color: var(--brand); border-left-color: var(--brand)}
+    @media (max-width: 1259px){
+      .toc{display: none}
+    }
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--brand)}
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+  </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</head>
+<body id='top'>
+  <div class='wrap'>
+    <header>
+      <div class='brand'>
+        <a class='brand-link' href='../index.html'>
+          <img class='logo' src='../resources/logo.svg' alt='GPTomics logo' />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label='Primary'>
+        <a href='../blog.html'>Blog</a>
+        <a href='../history_book.html' class='active'>History Book</a>
+        <a href='../index.html#contact'>Contact</a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>
+      </nav>
+    </header>
+
+    <aside class='toc' aria-label='Table of contents'>
+      <div class='toc-title'>On this page</div>
+      <ol id='toc-list'></ol>
+    </aside>
+
+    <main>
+      <a class='back-link' href='../history_book.html'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
+        History Book
+      </a>
+      <article>
+        <div class='post-date'>JUNE 23, 2026</div>
+        <h1>Era 0, Part I: Heredity observed from variation</h1>
+        <p class='byline'>Series authors &middot; <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a>, <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>, and <a href="https://www.linkedin.com/in/biancamlauro/" target="_blank" rel="noopener">Bianca Lauro</a></p>
+        <p><em>Quantitative foundations: biometry and statistical genetics, 1830s–1918</em></p>
+<p>Before heredity was explained with molecular data, scientists analyzed it through phenotypes. Breeders and naturalists watched variation across generations both in ordinary inheritance and through forced cross-breeding.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> The visible patterns they observed and the records they kept of those traits led to some of the earliest foundations of computational biology. These foundations allowed scientists to begin to hypothesize about the hidden structures driving those traits and statistics gave scientists a way to turn observations that had long been anecdotal into hand-calculated quantities.<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref2:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+<p>Once scientists could quantify resemblance, they could analyze populations numerically. Population traits could be treated as distributions with means, variances, correlations, and more. Because this was a new way of evaluating biology, the datasets, descriptive language, and research community had to be developed from the ground up but they did not have to start from scratch. Many scientific and analytical practices were already established such as the rigorous logging of observations, newly developed statistical measurement techniques, information sharing through journals, and using assistants to increase manual calculation throughput.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup><sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup> As the research progressed, this new way of collecting evidence made its way into paper records and printed exchanges but, due to the field still being fragmented, some findings could remain obscure for decades. Despite these limitations, this new approach to analyzing biology started to show it was capable of underpinning new theories. For example, in 1918, Ronald Fisher used a computational foundation to show that continuous biometric traits could arise from discrete Mendelian factors.<sup id="fnref2:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+<p><img alt="Image 1: Mendel's notes on flower-color experiments" src="assets/era0_part1/mendel-flower-colour-notes.jpg" /><br />
+<em>Image 1. Mendel's surviving notes on flower-color experiments, written on the same sheet as editing marks for a sermon.<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup></em></p>
+<h2 id="inheritance-without-a-mechanism">Inheritance without a mechanism</h2>
+<p>By the mid-nineteenth century, natural history still depended largely on collecting, classifying, and comparing observations. Darwin's <em>On the Origin of Species</em> (1859) proposed natural selection but it left one key assumption exposed. Selection could only accumulate change if some variations survived across generations and Darwin did not yet know what carried them. He later tried to answer this question with pangenesis, a mechanism in which tiny "gemmules" from across the body contributed to reproduction, though he privately called the theory "abominably wildly, horridly speculative."<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> Despite this, Darwin and others knew an answer was needed, because without a mechanism of transmission, selection rested on an unexplained assumption.<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> But Darwin's need for persistent heredity ran into a common view at the time called "blending inheritance," in which offspring seemed to inherit an average of their parents' traits. Many scientists found the idea intuitive because offspring often did have traits that looked like a blend of their parents. The trouble with this theory came when analyzing it across many generations. If a tall parent and a short parent produced intermediate children, and that blending continued each generation, variation should wash out toward an average. The differences that breeders and naturalists kept seeing should have faded away, and selection would lose the persistent variation it needed to work on.<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup></p>
+<p>Francis Galton approached that persistence as something that could be measured. Rather than looking for the physical carrier of heredity, he focused on understanding how strongly traits in families and more distant relatives resembled one another.<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> Gregor Mendel had already published evidence in 1866 that inheritance could behave as discrete factors rather than blended resemblance, but that evidence did not reshape the field until its rediscovery around 1900.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup> Since Mendelian inheritance proposed factors that could hold their identity across generations, disappear from view, and return in countable ratios, once the field discovered it, it quickly gained popularity.<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref4:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup> After this, Walter Sutton and Theodor Boveri's work in cytology connected Mendelian segregation to chromosome behavior in the early 1900s, and Thomas Hunt Morgan's fly work made sex-linked inheritance traceable in 1910.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
+<p>Despite these advances, scientists were still unsure what the mechanism of inheritance was. Mendelian factors gave scientists rules for predicting inheritance, and chromosome-focused cytological work suggested where the factors of the mechanism might sit, but the factors themselves were still known only through their effects. Wilhelm Johannsen's pure-line beans made that gap sharper. He could select visible differences within a uniform line, but the descendants did not keep shifting, which showed that the measured trait and the inherited type were not the same thing. In 1909, he named that split "genotype" and "phenotype."<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup> Even with this knowledge the researchers still could not isolate and experiment directly on the inheritance factor. They still did not know how to connect a visible trait to a particular hereditary factor, for instance, how a seed shape followed from a particular factor. Statistics had made visible resemblance quantifiable, and cytology gave the factors a possible cellular location, but the factor itself remained an open, contested question.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<h2 id="what-made-quantification-possible">What made quantification possible</h2>
+<p>Making progress on understanding inheritance without knowing the mechanism was only possible because of advances in statistics. Scientists in physics and astronomy had seen that repeated measurements scattered around a true value and created a bell-shaped "law of error" leading to the normal distribution theory.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> In 1835, Belgian astronomer-statistician Adolphe Quetelet applied the same logic to human traits. Human measurements varied from person to person, but Quetelet argued that they still formed regular population patterns around average values, represented by the "average man," or <em>l'homme moyen</em>.<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> While Quetelet focused on the population mean, Galton used that mean as a baseline for inheritance. He wanted to understand how much of a parent's departure from the mean appeared again in the child versus how much fell back toward the population mean.<sup id="fnref3:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref2:8"><a class="footnote-ref" href="#fn:8">8</a></sup></p>
+<p>Scientists found that applying statistics to inheritance required data to be collected in the right structure. Through the nineteenth century, data collection had come from census-like social statistics, anthropometric surveys, and breeding records.<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup> Those records were useful, but they were not built around family comparison, so Galton began looking to collect measurements that connected relatives across generations that could be statistically analyzed. At the 1884 International Health Exhibition in London, he set up an Anthropometric Laboratory and measured 9,337 visitors, recording height, weight, grip strength, hearing, vision, and other personal data while actually charging each person.<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup> Those rows of comparable measurements let Galton ask whether relatives departed from the population mean together, and whether one trait tended to correlate with another. In that tabular form, human variation could be compared in the way Galton needed so that he could begin to develop modern statistical regression and correlation.<sup id="fnref4:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref3:8"><a class="footnote-ref" href="#fn:8">8</a></sup><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup></p>
+<div style="display: flex; gap: 16px; align-items: flex-start;">
+  <img src="assets/era0_part1/galton-anthropometric-lab-measurements.jpg" alt="Galton Anthropometric Laboratory measurement card" style="width: 48%; height: auto;">
+  <img src="assets/era0_part1/galton-family-heights-notebook.jpg" alt="Galton family heights notebook page" style="width: 48%; height: auto;">
+</div>
+<p><em>Image 2. Left: a measurement card from Galton's Anthropometric Laboratory, dated December 1, 1888. Right: a page from Galton's family-heights notebook, where parent and child heights were recorded in tabular form. Together they show the paper form of the data Galton wanted statistics to explain.<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup></em></p>
+<p>By the end of the nineteenth century there were new methods for measuring heredity but there was still no consensus on what the results meant for inheritance. Around 1900, this question led to a sharp divide when three botanists, Hugo de Vries, Carl Correns, and Erich von Tschermak, rediscovered what would become a pivotal paper. That paper was Mendel's. Historians still debate the independence and priority of that rediscovery,<sup id="fnref3:5"><a class="footnote-ref" href="#fn:5">5</a></sup> but the paper's return turned heredity into a fight between two groups known as the biometricians and Mendelians.<sup id="fnref3:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<h2 id="the-fight-over-heredity">The fight over heredity</h2>
+<p>After Mendel's work was rediscovered around 1900, biologists split into two camps that argued bitterly over what inheritance was and how it worked.<sup id="fnref4:15"><a class="footnote-ref" href="#fn:15">15</a></sup> <strong>Biometricians</strong> treated heredity as a statistical pattern of resemblance across families and populations, built from many ancestral contributions while <strong>Mendelians</strong> treated heredity as the transmission of discrete factors revealed by controlled crosses.<sup id="fnref5:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p>The biometricians, led by Karl Pearson and W. F. R. Weldon, measured continuous variation in wild populations and described it with correlations and distributions. From their side, Mendelian ratios could look too clean, experimental, and detached from the smooth variation visible in real populations. To build out evidence for the biometricians' position, in 1893 Weldon measured different body dimensions of adult female shore crabs from Naples and Plymouth. He found that crab anatomy varied continuously but not randomly, with body dimensions covarying within each measured population rather than varying independently. His later work even suggested that broader-fronted crabs were selectively eliminated in silty water, providing a quantification of natural selection.<sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup> Instead of relying on population measurements, the Mendelians, led by William Bateson, collected evidence from controlled multi-generational crosses. Bateson spent years collecting cases where variation appeared in discontinuous forms, including organisms with extra or missing parts. His 1894 <em>Materials for the Study of Variation</em> treated discontinuity as a biological clue rather than statistical noise.<sup id="fnref6:15"><a class="footnote-ref" href="#fn:15">15</a></sup> From their perspective the biometric averages looked too smooth. A curve could describe a population with high accuracy but it would miss that a trait could reappear unchanged in a cross after a generation. The reappearance of Mendel's paper in 1900 gave Bateson the mechanism he had been looking for. Mendel's work showed that traits could segregate, disappear from view, and return in predictable ratios. Bateson turned this interpretation into the basis of his work and, in 1905, gave the new study of heredity its name, "genetics."<sup id="fnref7:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p><img alt="Image 3: Bateson's sawfly figure with one antenna bearing a foot-like structure" src="assets/era0_part1/bateson-cimbex-fig16.jpg" /><br />
+<em>Image 3. Bateson's Fig. 16 shows a sawfly with one normal antenna and one antenna bearing a foot-like structure. Cases like this made discontinuity look like evidence rather than stray measurement error.<sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup></em></p>
+<p>By 1906, the Weldon-Bateson dispute had become both technical and openly hostile. The technical question was whether Mendel's pea crosses could support the broad claims Bateson made for them. Weldon argued that other crosses showed variable dominance and that the ancestry of the lines still mattered. To him that made Mendel's results look too narrow to serve as a general theory of inheritance. Bateson's 1902 reply called Weldon's criticism "baseless and for the most part irrelevant." For Bateson, the crucial point was that a trait could disappear from view in one generation and return in predictable proportions later. Weldon's death in 1906 left Pearson as the main defender of the biometric position.<sup id="fnref8:15"><a class="footnote-ref" href="#fn:15">15</a></sup> By this point, each side had found a real issue in the other. Bateson saw that the older ancestral-contribution picture could not explain everything heredity did. If inheritance was only graded resemblance from ancestors, it struggled to explain traits that skipped generations and returned intact in predictable ratios. Pearson and Weldon saw that clean Mendelian crosses made heredity look simpler than it was in wild populations, where variation was usually continuous and selection worked through small measured differences.<sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref9:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p>A bridge between the two groups came in two parts. First, in 1908, Godfrey Hardy and Wilhelm Weinberg each independently showed mathematically that Mendelian inheritance could be calculated in a population, not only in a controlled cross. In their proposal they showed that if mating was random and no outside force changed the frequency of a hereditary factor, the different forms of that factor would appear in predictable genotype proportions in the next generation. Since the factors themselves were still unseen, observable trait counts were the evidence biologists could use as the calculation's foundation and a population could remain stable without blending inheritance. Hardy and Weinberg's proposals gave biologists an idealized baseline for what Mendelian heredity did by itself.<sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup> While their proposal explained some of the gap, the harder case was continuous traits, the kind the biometricians had been focused on. Plant breeders unknowingly had the solution since they had shown that in wheat, maize, and tobacco, measured traits could grade smoothly when several Mendelian factors contributed to the same character.<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup> A solution to the second part of the bridge came formally in 1918 when Fisher presented a mathematical answer showing how discrete inheritance could still generate continuous variation.<sup id="fnref3:17"><a class="footnote-ref" href="#fn:17">17</a></sup> He showed that a trait could be shaped by many Mendelian factors, each with a small effect. When added together and blurred by the environment and error, those factors could produce the smooth distributions and family correlations that Pearson and Weldon had measured. Fisher focused on showing how much of the observed variation could be traced to inheritance. He partitioned the measured trait variation into hereditary and environmental components, then related it back to Mendelian factors acting together, changing how biometric data could be interpreted. This change meant that parent-child resemblance, correlations, and distributions were foundational to estimating how hidden hereditary factors contributed to visible variation. This reframing bridged the remaining disagreement between biometricians and Mendelians and was the first step into what would become quantitative genetics.<sup id="fnref4:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+<h2 id="eugenics-and-the-biometric-program">Eugenics and the biometric program</h2>
+<p>While the fight over Mendelism was unfolding, Galton and Pearson were also tying biometry to eugenics. Galton coined the word in 1883, then defined it in 1904 as the study of influences that improve "inborn qualities."<sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup> Galton saw biometric evidence not only as a way to understand heredity, but as a possible tool for guiding marriage, reproduction, and social policy though he did caution that more work was needed and that findings should be used only "so far as they are surely known."<sup id="fnref2:18"><a class="footnote-ref" href="#fn:18">18</a></sup> This caution was echoed by several scientists questioning how far the evidence could go. Weldon defended Galton's statistical methods but warned that limited breeding experiments could not be turned directly into eugenic rules, H. G. Wells worried that family status could be mistaken for inherited ability, and Robert Hutchison argued that food and childhood environment could shape physical and mental development enough to be mistaken for inherited weakness.<sup id="fnref3:18"><a class="footnote-ref" href="#fn:18">18</a></sup> Even with those reservations and disagreements on what the biometric measurements could prove, eugenics gave biometric heredity a public purpose, funding, and institutional force.<sup id="fnref4:18"><a class="footnote-ref" href="#fn:18">18</a></sup><sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup></p>
+<p>Galton then worked to build an institutional home for eugenics. He began the Eugenics Record Office in 1904 and, in 1907, Pearson took over the work. After Galton died in 1911, his estate endowed the Francis Galton Professorship of Eugenics, with Pearson as the first holder.<sup id="fnref2:19"><a class="footnote-ref" href="#fn:19">19</a></sup> For Galton and Pearson, eugenics was the practical promise of biometry. If heredity appeared in family resemblance, then enough family records could show which traits, diseases, abilities, and social outcomes ran through a lineage. To support this research, the laboratory collected and standardized family data on the belief that heredity could be turned into tables, analyzed statistically, and then applied to eugenic policy. While Fisher's 1918 proposal resolved the division between Mendelians and biometricians, it also strengthened the statistical heredity that eugenic arguments depended on. The lab continued this research and Fisher would later hold the Galton Professorship from 1933 to 1943.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup> It would take much of the next century to separate heritability from the claim that a trait was fixed in any one person.<sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup></p>
+<h2 id="key-quantitative-ideas">Key quantitative ideas</h2>
+<p><strong>Gregor Mendel</strong>, an Augustinian friar in Brünn, began with a hybridization problem. He wrote that artificial fertilizations in ornamental plants had revealed a "striking regularity" in the return of hybrid forms.<sup id="fnref5:6"><a class="footnote-ref" href="#fn:6">6</a></sup> The missing step, as he saw it, was to follow those forms through later generations and establish their numerical ratios. Mendel's insight arose from the agricultural world around Brünn, where sheep breeders, plant hybridizers, and his own abbot had treated inheritance as something that could be tested rather than only described.<sup id="fnref2:29"><a class="footnote-ref" href="#fn:29">29</a></sup> He found that peas fit his goal because they offered constant, sharply distinguishable traits, controllable pollination, and fertile hybrid offspring. From 1856 to 1863, he turned the monastery garden into a counting experiment.<sup id="fnref6:6"><a class="footnote-ref" href="#fn:6">6</a></sup> The work spanned many seasons and required counting traits by hand. In one second-generation cross for seed shape, he counted 5,474 round seeds against 1,850 wrinkled, a ratio of 2.96 to 1.<sup id="fnref7:6"><a class="footnote-ref" href="#fn:6">6</a></sup> From that count he inferred a hidden hereditary element behind the visible trait. Mendel used several terms for the visible traits and the inherited factors that produced them, including Merkmale (or characters), Anlage, and Factoren. In his publication he represented the factors with letters such as \(A\) and \(a\).<sup id="fnref8:6"><a class="footnote-ref" href="#fn:6">6</a></sup> He argued that, in a hybrid, egg and pollen cells carried those factors "on average in equal numbers," and combined by chance at fertilization.<sup id="fnref9:6"><a class="footnote-ref" href="#fn:6">6</a></sup> A character, or physical trait, could vanish from appearance without the factor being diluted away. Despite not knowing about genes, the Mendel could see from the factor counts that there had to be a hidden hereditary unit. The paper landed in a local natural-history society journal and was written in the language of plant hybridization. Since it appeared before cytology and chromosomes had become central to heredity, and it was printed in a local publication, the work did not become part of mainstream heredity theory for three decades.<sup id="fnref4:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref10:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref10:15"><a class="footnote-ref" href="#fn:15">15</a></sup></p>
+<p><strong>Francis Galton</strong> focused on the problem of understanding family resemblance. He postulated that if heredity showed up as resemblance among relatives, then resemblance had to be measured across families, rather than argued from individual examples. He first saw the pattern in sweet peas. Galton had friends grow packets of carefully weighed seeds and found that the offspring seeds tended back toward an ordinary size.<sup id="fnref4:8"><a class="footnote-ref" href="#fn:8">8</a></sup> For humans, he saw the same evidence in stature. In his 1886 paper, he described the object of the work as the "degrees of family likeness in different degrees of kinship." Studying 930 adult children from 205 families, he found that the children of tall parents were usually tall, though less extreme than their parents. Their heights retained about two-thirds of the mid-parent deviation from the population mean.<sup id="fnref5:7"><a class="footnote-ref" href="#fn:7">7</a></sup> Galton then generalized the problem, writing that "the large do not always beget the large," yet population proportions stayed surprisingly regular across generations.<sup id="fnref5:8"><a class="footnote-ref" href="#fn:8">8</a></sup> From statistics, correlation gave him a way to measure that regularity between traits and relatives while the mechanism of inheritance remained unknown. Through his work of applying statistics to the observed traits, Galton made a hereditary relationship measurable as a single number.</p>
+<p><strong>Karl Pearson</strong> took Galton's family-resemblance problem and pushed it toward larger samples and stricter formulas. He called this "inheritance in the mass."<sup id="fnref2:9"><a class="footnote-ref" href="#fn:9">9</a></sup> A single family could mislead, but a population of measured parents and children could show how strongly traits moved together. In 1896, building on Galton's correlation idea and Francis Edgeworth's mathematical groundwork, Pearson developed the product-moment coefficient, which gives correlation the \(r\) we still use today.<sup id="fnref3:9"><a class="footnote-ref" href="#fn:9">9</a></sup> In this paper Pearson argued that heredity and regression had been discussed too loosely, with speculation about causes, and needed precise definitions, measurements, formulas, and probability-based analysis before anyone could claim to explain heredity.<sup id="fnref4:9"><a class="footnote-ref" href="#fn:9">9</a></sup> In 1900, Pearson developed the chi-square \(\chi^2\) test, which he described as a way to judge whether observed deviations could reasonably have arisen from random sampling.<sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup> Pearson also founded the journal <em>Biometrika</em> in 1901 with Galton and Weldon, giving the new quantitative biology a home of its own.<sup id="fnref2:11"><a class="footnote-ref" href="#fn:11">11</a></sup> Its first issue said the journal would collect biological data and spread the statistical theory needed for their "scientific treatment."<sup id="fnref3:11"><a class="footnote-ref" href="#fn:11">11</a></sup> In 1902, Weldon applied Pearson's method to Mendel's pea counts and found that one set of results fit Mendel's hypothesis with exceptional closeness.<sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup> For the 639 plants in Mendel's three-character cross, Weldon calculated that a repeated experiment would give a worse fit about 95 times in 100 (\(P \approx 0.95\)), making the original counts look almost too close to the predicted ratios.<sup id="fnref3:10"><a class="footnote-ref" href="#fn:10">10</a></sup> In 1903, at UCL, Pearson's biometric work was formalized as the Drapers' Biometric Laboratory, where assistants helped turn measurements into usable tables.<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup> In this lab, labor was the computation scaler, with people copying measurements, checking arithmetic, and turning scattered observations into numbers a journal could print.<sup id="fnref3:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p><strong>William Sealy Gosset</strong> brought statistics into his work at Guinness in Dublin. He faced a practical limit because large-scale experiments on barley and malt were too expensive for a working brewery and he saw that the normal curve worked best with large samples. He needed a way to measure uncertainty in small samples because of his data limitations. For example, in one experiment with barley he only had two pot-culture comparisons and in another experiment, he had eleven paired seed experiments, seven varieties in one year and four in the next. In 1908 he published his answer, the t-distribution, which could estimate a mean when the sample is small and the true population variation is unknown.<sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> This distribution looks like a normal curve with heavier tails, which means it gives more honest uncertainty for small experiments where a few measurements can swing the average. The ability to handle small samples made the t-test useful far beyond brewing, because biological experiments were often small and noisy for exactly those reasons.<sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">13</a></sup></p>
+<p><strong>Godfrey Hardy and Wilhelm Weinberg</strong> made Mendelian inheritance calculable in populations. While Mendel had shown how factors behaved in crosses, Hardy and Weinberg asked what those factors would do across a whole population. In 1908, each independently showed that under random mating, the frequency of a factor's alternatives could predict genotype proportions in the next generation.<sup id="fnref2:16"><a class="footnote-ref" href="#fn:16">16</a></sup> A stable population no longer had to imply blending inheritance and the biometricians' theory. It could be what Mendelian heredity looked like when no outside force was changing the factor's frequency.<sup id="fnref3:16"><a class="footnote-ref" href="#fn:16">16</a></sup></p>
+<p><strong>Ronald A. Fisher</strong> showed in 1918 that continuous traits did not rule out Mendelian inheritance. Many Mendelian factors, each with a small effect, could add together, while environmental variation blurred the result, producing the smooth variation biometricians had measured.<sup id="fnref5:17"><a class="footnote-ref" href="#fn:17">17</a></sup> Fisher proposed splitting observed variation into inherited and environmental components. Parent-child resemblance and population spread became ways to estimate hidden hereditary contributions, decades before anyone could read the molecules carrying those factors.<sup id="fnref6:17"><a class="footnote-ref" href="#fn:17">17</a></sup></p>
+<h2 id="what-the-era-left">What the era left</h2>
+<p>By the end of this period, biologists could use visible variation to reason about hidden inheritance. There was now a common thread from Mendel's ratios through Fisher's variance. Each method used visible patterns to make claims about hidden inheritance. The hereditary factor itself was still unknown, yet there were ways to quantify its effects. Since the analysis methods were starting to align, data collection and sharing efforts standardized to support them and other scientists could peer review. New journals and biometric laboratories improved the scale at which the work could be done across institutions.<sup id="fnref4:11"><a class="footnote-ref" href="#fn:11">11</a></sup><sup id="fnref4:12"><a class="footnote-ref" href="#fn:12">12</a></sup></p>
+<p>After 1918, the application of statistics would be carried into population genetics. Haldane's mathematical theory of selection began appearing in 1924. Fisher and Wright then built on the same base in 1930 and 1931, turning the 1918 reconciliation into a theory of how hereditary factors change in populations.<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup> The question would shift from resemblance among relatives to movement across generations. At the same time, another branch of quantitative biology was taking shape from work that treated living forms and processes as physical and mathematical problems.<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> This branch used instruments, equations, and physical explanations to make living processes calculable. We'll dive deeper into this branch in our next Era 0 post.</p>
+<hr />
+<h2 id="endnotes">Endnotes</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Charles Darwin, <em>On the Origin of Species</em> (London: John Murray, 1859), made heritable variation central to natural selection but offered no working mechanism of inheritance. Darwin later proposed pangenesis in <em>The Variation of Animals and Plants under Domestication</em> (London: John Murray, 1868), vol. 2, ch. 27; the Darwin Correspondence Project gives Darwin's "provisional hypothesis" framing and his private "abominably wildly, horridly speculative" description. <a href="https://www.gutenberg.org/ebooks/1228" target="_blank" rel="noopener">https://www.gutenberg.org/ebooks/1228</a> ; <a href="https://darwin-online.org.uk/content/frameset?itemID=F877.2&amp;viewtype=text&amp;pageseq=1" target="_blank" rel="noopener">https://darwin-online.org.uk/content/frameset?itemID=F877.2&amp;viewtype=text&amp;pageseq=1</a> ; <a href="https://www.darwinproject.ac.uk/commentary/evolution/inheritance&#160" target="_blank" rel="noopener">https://www.darwinproject.ac.uk/commentary/evolution/inheritance&#160</a>;</p>
+</li>
+<li id="fn:2">
+<p>Wilhelm Johannsen introduced the genotype/phenotype distinction in <em>Elemente der exakten Erblichkeitslehre</em> (Jena: Gustav Fischer, 1909) and developed it for English readers in "The Genotype Conception of Heredity," <em>The American Naturalist</em> 45, 129–159 (1911). For chromosome theory in the same period, see Walter Sutton, "The Chromosomes in Heredity," <em>Biological Bulletin</em> 4, 231–251 (1903); Theodor Boveri, <em>Ergebnisse über die Konstitution der chromatischen Substanz des Zellkerns</em> (Jena: Gustav Fischer, 1904); and Thomas Hunt Morgan, "Sex Limited Inheritance in Drosophila," <em>Science</em> 32, 120–122 (1910). <a href="https://www.biodiversitylibrary.org/item/15717" target="_blank" rel="noopener">https://www.biodiversitylibrary.org/item/15717</a> ; <a href="https://www.journals.uchicago.edu/doi/10.1086/279202" target="_blank" rel="noopener">https://www.journals.uchicago.edu/doi/10.1086/279202</a> ; <a href="https://doi.org/10.5962/bhl.title.28064" target="_blank" rel="noopener">https://doi.org/10.5962/bhl.title.28064</a> ; <a href="https://doi.org/10.1126/science.32.812.120&#160" target="_blank" rel="noopener">https://doi.org/10.1126/science.32.812.120&#160</a>;</p>
+</li>
+<li id="fn:3">
+<p>Adolphe Quetelet, <em>Sur l'homme et le développement de ses facultés, ou Essai de physique sociale</em> (Paris: Bachelier, 1835). Quetelet applied the normal "law of error" tradition from astronomy and physics to human measurements, proposed <em>l'homme moyen</em>, and helped make population-level social statistics part of quantitative human measurement; for the earlier astronomical error-theory setting, see Carl Friedrich Gauss, <em>Theoria motus corporum coelestium in sectionibus conicis solem ambientium</em> (Hamburg: Perthes and Besser, 1809). <a href="https://wellcomecollection.org/works/dt8f77gf" target="_blank" rel="noopener">https://wellcomecollection.org/works/dt8f77gf</a> ; <a href="https://archive.org/details/bub_gb_ORUOAAAAQAAJ&#160" target="_blank" rel="noopener">https://archive.org/details/bub_gb_ORUOAAAAQAAJ&#160</a>;</p>
+</li>
+<li id="fn:4">
+<p>Galton's Anthropometric Laboratory at the 1884 International Health Exhibition measured 9,337 people; his <em>Nature</em> correction gives the fee as threepence (3d), not three pounds. See Galton, "On the Anthropometric Laboratory at the late International Health Exhibition," <em>Journal of the Anthropological Institute of Great Britain and Ireland</em> 14, 205–218 (1885); Galton's 1884 exhibition pamphlet for the measured traits and duplicate records; "Anthropometric Per-Centiles," <em>Nature</em> 31, 223–225 (1885), for the 9,337 figure; and "The Cost of Anthropometric Measurements," <em>Nature</em> 31, 150 (1884), for the threepence correction. <a href="https://galton.org/essays/1880-1889/galton-1884-jaigi-anthro-lab.pdf" target="_blank" rel="noopener">https://galton.org/essays/1880-1889/galton-1884-jaigi-anthro-lab.pdf</a> ; <a href="https://galton.org/essays/1880-1889/galton-1884-anthro-lab.pdf" target="_blank" rel="noopener">https://galton.org/essays/1880-1889/galton-1884-anthro-lab.pdf</a> ; <a href="https://doi.org/10.1038/031223a0" target="_blank" rel="noopener">https://doi.org/10.1038/031223a0</a> ; <a href="https://doi.org/10.1038/031150c0&#160" target="_blank" rel="noopener">https://doi.org/10.1038/031150c0&#160</a>;</p>
+</li>
+<li id="fn:5">
+<p>Mendel's 1866 paper is usually described as rediscovered in 1900 by Hugo de Vries, Carl Correns, and Erich von Tschermak, though historians debate the independence and priority of the rediscovery. The 1900 papers are de Vries, "Das Spaltungsgesetz der Bastarde," <em>Berichte der Deutschen Botanischen Gesellschaft</em> 18, 83–90 (1900); Correns, "G. Mendel's Regel über das Verhalten der Nachkommenschaft der Rassenbastarde," <em>Berichte der Deutschen Botanischen Gesellschaft</em> 18, 158–168 (1900); and Tschermak, "Über künstliche Kreuzung bei Pisum sativum," <em>Zeitschrift für das landwirtschaftliche Versuchswesen in Österreich</em> 3, 465–555 (1900). For the rediscovery debate, see Augustine Brannigan, "The Reification of Mendel," <em>Social Studies of Science</em> 9, 423–454 (1979), and Michal Simunek et al., "'Rediscovery' revised," <em>Plant Biology</em> 13, 835–841 (2011). <a href="https://doi.org/10.1111/j.1438-8677.1900.tb04884.x" target="_blank" rel="noopener">https://doi.org/10.1111/j.1438-8677.1900.tb04884.x</a> ; <a href="https://doi.org/10.1111/j.1438-8677.1900.tb04893.x" target="_blank" rel="noopener">https://doi.org/10.1111/j.1438-8677.1900.tb04893.x</a> ; <a href="https://books.google.com/books/about/Ueber_k%C3%BCnstliche_Kreuzung_bei_Pisum_sat.html?id=XC8bAAAAYAAJ" target="_blank" rel="noopener">https://books.google.com/books/about/Ueber_k%C3%BCnstliche_Kreuzung_bei_Pisum_sat.html?id=XC8bAAAAYAAJ</a> ; <a href="https://doi.org/10.1177/030631277900900403" target="_blank" rel="noopener">https://doi.org/10.1177/030631277900900403</a> ; <a href="https://doi.org/10.1111/j.1438-8677.2011.00491.x&#160" target="_blank" rel="noopener">https://doi.org/10.1111/j.1438-8677.2011.00491.x&#160</a>;</p>
+</li>
+<li id="fn:6">
+<p>Gregor Mendel, "Versuche über Pflanzen-Hybriden," <em>Verhandlungen des naturforschenden Vereines in Brünn</em> 4, 3–47 (1866); presented February and March 1865. The linked Gutenberg text is a 1911 German reprint of the 1866 paper and gives the second-generation seed-shape count as 5,474 round to 1,850 wrinkled seeds (≈2.96:1); the Hamburg transcript is useful for Mendel's Merkmale, Anlage, Factoren, and letter notation. The John Innes Centre page supplies the 1856–1863 experiment window. <a href="https://www.gutenberg.org/ebooks/40854" target="_blank" rel="noopener">https://www.gutenberg.org/ebooks/40854</a> ; <a href="https://www-archiv.fdm.uni-hamburg.de/b-online/d08_mend/mendel.htm" target="_blank" rel="noopener">https://www-archiv.fdm.uni-hamburg.de/b-online/d08_mend/mendel.htm</a> ; <a href="https://www.jic.ac.uk/research-impact/our-strategic-research-programmes/harnessing-biosynthesis-for-sustainable-food-and-health-hbio/impact/peas/the-history-of-pea-research-at-the-john-innes-centre/gregor-mendel-the-father-of-genetics/&#160" target="_blank" rel="noopener">https://www.jic.ac.uk/research-impact/our-strategic-research-programmes/harnessing-biosynthesis-for-sustainable-food-and-health-hbio/impact/peas/the-history-of-pea-research-at-the-john-innes-centre/gregor-mendel-the-father-of-genetics/&#160</a>;</p>
+</li>
+<li id="fn:7">
+<p>Francis Galton, "Regression towards Mediocrity in Hereditary Stature," <em>Journal of the Anthropological Institute of Great Britain and Ireland</em> 15, 246–263 (1886); Galton describes the family-likeness problem, analyzes 930 adult children from 205 parent pairs, and reports that offspring deviated from the mean by about two-thirds of the mid-parent deviation. <a href="https://galton.org/essays/1880-1889/galton-1886-jaigi-regression-stature.pdf&#160" target="_blank" rel="noopener">https://galton.org/essays/1880-1889/galton-1886-jaigi-regression-stature.pdf&#160</a>;</p>
+</li>
+<li id="fn:8">
+<p>Francis Galton, "Co-relations and their measurement, chiefly from anthropometric data," <em>Proceedings of the Royal Society of London</em> 45, 135–145 (1888); <em>Natural Inheritance</em> (London: Macmillan, 1889), including the quincunx and normal-variability material; and "The average contribution of each several ancestor to the total heritage of the offspring," <em>Proceedings of the Royal Society of London</em> 61, 401–413 (1897), his mature statement of ancestral heredity. <a href="https://royalsocietypublishing.org/doi/10.1098/rspl.1888.0082" target="_blank" rel="noopener">https://royalsocietypublishing.org/doi/10.1098/rspl.1888.0082</a> ; <a href="https://galton.org/books/natural-inheritance/" target="_blank" rel="noopener">https://galton.org/books/natural-inheritance/</a> ; <a href="https://galton.org/essays/1890-1899/galton-1897-avg-contribution.pdf&#160" target="_blank" rel="noopener">https://galton.org/essays/1890-1899/galton-1897-avg-contribution.pdf&#160</a>;</p>
+</li>
+<li id="fn:9">
+<p>Karl Pearson, "Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia," <em>Philosophical Transactions of the Royal Society of London. Series A</em> 187, 253–318 (1896); the product-moment correlation coefficient. Galton originated the biological correlation program, Edgeworth supplied mathematical groundwork in "Correlated Averages," <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science</em>, 5th series, 34, 190–204 (1892), and Pearson supplied the working formula. Pearson's phrase "inheritance in the mass" — studying heredity at the population level rather than in a single family — is from this paper. <a href="https://royalsocietypublishing.org/doi/10.1098/rsta.1896.0007" target="_blank" rel="noopener">https://royalsocietypublishing.org/doi/10.1098/rsta.1896.0007</a> ; <a href="https://doi.org/10.1080/14786449208620307&#160" target="_blank" rel="noopener">https://doi.org/10.1080/14786449208620307&#160</a>;</p>
+</li>
+<li id="fn:10">
+<p>Karl Pearson, "On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling," <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science</em>, 5th series, 50, 157–175 (1900), introduced the chi-square goodness-of-fit test. Weldon's 1902 use of Pearsonian goodness-of-fit reasoning against Mendel appears in W. F. R. Weldon, "Mendel's Laws of Alternative Inheritance in Peas," <em>Biometrika</em> 1, 228–254 (1902); for Mendel's three-character cross, Weldon tabulated 639 second-generation plants and computed that a repeat would give a worse fit about 95 times in 100 (P ≈ 0.95), the basis for the "too close" charge. <a href="https://www.tandfonline.com/doi/abs/10.1080/14786440009463897" target="_blank" rel="noopener">https://www.tandfonline.com/doi/abs/10.1080/14786440009463897</a> ; <a href="https://doi.org/10.1093/biomet/1.2.228" target="_blank" rel="noopener">https://doi.org/10.1093/biomet/1.2.228</a> ; <a href="http://www.esp.org/foundations/genetics/classical/holdings/w/wfrw-02.pdf&#160" target="_blank" rel="noopener">http://www.esp.org/foundations/genetics/classical/holdings/w/wfrw-02.pdf&#160</a>;</p>
+</li>
+<li id="fn:11">
+<p><em>Biometrika</em> was founded in 1901 by Karl Pearson, Francis Galton, and W. F. R. Weldon; UCL's department history describes it as the journal those three founded for statistical work on quantitative biology and eugenics. The "scientific treatment" wording comes from the opening editorial, "The Scope of Biometrika," <em>Biometrika</em> 1, 1–2 (1901). <a href="https://www.ucl.ac.uk/mathematical-physical-sciences/our-early-history" target="_blank" rel="noopener">https://www.ucl.ac.uk/mathematical-physical-sciences/our-early-history</a> ; <a href="https://doi.org/10.1093/biomet/1.1.1&#160" target="_blank" rel="noopener">https://doi.org/10.1093/biomet/1.1.1&#160</a>;</p>
+</li>
+<li id="fn:12">
+<p>Pearson's Drapers' Biometric Laboratory at University College London was formalized with Drapers' Company support in 1903, and the broader Pearson program depended on hand calculation, assistants, and laboratory staff. For the institutional history and labor context, see M. Eileen Magnello, "The Non-Correlation of Biometrics and Eugenics: Rival Forms of Laboratory Work in Karl Pearson's Career at University College London," Parts 1–2, <em>History of Science</em> 37, 79–106 and 123–150 (1999); the UCL archive record documents Pearson's 1903 correspondence thanking the Drapers for their £1,000 gift toward statistical research. <a href="https://journals.sagepub.com/doi/10.1177/007327539903700103" target="_blank" rel="noopener">https://journals.sagepub.com/doi/10.1177/007327539903700103</a> ; <a href="https://journals.sagepub.com/doi/10.1177/007327539903700201" target="_blank" rel="noopener">https://journals.sagepub.com/doi/10.1177/007327539903700201</a> ; <a href="https://archives.ucl.ac.uk/calmview/Record.aspx?AddBasket=PEARSON%2F11%2F2%2F19%2F3&amp;id=PEARSON%2F11%2F2%2F19%2F3&amp;src=CalmView.Catalog&#160" target="_blank" rel="noopener">https://archives.ucl.ac.uk/calmview/Record.aspx?AddBasket=PEARSON%2F11%2F2%2F19%2F3&amp;id=PEARSON%2F11%2F2%2F19%2F3&amp;src=CalmView.Catalog&#160</a>;</p>
+</li>
+<li id="fn:13">
+<p>"Student" (William Sealy Gosset), "The Probable Error of a Mean," <em>Biometrika</em> 6, 1–25 (1908), gives the small-sample barley and seed examples and derives the distribution later called Student's t. Stephen Ziliak's archival account says the paper was written at Guinness and published pseudonymously because Gosset's commercial employer required that his identity be shielded from competitors. For the later life-science importance of the t-test, see The Physiological Society's historical account. <a href="https://www.jstor.org/stable/2331554" target="_blank" rel="noopener">https://www.jstor.org/stable/2331554</a> ; <a href="https://www.aeaweb.org/articles?id=10.1257/jep.22.4.199" target="_blank" rel="noopener">https://www.aeaweb.org/articles?id=10.1257/jep.22.4.199</a> ; <a href="https://www.physoc.org/magazine-articles/the-strange-origins-of-the-students-t-test/&#160" target="_blank" rel="noopener">https://www.physoc.org/magazine-articles/the-strange-origins-of-the-students-t-test/&#160</a>;</p>
+</li>
+<li id="fn:14">
+<p>W. F. R. Weldon, "On certain correlated variations in <em>Carcinus maenas</em>," <em>Proceedings of the Royal Society of London</em> 54, 318–329 (1893), using two samples of 1,000 adult female crabs from Naples and Plymouth. For the selection claim, see the Galton-chaired committee report, "An attempt to measure the death-rate due to the selective destruction of <em>Carcinus maenas</em> with respect to a particular dimension," <em>Proceedings of the Royal Society of London</em> 57, 360–379 (1895). J. Arthur Harris's 1911 account summarizes Weldon's later interpretation that fine silt selectively eliminated broader-fronted crabs. <a href="https://royalsocietypublishing.org/doi/10.1098/rspl.1893.0078" target="_blank" rel="noopener">https://royalsocietypublishing.org/doi/10.1098/rspl.1893.0078</a> ; <a href="https://royalsocietypublishing.org/doi/10.1098/rspl.1894.0165" target="_blank" rel="noopener">https://royalsocietypublishing.org/doi/10.1098/rspl.1894.0165</a> ; <a href="https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_78/June_1911/The_Measurement_of_Natural_Selection&#160" target="_blank" rel="noopener">https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_78/June_1911/The_Measurement_of_Natural_Selection&#160</a>;</p>
+</li>
+<li id="fn:15">
+<p>William Bateson, <em>Materials for the Study of Variation, Treated with Especial Regard to Discontinuity in the Origin of Species</em> (London: Macmillan, 1894), framed discontinuous variation as a central evolutionary problem before the 1900 Mendel rediscovery. Bateson's "baseless and for the most part irrelevant" reply to Weldon appears in <em>Mendel's Principles of Heredity: A Defence</em> (Cambridge: Cambridge University Press, 1902); he coined "genetics" in a 1905 letter to Adam Sedgwick and used it publicly in "The Progress of Genetic Research," in the <em>Report of the Third International Conference 1906 on Genetics</em> (London: Royal Horticultural Society, 1907), 90–97. For the biometrician–Mendelian controversy more broadly, see William B. Provine, <em>The Origins of Theoretical Population Genetics</em> (Chicago: University of Chicago Press, 1971), and Nicholas W. Gillham, "The Battle Between the Biometricians and the Mendelians," <em>Science &amp; Education</em> 24, 61–75 (2015). <a href="https://www.biodiversitylibrary.org/item/69820" target="_blank" rel="noopener">https://www.biodiversitylibrary.org/item/69820</a> ; <a href="https://www.gutenberg.org/ebooks/69362" target="_blank" rel="noopener">https://www.gutenberg.org/ebooks/69362</a> ; <a href="https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/naming-genetics/" target="_blank" rel="noopener">https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/naming-genetics/</a> ; <a href="https://www.biodiversitylibrary.org/item/206746" target="_blank" rel="noopener">https://www.biodiversitylibrary.org/item/206746</a> ; <a href="https://press.uchicago.edu/ucp/books/book/chicago/O/bo3618372.html" target="_blank" rel="noopener">https://press.uchicago.edu/ucp/books/book/chicago/O/bo3618372.html</a> ; <a href="https://doi.org/10.1007/s11191-013-9642-1&#160" target="_blank" rel="noopener">https://doi.org/10.1007/s11191-013-9642-1&#160</a>;</p>
+</li>
+<li id="fn:16">
+<p>The Hardy–Weinberg principle was published independently in 1908 by G. H. Hardy and Wilhelm Weinberg; for a single locus under random mating it gives the genotype proportions implied by allele frequencies. See G. H. Hardy, "Mendelian Proportions in a Mixed Population," <em>Science</em> 28, 49–50 (1908), and Wilhelm Weinberg, "Über den Nachweis der Vererbung beim Menschen," <em>Jahreshefte des Vereins für vaterländische Naturkunde in Württemberg</em> 64, 369–382 (1908). <a href="https://www.science.org/doi/10.1126/science.28.706.49" target="_blank" rel="noopener">https://www.science.org/doi/10.1126/science.28.706.49</a> ; <a href="https://wellcomecollection.org/works/ek48psze&#160" target="_blank" rel="noopener">https://wellcomecollection.org/works/ek48psze&#160</a>;</p>
+</li>
+<li id="fn:17">
+<p>R. A. Fisher, "The Correlation between Relatives on the Supposition of Mendelian Inheritance," <em>Transactions of the Royal Society of Edinburgh</em> 52, 399–433 (1918); introduced "variance," partitioned it into genetic and environmental components, and reconciled Mendelian inheritance with continuous biometric variation. <a href="https://doi.org/10.1017/S0080456800012163" target="_blank" rel="noopener">https://doi.org/10.1017/S0080456800012163</a> ; <a href="https://zenodo.org/records/1428666&#160" target="_blank" rel="noopener">https://zenodo.org/records/1428666&#160</a>;</p>
+</li>
+<li id="fn:18">
+<p>Galton coined "eugenics" in <em>Inquiries into Human Faculty and Its Development</em> (London: Macmillan, 1883) and defined it in "Eugenics: Its Definition, Scope, and Aims," <em>American Journal of Sociology</em> 10, 1–25 (1904), as the science of influences that improve "inborn qualities." The 1904 paper and discussion also contain the "so far as they are surely known" qualifier, Galton's actuarial framing, Weldon's large-series-versus-limited-experiment comments, H. G. Wells's worry about class status, and Robert Hutchison's nutrition/environment objection. <a href="https://galton.org/books/human-faculty/" target="_blank" rel="noopener">https://galton.org/books/human-faculty/</a> ; <a href="https://galton.org/essays/1900-1911/galton-1904-am-journ-soc-eugenics-scope-aims.htm&#160" target="_blank" rel="noopener">https://galton.org/essays/1900-1911/galton-1904-am-journ-soc-eugenics-scope-aims.htm&#160</a>;</p>
+</li>
+<li id="fn:19">
+<p>UCL's institutional histories give the Eugenics Record Office in 1904, the Francis Galton Laboratory for National Eugenics in 1907, and Pearson's 1911 Galton Professorship. UCL's Galton Laboratory Records catalogue describes the collection as including research papers and data for studies, and <em>Treasury of Human Inheritance</em>, issued from the Francis Galton Laboratory for National Eugenics, includes pedigrees of physical, psychical, and pathological characters in humans. For the historiography, see M. Eileen Magnello, "The Non-Correlation of Biometrics and Eugenics: Rival Forms of Laboratory Work in Karl Pearson's Career at University College London," Parts 1–2, <em>History of Science</em> 37, 79–106 and 123–150 (1999); Donald A. MacKenzie, <em>Statistics in Britain, 1865–1930: The Social Construction of Scientific Knowledge</em> (Edinburgh: Edinburgh University Press, 1981); and Theodore M. Porter, <em>Karl Pearson: The Scientific Life in a Statistical Age</em> (Princeton: Princeton University Press, 2004). <a href="https://www.ucl.ac.uk/prejudice-in-power/digital-showcase/history-eugenics-inside-ucl" target="_blank" rel="noopener">https://www.ucl.ac.uk/prejudice-in-power/digital-showcase/history-eugenics-inside-ucl</a> ; <a href="https://www.ucl.ac.uk/mathematical-physical-sciences/our-early-history" target="_blank" rel="noopener">https://www.ucl.ac.uk/mathematical-physical-sciences/our-early-history</a> ; <a href="https://archives.ucl.ac.uk/CalmView/Record.aspx?src=CalmView.Catalog&amp;id=GALTON+LABORATORY" target="_blank" rel="noopener">https://archives.ucl.ac.uk/CalmView/Record.aspx?src=CalmView.Catalog&amp;id=GALTON+LABORATORY</a> ; <a href="https://wellcomecollection.org/works/pe2s8c7d" target="_blank" rel="noopener">https://wellcomecollection.org/works/pe2s8c7d</a> ; <a href="https://journals.sagepub.com/doi/10.1177/007327539903700103" target="_blank" rel="noopener">https://journals.sagepub.com/doi/10.1177/007327539903700103</a> ; <a href="https://journals.sagepub.com/doi/10.1177/007327539903700201" target="_blank" rel="noopener">https://journals.sagepub.com/doi/10.1177/007327539903700201</a> ; <a href="https://search.worldcat.org/title/statistics-in-britain-1865-1930-the-social-construction-of-scientific-knowledge/oclc/8952686" target="_blank" rel="noopener">https://search.worldcat.org/title/statistics-in-britain-1865-1930-the-social-construction-of-scientific-knowledge/oclc/8952686</a> ; <a href="https://www.degruyterbrill.com/document/doi/10.1515/9781400835706/html&#160" target="_blank" rel="noopener">https://www.degruyterbrill.com/document/doi/10.1515/9781400835706/html&#160</a>;</p>
+</li>
+<li id="fn:20">
+<p>R. A. Fisher succeeded Pearson as Galton Professor of Eugenics in 1933 and resigned in 1943 — context noted because it falls outside this post's 1830s–1918 window. See "Dr. R. A. Fisher, F.R.S.," <em>Nature</em> 132, 21 (1933), and UCL's history of eugenics inside UCL. <a href="https://www.nature.com/articles/132021a0" target="_blank" rel="noopener">https://www.nature.com/articles/132021a0</a> ; <a href="https://www.ucl.ac.uk/prejudice-in-power/digital-showcase/history-eugenics-inside-ucl&#160" target="_blank" rel="noopener">https://www.ucl.ac.uk/prejudice-in-power/digital-showcase/history-eugenics-inside-ucl&#160</a>;</p>
+</li>
+<li id="fn:21">
+<p>The post-1918 population-genetics handoff (downstream of this era): J. B. S. Haldane, "A Mathematical Theory of Natural and Artificial Selection. Part I," <em>Transactions of the Cambridge Philosophical Society</em> 23, 19–41 (1924); R. A. Fisher, <em>The Genetical Theory of Natural Selection</em> (Oxford: Clarendon Press, 1930); and Sewall Wright, "Evolution in Mendelian Populations," <em>Genetics</em> 16, 97–159 (1931). <a href="https://jbshaldane.org/books/1932-Causes-of-Evolution/haldane-MathematicalTheoryOfNaturalAndArtificialSelection-1924-1932.pdf" target="_blank" rel="noopener">https://jbshaldane.org/books/1932-Causes-of-Evolution/haldane-MathematicalTheoryOfNaturalAndArtificialSelection-1924-1932.pdf</a> ; <a href="https://www.biodiversitylibrary.org/item/69976" target="_blank" rel="noopener">https://www.biodiversitylibrary.org/item/69976</a> ; <a href="https://academic.oup.com/genetics/article-abstract/16/2/97/6045152&#160" target="_blank" rel="noopener">https://academic.oup.com/genetics/article-abstract/16/2/97/6045152&#160</a>;</p>
+</li>
+<li id="fn:22">
+<p>The correction to simple readings of heredity rests on the modern definition of heritability as a population parameter, not a fixed statement about an individual or an immutable trait. See Peter M. Visscher, William G. Hill, and Naomi R. Wray, "Heritability in the genomics era — concepts and misconceptions," <em>Nature Reviews Genetics</em> 9, 255–266 (2008). <a href="https://www.nature.com/articles/nrg2322&#160" target="_blank" rel="noopener">https://www.nature.com/articles/nrg2322&#160</a>;</p>
+</li>
+<li id="fn:23">
+<p>Fleeming Jenkin, "The Origin of Species," <em>North British Review</em> 46, 277–318 (1867), developed the blending-inheritance "swamping" objection that intercrossing would dilute exceptional variants; for a modern historical audit, see Michael Bulmer, "Did Jenkin's swamping argument invalidate Darwin's theory of natural selection?", <em>British Journal for the History of Science</em> 37, 281–297 (2004). <a href="https://web.viu.ca/johnstoi/darwin/jenkin.htm" target="_blank" rel="noopener">https://web.viu.ca/johnstoi/darwin/jenkin.htm</a> ; <a href="https://doi.org/10.1017/S0007087404005850&#160" target="_blank" rel="noopener">https://doi.org/10.1017/S0007087404005850&#160</a>;</p>
+</li>
+<li id="fn:24">
+<p>The parallel mechanistic and physical-mathematical lane is anchored here by D'Arcy Wentworth Thompson, <em>On Growth and Form</em> (Cambridge: Cambridge University Press, 1917), which treated organismal shape and growth as problems of physical and mathematical explanation; later posts can carry the fuller physiology, reaction-diffusion, and biophysical-modeling arc. <a href="https://www.gutenberg.org/ebooks/55264&#160" target="_blank" rel="noopener">https://www.gutenberg.org/ebooks/55264&#160</a>;</p>
+</li>
+<li id="fn:25">
+<p>Wilhelm Johannsen, <em>Ueber Erblichkeit in Populationen und in reinen Linien: Ein Beitrag zur Beleuchtung schwebender Selektionsfragen</em> (Jena: Gustav Fischer, 1903), introduced the pure-line framing; Johannsen later introduced and developed the genotype/phenotype distinction in the 1909 and 1911 works cited in note 2. <a href="https://archive.org/details/uebererblichkei00johagoog" target="_blank" rel="noopener">https://archive.org/details/uebererblichkei00johagoog</a> ; <a href="https://www.journals.uchicago.edu/doi/10.1086/279202&#160" target="_blank" rel="noopener">https://www.journals.uchicago.edu/doi/10.1086/279202&#160</a>;</p>
+</li>
+<li id="fn:26">
+<p>Herman Nilsson-Ehle, <em>Kreuzungsuntersuchungen an Hafer und Weizen</em> (Lund: H. Ohlssons, 1909), connected quantitative cereal traits to multiple Mendelian factors; R. A. Emerson and E. M. East, <em>The Inheritance of Quantitative Characters in Maize</em> (Nebraska Agricultural Experiment Station Research Bulletin 2, 1913), and E. M. East, "Studies on Size Inheritance in Nicotiana," <em>Genetics</em> 1, 164–176 (1916), extended the many-factor treatment of quantitative plant traits. <a href="https://doi.org/10.1007/BF02047779" target="_blank" rel="noopener">https://doi.org/10.1007/BF02047779</a> ; <a href="https://digitalcommons.unl.edu/ardhistrb/3/" target="_blank" rel="noopener">https://digitalcommons.unl.edu/ardhistrb/3/</a> ; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1193657/&#160" target="_blank" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC1193657/&#160</a>;</p>
+</li>
+<li id="fn:27">
+<p>University Art Gallery, University of Pittsburgh, "Measurements from Galton's Anthropometric Lab," object L201606_002 (December 1, 1888); J. A. Hanley, "Family heights: Copy of original data," page 1 image from Galton's family-height notebook, Galton Papers, University College London. These sources support the paired images of Galton's anthropometric measurement card and family-height table. <a href="https://collections.uag.pitt.edu/Detail/objects/10124" target="_blank" rel="noopener">https://collections.uag.pitt.edu/Detail/objects/10124</a> ; <a href="https://jhanley.biostat.mcgill.ca/galton/notebook/index.html" target="_blank" rel="noopener">https://jhanley.biostat.mcgill.ca/galton/notebook/index.html</a> ; <a href="https://jhanley.biostat.mcgill.ca/galton/notebook/images/1_page_1.jpg&#160" target="_blank" rel="noopener">https://jhanley.biostat.mcgill.ca/galton/notebook/images/1_page_1.jpg&#160</a>;</p>
+</li>
+<li id="fn:28">
+<p>Erik Schwarzbach, Petr Smýkal, Ondřej Dostál, Michaela Jarkovská, and Simona Valová, "Gregor J. Mendel - Genetics Founding Father," <em>Czech Journal of Genetics and Plant Breeding</em> 50, 43–51 (2014), fig. 3, 46; source for the image and for identifying the sheet as Mendel notes on flower-color experiments with sermon editing marks. Our separate translation of the spread reads the left page as a Pisum character inventory and the right page as notes on Geum and Aquilegia hybrids, including fertility, sterility, parental resemblance, variation, a 1:2:1 notation, and lettered character states for Geum intermedium. <a href="https://www.researchgate.net/publication/263353344_Gregor_J_Mendel_-_Genetics_Founding_Father&#160" target="_blank" rel="noopener">https://www.researchgate.net/publication/263353344_Gregor_J_Mendel_-_Genetics_Founding_Father&#160</a>;</p>
+</li>
+<li id="fn:29">
+<p>Péter Poczai, Neil Bell, and Jaakko Hyvönen, "Imre Festetics and the Sheep Breeders' Society of Moravia: Mendel's Forgotten 'Research Network,'" <em>PLOS Biology</em> 12, e1001772 (2014), describes the Brünn agricultural-heredity setting around Mendel, including Abbot Cyrill Napp's role, while noting that there is no direct evidence Mendel read Festetics. <a href="https://doi.org/10.1371/journal.pbio.1001772&#160" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pbio.1001772&#160</a>;</p>
+</li>
+<li id="fn:30">
+<p>William Bateson, <em>Materials for the Study of Variation, Treated with Especial Regard to Discontinuity in the Origin of Species</em> (London: Macmillan, 1894), 147, fig. 16. The cited figure shows the sawfly antenna malformation used in Image 3. <a href="https://archive.org/details/materialsforstu00bate&#160" target="_blank" rel="noopener">https://archive.org/details/materialsforstu00bate&#160</a>;</p>
+</li>
+</ol>
+</div>
+      </article>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 GPTomics. Just figure things out.</div>
+      <div><a href='#top'>I'm lazy, take me to the top</a></div>
+    </footer>
+  </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
+  <script>
+    (function(){
+      var list = document.getElementById('toc-list');
+      var toc = document.querySelector('.toc');
+      if(!list || !toc) return;
+      var headings = document.querySelectorAll('article h2');
+      if(!headings.length){ toc.style.display = 'none'; return; }
+      var links = {};
+      headings.forEach(function(h){
+        if(!h.id) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+        links[h.id] = a;
+      });
+      if('IntersectionObserver' in window){
+        var current = null;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              if(current) current.classList.remove('is-active');
+              current = links[e.target.id];
+              if(current) current.classList.add('is-active');
+            }
+          });
+        }, {rootMargin: '-80px 0px -70% 0px'});
+        headings.forEach(function(h){ if(h.id) io.observe(h); });
+      }
+    })();
+  </script>
+</body>
+</html>

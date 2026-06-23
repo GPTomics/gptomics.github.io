@@ -16,8 +16,61 @@ BLOGS_DIR = ROOT / 'blogs'
 OUT_DIR = ROOT / 'blog'
 MANIFEST = BLOGS_DIR / 'blogs.json'
 AUTHORS = BLOGS_DIR / 'authors.json'
+HISTORY_BOOK_DIR = ROOT / 'history_book'
 SITE_URL = 'https://www.gptomics.com'
 GA_ID = 'G-WC0W8D6J20'
+
+ICON_GITHUB = "<a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>"
+ICON_X = "<a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>"
+
+
+def nav_items(active):
+    '''Primary nav inner HTML for a post page (paths are one level up). active is "blog" or "history_book".'''
+    blog = " class='active'" if active == 'blog' else ''
+    cb = " class='active'" if active == 'history_book' else ''
+    return (
+        f"<a href='../blog.html'{blog}>Blog</a>\n"
+        f"        <a href='../history_book.html'{cb}>History Book</a>\n"
+        f"        <a href='../index.html#contact'>Contact</a>\n"
+        f"        {ICON_GITHUB}\n"
+        f"        {ICON_X}"
+    )
+
+
+MATH_RE = re.compile(r'(\$\$.+?\$\$|\\\(.+?\\\)|\\\[.+?\\\])', re.DOTALL)
+
+
+def protect_math(md_text):
+    '''Stash math spans so python-markdown does not eat their backslashes or split them on newlines.'''
+    spans = []
+
+    def stash(m):
+        spans.append(m.group(1))
+        return f'MATHzZ{len(spans) - 1}zZ'
+
+    return MATH_RE.sub(stash, md_text), spans
+
+
+def restore_math(html_str, spans):
+    for i, s in enumerate(spans):
+        html_str = html_str.replace(f'MATHzZ{i}zZ', s)
+    return html_str
+
+
+def linkify_footnotes(html_str):
+    '''Linkify bare URLs and strip backref arrows inside the python-markdown footnote block.'''
+    def fix(block):
+        b = re.sub(r"<a class=\"footnote-backref\".*?</a>", '', block.group(0), flags=re.DOTALL)
+
+        def link(m):
+            u, trail = m.group(1), ''
+            while u and u[-1] in '.,;':
+                trail, u = u[-1] + trail, u[:-1]
+            return f"<a href=\"{u}\" target=\"_blank\" rel=\"noopener\">{u}</a>{trail}"
+
+        return re.sub(r'(https?://[^\s<]+)', link, b)
+
+    return re.sub(r'<div class="footnote">.*?</div>', fix, html_str, flags=re.DOTALL)
 
 TEMPLATE = '''<!doctype html>
 <html lang='en'>
@@ -184,6 +237,7 @@ TEMPLATE = '''<!doctype html>
       font-weight: 800;
       letter-spacing: 0.1px;
       color: var(--ink);
+      scroll-margin-top: 96px;
     }}
     article h3{{
       margin: 26px 0 10px;
@@ -199,6 +253,10 @@ TEMPLATE = '''<!doctype html>
     }}
     article a{{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}}
     article a:hover{{text-decoration: none}}
+    article sup a.footnote-ref{{text-decoration: none; font-weight: 600}}
+    article sup a.footnote-ref:hover{{text-decoration: underline}}
+    article sup + sup::before{{content: ","; color: var(--muted); font-weight: 400}}
+    article .footnote li{{scroll-margin-top: 96px}}
     article ul, article ol{{
       color: var(--ink);
       font-size: 16.5px;
@@ -394,14 +452,7 @@ TEMPLATE = '''<!doctype html>
         </a>
       </div>
       <nav aria-label='Primary'>
-        <a href='../blog.html' class='active'>Blog</a>
-        <a href='../index.html#contact'>Contact</a>
-        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'>
-          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>
-        </a>
-        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'>
-          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>
-        </a>
+        {nav_items}
       </nav>
     </header>
 
@@ -411,9 +462,9 @@ TEMPLATE = '''<!doctype html>
     </aside>
 
     <main>
-      <a class='back-link' href='../blog.html'>
+      <a class='back-link' href='{back_link_href}'>
         <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
-        All posts
+        {back_link_label}
       </a>
       <article>
         <div class='post-date'>{display_date}</div>
@@ -552,13 +603,15 @@ def save_manifest(entries):
     MANIFEST.write_text(json.dumps(entries_sorted, indent=2) + '\n')
 
 
-def upsert_manifest(manifest, file_name, iso_date, title, author):
+def upsert_manifest(manifest, file_name, iso_date, title, author, extra=None):
+    extra = extra or {}
     for entry in manifest:
         if entry['file'] == file_name:
             entry['title'] = title
             entry['author'] = author
+            entry.update(extra)
             return manifest
-    manifest.append({'file': file_name, 'date': iso_date, 'title': title, 'author': author})
+    manifest.append({'file': file_name, 'date': iso_date, 'title': title, 'author': author, **extra})
     return manifest
 
 
@@ -566,6 +619,7 @@ def parse_args():
     p = argparse.ArgumentParser(description='Generate a blog post HTML page from markdown.')
     p.add_argument('markdown', help='path to the .md post')
     p.add_argument('--author', required=True, nargs='+', help='one or more authors (space-separated, quote multi-word names); homepage URLs come from blogs/authors.json')
+    p.add_argument('--history_book', action='store_true', help='publish under the History Book series (history_book/) instead of the blog')
     return p.parse_args()
 
 
@@ -577,9 +631,11 @@ def main():
         sys.exit(1)
 
     slug = src.stem
+    out_dir = HISTORY_BOOK_DIR if args.history_book else OUT_DIR
+    section = 'history_book' if args.history_book else 'blog'
     md_dest = BLOGS_DIR / f'{slug}.md'
-    html_dest = OUT_DIR / f'{slug}.html'
-    OUT_DIR.mkdir(exist_ok=True)
+    html_dest = out_dir / f'{slug}.html'
+    out_dir.mkdir(exist_ok=True)
     BLOGS_DIR.mkdir(exist_ok=True)
 
     if src.resolve() != md_dest.resolve():
@@ -597,7 +653,9 @@ def main():
     manifest = load_manifest()
     existing = next((e for e in manifest if e['file'] == md_dest.name), None)
     iso_date = existing['date'] if existing else date.today().isoformat()
-    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field)
+    href = f'{section}/{slug}.html'
+    extra = {'series': 'History Book', 'path': href} if args.history_book else None
+    manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field, extra)
     save_manifest(manifest)
 
     authors_map = load_authors()
@@ -616,6 +674,8 @@ def main():
         author_html = f'{links[0]} and {links[1]}'
     else:
         author_html = ', '.join(links[:-1]) + f', and {links[-1]}'
+    if args.history_book:
+        author_html = f'Series authors &middot; {author_html}'
 
     article_author_meta = '\n  '.join(f"<meta property='article:author' content='{html.escape(n)}' />" for n in author_names)
 
@@ -630,10 +690,13 @@ def main():
     else:
         author_jsonld = '[' + ', '.join(author_jsonld_entry(n, u) for n, u in author_pairs) + ']'
 
-    body_html = markdown.markdown(body_md, extensions=['extra', 'sane_lists', 'nl2br', 'toc'])
+    protected_md, math_spans = protect_math(body_md)
+    body_html = markdown.markdown(protected_md, extensions=['extra', 'sane_lists', 'nl2br', 'toc'])
     body_html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', body_html, flags=re.DOTALL)
+    body_html = linkify_footnotes(body_html)
+    body_html = restore_math(body_html, math_spans)
 
-    url = f'{SITE_URL}/blog/{slug}.html'
+    url = f'{SITE_URL}/{href}'
     page = TEMPLATE.format(
         title=html.escape(title),
         title_html=html.escape(title),
@@ -647,11 +710,14 @@ def main():
         display_date=format_date(iso_date),
         year=date.today().year,
         body_html=body_html,
+        nav_items=nav_items(section),
+        back_link_href='../history_book.html' if args.history_book else '../blog.html',
+        back_link_label='History Book' if args.history_book else 'All posts',
         SITE_URL=SITE_URL,
         GA_ID=GA_ID,
     )
     html_dest.write_text(page)
-    print(f'wrote blog/{html_dest.name}')
+    print(f'wrote {href}')
     print(f"manifest: {md_dest.name} @ {iso_date} by {', '.join(author_names)}")
 
 

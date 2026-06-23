@@ -1,5 +1,17 @@
 [
   {
+    "file": "era0_part1.md",
+    "date": "2026-06-23",
+    "title": "Era 0, Part I: Heredity observed from variation",
+    "author": [
+      "Domen Jemec",
+      "Jason Chin",
+      "Bianca Lauro"
+    ],
+    "series": "History Book",
+    "path": "history_book/era0_part1.html"
+  },
+  {
     "file": "conway_law_genomics.md",
     "date": "2026-05-27",
     "title": "Conway's Law and the Shape of Computational Genomics Software",
