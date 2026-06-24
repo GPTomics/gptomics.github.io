@@ -27,19 +27,19 @@
   <meta property="og:description" content="A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.gptomics.com/history_book.html" />
-  <meta property="og:image" content="https://www.gptomics.com/resources/logo_square.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1000" />
-  <meta property="og:image:height" content="1000" />
-  <meta property="og:image:alt" content="GPTomics logo" />
+  <meta property="og:image" content="https://www.gptomics.com/resources/history_book_card.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Stylized botanical illustration of a pea plant in iris violet" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@gptomics" />
   <meta name="twitter:creator" content="@gptomics" />
   <meta name="twitter:title" content="A historical overview of modern computational biology" />
   <meta name="twitter:description" content="A historical overview of modern computational biology, a chronological series of essays on applying computers to biology, released one era at a time." />
-  <meta name="twitter:image" content="https://www.gptomics.com/resources/logo_square.png" />
-  <meta name="twitter:image:alt" content="GPTomics logo" />
+  <meta name="twitter:image" content="https://www.gptomics.com/resources/history_book_card.jpg" />
+  <meta name="twitter:image:alt" content="Stylized botanical illustration of a pea plant in iris violet" />
 
   <script type="application/ld+json">
   {
@@ -53,9 +53,9 @@
     "mainEntityOfPage": "https://www.gptomics.com/history_book.html",
     "inLanguage": "en",
     "datePublished": "2026-06-23T12:00:00-07:00",
-    "dateModified": "2026-06-23T12:00:00-07:00",
+    "dateModified": "2026-06-24T14:00:00-07:00",
     "keywords": "computational biology history, bioinformatics history, history of science, biometry, statistical genetics, Mendel, Galton",
-    "image": "https://www.gptomics.com/resources/logo_square.png",
+    "image": "https://www.gptomics.com/resources/history_book_card.jpg",
     "isPartOf": {
       "@type": "WebSite",
       "name": "GPTomics",
@@ -162,6 +162,11 @@
     .series-authors{margin:0 0 18px; color: var(--muted); font-size:15px; font-style:italic}
     .series-authors a{color: inherit; text-decoration:underline; text-underline-offset:3px}
     .series-authors a:hover{color: var(--brand); text-decoration:none}
+    .summary-band{display:flex; gap:34px; align-items:flex-start}
+    .cover-plate{margin:0; flex:0 0 80px; max-width:80px}
+    .cover-plate img{display:block; width:100%; height:auto}
+    .summary-text{flex:1 1 auto; min-width:0}
+    .summary-text > :first-child{margin-top:0}
 
     /*
       Time-based timeline. Vertical position maps to year:
@@ -280,6 +285,8 @@
     a.part-box:hover + .hspan{opacity:1}
 
     @media (max-width: 720px){
+      .summary-band{flex-direction:column; gap:14px}
+      .cover-plate{flex-basis:auto; max-width:150px; margin:0}
       .timeline{min-height:0}
       .timeline::before{left:7px; margin-left:0; top:6px; height:auto; bottom:24px}
       .coverage, .tick, .hspan{display:none}
@@ -328,18 +335,25 @@
       <section class="summary" aria-label="About">
         <hr>
         <h2>A historical overview of modern computational biology</h2>
-        <p class="series-authors">
-          Series co-authors:
-          <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a>,
-          <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>, and
-          <a href="https://www.linkedin.com/in/biancamlauro/" target="_blank" rel="noopener">Bianca Lauro</a>
-        </p>
-        <p>
-          This is a somewhat chronological series of medium-depth essays on the history of studying biology through a computational lens. Biology has had quantitative roots for centuries, but we focus on the run-up to computing in biology and the application of computers to biological problems. Expect that, as we get closer to the present, the essays will go deeper.
-        </p>
-        <p>
-          We'll release one essay at a time as we develop the series. Please reach out if you spot anything we should correct or add.
-        </p>
+        <div class="summary-band">
+          <figure class="cover-plate">
+            <img src="resources/history_book.webp" width="480" height="918" alt="Stylized botanical illustration of a pea plant in iris violet" />
+          </figure>
+          <div class="summary-text">
+            <p class="series-authors">
+              Series co-authors:
+              <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a>,
+              <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>, and
+              <a href="https://www.linkedin.com/in/biancamlauro/" target="_blank" rel="noopener">Bianca Lauro</a>
+            </p>
+            <p>
+              This is a somewhat chronological series of medium-depth essays on the history of studying biology through a computational lens. Biology has had quantitative roots for centuries, but we focus on the run-up to computing in biology and the application of computers to biological problems. Expect that, as we get closer to the present, the essays will go deeper.
+            </p>
+            <p>
+              We'll release one essay at a time as we develop the series. Please reach out if you spot anything we should correct or add.
+            </p>
+          </div>
+        </div>
       </section>
 
       <div class="timeline">
