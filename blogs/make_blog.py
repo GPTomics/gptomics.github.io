@@ -60,7 +60,7 @@ def restore_math(html_str, spans):
 def linkify_footnotes(html_str):
     '''Linkify bare URLs and strip backref arrows inside the python-markdown footnote block.'''
     def fix(block):
-        b = re.sub(r"<a class=\"footnote-backref\".*?</a>", '', block.group(0), flags=re.DOTALL)
+        b = re.sub(r"(?:&#160;|\s)*<a class=\"footnote-backref\".*?</a>", '', block.group(0), flags=re.DOTALL)
 
         def link(m):
             u, trail = m.group(1), ''
@@ -71,6 +71,19 @@ def linkify_footnotes(html_str):
         return re.sub(r'(https?://[^\s<]+)', link, b)
 
     return re.sub(r'<div class="footnote">.*?</div>', fix, html_str, flags=re.DOTALL)
+
+
+def link_figures(html_str):
+    '''Give each figure paragraph an id and turn in-text "Figure N" mentions into anchors that scroll to it.'''
+    html_str = re.sub(r'<p>(<img[^>]*>\s*<br\s*/>\s*<em>Figure (\d+)\.)', r'<p id="figure-\2">\1', html_str)
+
+    def link(m):
+        if m.group(1):
+            return m.group(0)
+        n = m.group(2)
+        return f'<a class="fig-ref" href="#figure-{n}">Figure {n}</a>'
+
+    return re.sub(r'(<em>)?Figure (\d+)', link, html_str)
 
 TEMPLATE = '''<!doctype html>
 <html lang='en'>
@@ -253,6 +266,9 @@ TEMPLATE = '''<!doctype html>
     }}
     article a{{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}}
     article a:hover{{text-decoration: none}}
+    article a.fig-ref{{color: var(--brand); text-decoration: none; border-bottom: 1px dotted var(--brand-edge)}}
+    article a.fig-ref:hover{{border-bottom-style: solid; text-decoration: none}}
+    article p[id^="figure-"]{{scroll-margin-top: 96px}}
     article sup a.footnote-ref{{text-decoration: none; font-weight: 600}}
     article sup a.footnote-ref:hover{{text-decoration: underline}}
     article sup + sup::before{{content: ","; color: var(--muted); font-weight: 400}}
@@ -694,6 +710,7 @@ def main():
     body_html = markdown.markdown(protected_md, extensions=['extra', 'sane_lists', 'nl2br', 'toc'])
     body_html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', body_html, flags=re.DOTALL)
     body_html = linkify_footnotes(body_html)
+    body_html = link_figures(body_html)
     body_html = restore_math(body_html, math_spans)
 
     url = f'{SITE_URL}/{href}'

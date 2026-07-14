@@ -1,5 +1,14 @@
 [
   {
+    "file": "your-genome-report.md",
+    "date": "2026-07-14",
+    "title": "What Your Genome Report Doesn't Say",
+    "author": [
+      "Jason Chin",
+      "Domen Jemec"
+    ]
+  },
+  {
     "file": "era0_part1.md",
     "date": "2026-06-23",
     "title": "Era 0, Part I: Heredity observed from variation",
