@@ -1,5 +1,14 @@
 [
   {
+    "file": "some-guy-from-buffalo.md",
+    "date": "2026-07-28",
+    "title": "Part 1: Some Guy From Buffalo",
+    "author": [
+      "Jason Chin",
+      "Domen Jemec"
+    ]
+  },
+  {
     "file": "your-genome-report.md",
     "date": "2026-07-14",
     "title": "What Your Genome Report Doesn't Say",

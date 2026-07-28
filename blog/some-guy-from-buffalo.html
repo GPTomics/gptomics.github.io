@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='Human genomics treats one anonymous man from Buffalo as the center of the genomic universe. Better reference genomes still leave the center in place.' />
+  <title>Part 1: Some Guy From Buffalo | GPTomics</title>
+  <meta property='og:site_name' content='GPTomics' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:title' content='Part 1: Some Guy From Buffalo' />
+  <meta property='og:description' content='Human genomics treats one anonymous man from Buffalo as the center of the genomic universe. Better reference genomes still leave the center in place.' />
+  <meta property='og:url' content='https://www.gptomics.com/blog/some-guy-from-buffalo.html' />
+  <meta property='og:type' content='article' />
+  <meta property='og:image' content='https://www.gptomics.com/blog/assets/some-guy-from-buffalo/Tychonian.png' />
+  <meta property='og:image:width' content='600' />
+  <meta property='og:image:height' content='640' />
+  <meta property='og:image:alt' content='A seventeenth-century illustration of the Tychonic planetary system' />
+  <meta property='article:author' content='Jason Chin' />
+  <meta property='article:author' content='Domen Jemec' />
+  <meta property='article:published_time' content='2026-07-28' />
+  <meta property='article:modified_time' content='2026-07-28' />
+  <meta property='article:section' content='Genomics' />
+  <meta property='article:tag' content='reference genome' />
+  <meta property='article:tag' content='GRCh38' />
+  <meta property='article:tag' content='CHM13' />
+  <meta property='article:tag' content='genomic relativity' />
+  <meta property='article:tag' content='history of science' />
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@gptomics' />
+  <meta name='twitter:creator' content='@infoecho' />
+  <meta name='twitter:title' content='Part 1: Some Guy From Buffalo' />
+  <meta name='twitter:description' content='Human genomics treats one anonymous man from Buffalo as the center of the genomic universe. Better reference genomes still leave the center in place.' />
+  <meta name='twitter:image' content='https://www.gptomics.com/blog/assets/some-guy-from-buffalo/Tychonian.png' />
+  <meta name='twitter:image:alt' content='A seventeenth-century illustration of the Tychonic planetary system' />
+  <link rel='canonical' href='https://www.gptomics.com/blog/some-guy-from-buffalo.html' />
+  <link rel='icon' type='image/svg+xml' href='../resources/logo.svg' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
+  <link rel='preconnect' href='https://www.googletagmanager.com' />
+  <meta name='author' content='Jason Chin, Domen Jemec' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Part 1: Some Guy From Buffalo",
+    "description": "Human genomics treats one anonymous man from Buffalo as the center of the genomic universe. Better reference genomes still leave the center in place.",
+    "datePublished": "2026-07-28",
+    "dateModified": "2026-07-28",
+    "articleSection": "Genomics",
+    "keywords": "reference genome, GRCh38, CHM13, genomic relativity, RP11, history of science, Copernicus, Tycho Brahe",
+    "image": "https://www.gptomics.com/blog/assets/some-guy-from-buffalo/Tychonian.png",
+    "author": [{"@type": "Person", "name": "Jason Chin", "url": "https://x.com/infoecho/"}, {"@type": "Person", "name": "Domen Jemec", "url": "https://domenjemec.com/"}],
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo_square.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.gptomics.com/blog/some-guy-from-buffalo.html"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg: #fbfafe;
+      --bg2: #ffffff;
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
+      --radius: 14px;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    ::selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    ::-moz-selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a{color: var(--editorial); text-decoration:none}
+    a:hover{text-decoration: underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:18px 0 14px;
+      margin:0 0 22px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13.8px; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:0;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: var(--brand-tint);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--brand)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color: var(--muted);
+      font-size:13.5px;
+      margin-bottom: 22px;
+    }
+    .back-link:hover{color: var(--brand)}
+    .back-link svg{width:12px; height:12px}
+
+    article .post-date{
+      font-size:13px;
+      color: var(--editorial);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    article h1{
+      margin:0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-0.2px;
+      color: var(--ink);
+    }
+    article .byline{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+    article .byline a{color: inherit; text-decoration: underline; text-underline-offset: 3px}
+    article .byline a:hover{color: var(--brand); text-decoration: none}
+    article h2{
+      margin: 36px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      color: var(--ink);
+      scroll-margin-top: 96px;
+    }
+    article h3{
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    article p{
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    article a{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}
+    article a:hover{text-decoration: none}
+    article a.fig-ref{color: var(--brand); text-decoration: none; border-bottom: 1px dotted var(--brand-edge)}
+    article a.fig-ref:hover{border-bottom-style: solid; text-decoration: none}
+    article p[id^="figure-"]{scroll-margin-top: 96px}
+    article sup a.footnote-ref{text-decoration: none; font-weight: 600}
+    article sup a.footnote-ref:hover{text-decoration: underline}
+    article sup + sup::before{content: ","; color: var(--muted); font-weight: 400}
+    article .footnote li{scroll-margin-top: 96px}
+    article ul, article ol{
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+    article li{margin-bottom: 6px}
+    article blockquote{
+      border-left: 3px solid var(--spark);
+      padding-left: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    article .hl{background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone}
+    article code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    article pre{
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    article pre code{background: none; color: var(--ink); padding: 0}
+    article img{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}
+    article .figure-pair{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    article .figure-pair img{width: 100%; margin: 0}
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 18, 46, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
+    article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
+    article .katex-display > .katex{white-space: nowrap}
+    @media (max-width: 700px){
+      article .katex-display .katex{font-size: 0.85em}
+    }
+    @media (max-width: 480px){
+      article .katex-display .katex{font-size: 0.72em}
+    }
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(0,183,243,0.10)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--editorial)}
+
+    .toc{
+      position: fixed;
+      top: 120px;
+      left: calc(50% - 620px);
+      width: 200px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding-right: 10px;
+      z-index: 5;
+    }
+    .toc-title{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .toc ol{list-style: none; padding: 0; margin: 0}
+    .toc li{margin: 0}
+    .toc a{
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid var(--border);
+      text-decoration: none;
+    }
+    .toc a:hover{color: var(--ink); border-left-color: var(--brand-edge); text-decoration: none}
+    .toc a.is-active{color: var(--brand); border-left-color: var(--brand)}
+    @media (max-width: 1259px){
+      .toc{display: none}
+    }
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--brand)}
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start}
+      nav{justify-content:flex-start}
+    }
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+  </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</head>
+<body id='top'>
+  <div class='wrap'>
+    <header>
+      <div class='brand'>
+        <a class='brand-link' href='../index.html'>
+          <img class='logo' src='../resources/logo.svg' alt='GPTomics logo' />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label='Primary'>
+        <a href='../blog.html' class='active'>Blog</a>
+        <a href='../history_book.html'>History Book</a>
+        <a href='../index.html#contact'>Contact</a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>
+      </nav>
+    </header>
+
+    <aside class='toc' aria-label='Table of contents'>
+      <div class='toc-title'>On this page</div>
+      <ol id='toc-list'></ol>
+    </aside>
+
+    <main>
+      <a class='back-link' href='../blog.html'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
+        All posts
+      </a>
+      <article>
+        <div class='post-date'>JULY 28, 2026</div>
+        <h1>Part 1: Some Guy From Buffalo</h1>
+        <p class='byline'><a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a> and <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
+        <h2 id="still-waiting-for-copernicus">Still Waiting for Copernicus</h2>
+<p>In 1543, a Polish astronomer published a book so quietly radical that he dedicated it to the pope, hoping nobody important would read past the dedication. This astronomer, Nicolaus Copernicus, thought that the current models of the universe, while correct, were too ugly. The Ptolemaic system, which had kept the Earth pinned to the center of creation for more than a thousand years, could be used to accurately predict eclipses, track planets, and keep astrologers in business. To Copernicus, its most unappealing mathematical foundation was the equant, an off-center point that let a planet preserve the appearance of uniform circular motion while actually moving at different speeds depending on where it stood. God, he felt, would not have built so inelegant a contraption.</p>
+<p>His goal was to be able to remove exceptions without having to rescue the model with new ones, something we would later come to know as Occam's razor. So he tried something else. What if the Sun sat still, and the Earth were merely another planet, orbiting along with the rest?</p>
+<div style="display: flex; gap: 1rem; align-items: flex-start;">
+  <div style="flex: 1;"><img src="./assets/some-guy-from-buffalo/pre-Copernican.gif" alt="The pre-Copernican cosmos, with Earth at the center of planetary motion" style="width: 100%; height: auto;"></div>
+  <div style="flex: 1;"><img src="./assets/some-guy-from-buffalo/copernican_solar.gif" alt="The Copernican cosmos, with the Sun at the center and Earth among the planets" style="width: 100%; height: auto;"></div>
+</div>
+
+<p><em>Figure 1. The pre-Copernican cosmos (left) fixed Earth at the center of planetary motion, while the Copernican cosmos (right) placed the Sun at the center and Earth among the planets.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></em></p>
+<p>Suddenly retrograde motion, that maddening, seemingly backward movement of the planets across the night sky, was explainable without special pleading. It was not the planets doing loops, but rather the Earth overtaking the slower outer planets on the inside track, similar to a faster car making a slower one appear to drift backward. This was the elegance Copernicus was after.</p>
+<p>While this made Copernicus's model conceptually cleaner, in practice it did not end up mechanically simpler. To maintain the same predictive accuracy, he had to keep eccentric orbits and epicycles, and he never once questioned uniform circular motion. In the end, his model wasn't obviously leaner than Ptolemy's. While he had rearranged the cosmos around a more coherent premise, he had still left most of the relationships intact. He had discovered a tidier way to lie almost as much as before, but the rearrangement left astronomers asking what the center was and where it belonged.</p>
+<h2 id="genomics-earth">Genomics' Earth</h2>
+<p>But what does this have to do with human genomics?</p>
+<p><a href="https://gptomics.com/blog/your-genome-report.html">Previously</a>, we outlined how genomic medicine represents your DNA as a list of <em>deviations from one specific reference genome</em> and how this reference is a patchwork assembled mostly from the cells of a single anonymous donor. The most commonly used reference is GRCh38, which, more or less, is the current equivalent of Earth in the Earth-centric universe that is modern human genetics.</p>
+<p>The bulk of the reference's sequence comes from one donor, known by the code RP11, with the rest stitched in from others.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> Do not think that the reference is impersonal. It is accidentally personal since it is a mosaic dominated by one stranger and then treated as though it was THE neutral human origin.</p>
+<p>This origin came to be when RP11, a man from Buffalo, answered an advertisement that ran in the <em>Buffalo News</em> on March 23, 1997. He and nineteen other volunteers were sequenced and told that no more than about ten percent of the final sequence was expected to come from any single one of them.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> That expectation did not hold since, by the end, RP11 was roughly seventy percent of the reference.</p>
+<p>The medical genomics community then took the skewed average genome and pitched the personalized-medicine revolution, all built on the fictitious neighbor. As a result, most people who get genomic sequencing receive a list of deviations from a central reference, their orbits based on a mosaic that is seventy percent one man from Buffalo.</p>
+<p>This is not the first time the healthcare space has made such a mistake. Adolphe Quetelet brought it to biology by applying astronomy's theory of errors to understand human physical traits. The theory of errors proposed that at the center of many measurements lies the true value and that deviations from it are errors. We dive deeper into this in our <a href="https://gptomics.com/history_book/era0_part1.html">history book</a>, but Quetelet's approach of measuring many humans to find a true center led to a measurement that persists today. He developed the weight-over-height-squared formula that he used to define "normal," a formula renamed the body mass index (BMI) in 1972<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> and still used in modern healthcare.</p>
+<p>Because of how the reference genome is constructed, the most common complaint has naturally been that the small, select group is not representative of the broader diversity found across eight billion humans. This criticism is valid, but it sits downstream of an even bigger peculiarity.</p>
+<p>The diversity argument calls for a more representative reference. The problem is that the reference is already too personalized, only to someone else. It is a mosaic of human sequences, seventy percent of them from one man. Any sequence or variation not present in that group becomes difficult to express, and so it gets missed. Gradually, quietly, the reference allele gets mistaken for the true value. It becomes the "normal" allele, the "ancestral" allele, the most common one. These are labels of convenience, not descriptions of reality, but a shared convention is more useful than no shared language at all.</p>
+<p>The reference allele is simply an anchor placed at the center of the universe.</p>
+<p>Replace it with a different, more diverse center, and you still have a center. You have only moved it. This has been useful for medicine. A reference point is a serviceable way to make a map for localized navigation. But it means everything must be charted in relation to that point. Most sequencing projects have already decided where the result should start. The report just tells you how far from it you are, not what you actually are.</p>
+<p>Nearly five centuries after Copernicus moved the Earth, one anonymous man from Buffalo remains fixed at the middle of the human genome.</p>
+<h2 id="a-prettier-center">A Prettier Center</h2>
+<p>One man turned Copernicus's quiet heresy into a public emergency. Galileo did this by proclaiming it loudly, in public and in Italian, which turned out to be the actual "crime." The Church had been perfectly comfortable with heliocentrism as a calculating tool, and Copernicus's own book had prelates cheering him on. The trouble started when Galileo turned a technical dispute into a public referendum on who was allowed to decide what was true. The dangerous step was the moment the model claimed to be the truth.</p>
+<p>Decades earlier, a quieter figure had found a way to reconcile both views. In Tycho Brahe's system, the Earth stayed in the center, biblically aligned. The other planets orbited the Sun, and the Sun, in turn, orbited the Earth. It was the astronomical equivalent of having your cake and eating it too. Since Tycho kept most of Copernicus's mathematical organization without asking anyone to admit the Earth moved, it stayed a popular compromise for decades.</p>
+<p><img alt="A seventeenth-century illustration of the Tychonic planetary system" src="./assets/some-guy-from-buffalo/Tychonian.png" /></p>
+<p><em>Figure 2. Tycho's compromise, illustrated in the seventeenth century: the Sun, Moon, and sphere of fixed stars orbit an immobile Earth, while the five known planets orbit the Sun.<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></em></p>
+<p>Genomics has its Tychos. The newest and best-engineered reference is CHM13. This reference, finished in 2022, is the first nearly complete telomere-to-telomere human genome from a single sample. CHM13 is now gapless where the older references had been politely looking away, giving a richer, more defined center to the genomic universe.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
+<p>The downside is that CHM13 is just one genome. Swapping GRCh37 for GRCh38, and then GRCh38 for CHM13, is Tycho's compromise all over again, a better-built model that avoids major change and still insists something has to sit at the center. The better references allow for sharper maps and better distance measurements, but the system is still referential, just with a center relocated to a nicer spot.</p>
+<h2 id="endnotes">Endnotes</h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Cornell University, "Galileo." Presents paired diagrams of the pre-Copernican and Copernican conceptions of the solar system. <a href="https://courses.cit.cornell.edu/hd11/Galileo.html" target="_blank" rel="noopener">https://courses.cit.cornell.edu/hd11/Galileo.html</a></p>
+</li>
+<li id="fn:2">
+<p>Genome Reference Consortium, "Frequently Asked Questions," National Center for Biotechnology Information. States that the RP11 (RPCI-11) library, from an anonymous male donor of African-European admixture, contributes roughly 70% of the GRCh38 primary assembly, with the remainder drawn from more than 50 other libraries. <a href="https://www.ncbi.nlm.nih.gov/grc/help/faq/" target="_blank" rel="noopener">https://www.ncbi.nlm.nih.gov/grc/help/faq/</a></p>
+</li>
+<li id="fn:3">
+<p>Ashley Smart, "The Untold Story of the Human Genome Project: How One Man's DNA Became a Pillar of Genetics," <em>STAT</em>, July 9, 2024. Reports the <em>Buffalo News</em> recruitment advertisement of March 23, 1997, and the consent form's statement that no more than about 10% of the eventual sequence was expected from any one donor. <a href="https://www.statnews.com/2024/07/09/human-genome-project-untold-story-how-single-volunteer-became-genetics-foundation/" target="_blank" rel="noopener">https://www.statnews.com/2024/07/09/human-genome-project-untold-story-how-single-volunteer-became-genetics-foundation/</a></p>
+</li>
+<li id="fn:4">
+<p>Ancel Keys et al., "Indices of Relative Weight and Obesity," <em>Journal of Chronic Diseases</em> 25, no. 6-7 (1972): 329-343. Coined the term "body mass index" for Quetelet's weight-over-height-squared ratio. <a href="https://doi.org/10.1016/0021-9681(72)90027-6" target="_blank" rel="noopener">https://doi.org/10.1016/0021-9681(72)90027-6</a></p>
+</li>
+<li id="fn:5">
+<p>Anonymous, "Hypothesis Tychonica," in Johannes Hevelius's <em>Selenographia</em> (1647), 163. Image via Wikimedia Commons, "File:Tychonian.png." Public domain. <a href="https://commons.wikimedia.org/wiki/File:Tychonian.png" target="_blank" rel="noopener">https://commons.wikimedia.org/wiki/File:Tychonian.png</a></p>
+</li>
+<li id="fn:6">
+<p>Sergey Nurk et al. (Telomere-to-Telomere Consortium), "The Complete Sequence of a Human Genome," <em>Science</em> 376, no. 6588 (2022): 44-53. Describes the gapless T2T-CHM13 assembly of the 22 autosomes and chromosome X. Karen H. Miga et al., "Telomere-to-Telomere Assembly of a Complete Human X Chromosome," <em>Nature</em> 585 (2020): 79-84. Reports that the CHM13hTERT cell line was cultured from one complete hydatidiform mole and represents a duplicated paternal haplotype. Arang Rhie et al., "The Complete Sequence of a Human Y Chromosome," <em>Nature</em> 621 (2023): 344-354. Reports that the Y chromosome was assembled from the separate HG002 genome and then combined with CHM13. <a href="https://doi.org/10.1126/science.abj6987" target="_blank" rel="noopener">https://doi.org/10.1126/science.abj6987</a>; <a href="https://doi.org/10.1038/s41586-020-2547-7" target="_blank" rel="noopener">https://doi.org/10.1038/s41586-020-2547-7</a>; <a href="https://doi.org/10.1038/s41586-023-06457-y" target="_blank" rel="noopener">https://doi.org/10.1038/s41586-023-06457-y</a></p>
+</li>
+</ol>
+</div>
+      </article>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 GPTomics. Just figure things out.</div>
+      <div><a href='#top'>I'm lazy, take me to the top</a></div>
+    </footer>
+  </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
+  <script>
+    (function(){
+      var list = document.getElementById('toc-list');
+      var toc = document.querySelector('.toc');
+      if(!list || !toc) return;
+      var headings = document.querySelectorAll('article h2');
+      if(!headings.length){ toc.style.display = 'none'; return; }
+      var links = {};
+      headings.forEach(function(h){
+        if(!h.id) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+        links[h.id] = a;
+      });
+      if('IntersectionObserver' in window){
+        var current = null;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              if(current) current.classList.remove('is-active');
+              current = links[e.target.id];
+              if(current) current.classList.add('is-active');
+            }
+          });
+        }, {rootMargin: '-80px 0px -70% 0px'});
+        headings.forEach(function(h){ if(h.id) io.observe(h); });
+      }
+    })();
+  </script>
+</body>
+</html>
