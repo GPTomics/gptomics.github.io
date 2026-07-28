@@ -245,6 +245,29 @@
       margin: 20px 0;
     }
     article .figure-pair img{width: 100%; margin: 0}
+    article .post-figure{
+      margin: 24px 0 30px;
+      scroll-margin-top: 96px;
+    }
+    article .post-figure.single{
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    article .post-figure .figure-pair{margin: 0}
+    article .post-figure > img{display: block; margin: 0}
+    article .post-figure figcaption{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
+      font-style: normal;
+    }
+    article .post-figure .figure-label{
+      color: var(--ink);
+      font-weight: 700;
+    }
     .lightbox{
       position: fixed;
       inset: 0;
@@ -398,13 +421,10 @@
       <nav aria-label='Primary'>
         <a href='../blog.html' class='active'>Blog</a>
         <a href='../history_book.html'>History Book</a>
+        <a href='../genomic_relativity.html'>Genomic Relativity</a>
         <a href='../index.html#contact'>Contact</a>
-        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'>
-          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>
-        </a>
-        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'>
-          <svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg>
-        </a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>
       </nav>
     </header>
 
@@ -541,11 +561,13 @@ Net margin goes beyond gross margin to include all fixed costs such as the actua
 </tbody>
 </table></div>
 <p><em>Table 1. The revenue, costs, profit, and margins for GainZ at each order of magnitude of user growth. We also have the break-even points for both the gross margin (58 users) and net margin (758K users).</em></p>
-<div class="figure-pair">
-  <img alt="SaaS revenue and costs" src="./assets/how_ai_changes_software_pnl/figure_1a.svg" />
-  <img alt="SaaS gross and net margin" src="./assets/how_ai_changes_software_pnl/figure_1b.svg" />
+<figure class="post-figure" id="figure-1">
+<div class='figure-pair'>
+  <img alt='SaaS revenue and costs' src='./assets/how_ai_changes_software_pnl/figure_1a.svg' />
+  <img alt='SaaS gross and net margin' src='./assets/how_ai_changes_software_pnl/figure_1b.svg' />
 </div>
-<p><em>Figure 1. GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<figcaption><span class="figure-label">Figure 1.</span> GainZ's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</figcaption>
+</figure>
 <h3 id="aiboost-margins-for-ai-native-software">AIBoost: Margins for AI-native software</h3>
 <p><strong>Revenue</strong> AIBoost is coming into the market and has done their homework, so they know how much users are willing to pay for GainZ. AIBoost decides that even though they'll have new AI-based features, because they are new and can build more cheaply, they'll charge the same amount as GainZ. They expect that their new features will let them win customers. With this strategy, AIBoost will similarly generate annually about $120/user. At 1 million users, this also adds up to $120M in revenue.</p>
 <p><strong>Fixed costs</strong> AIBoost is counting on using the latest AI capabilities to build their product more efficiently and with fewer people. They expect that with this approach they're able to build the first version of the product for 1/10th the cost, or ~$2.5M. Even though their building cost has been decreased, they similarly have to invest more to increase adoption. We'll again assume it costs an incremental 10% each time they want to double their user base. At this scale, to reach 1 million users, AIBoost needs a fixed investment of ~$7.3M.</p>
@@ -650,22 +672,24 @@ Net margin goes beyond gross margin to include all fixed costs such as the actua
 </tbody>
 </table></div>
 <p><em>Table 2. The revenue, costs, profit, and margins for AIBoost at each order of magnitude of user growth. We also have the break-even points for both the gross margin (357 users) and net margin (339K users).</em></p>
-<div class="figure-pair">
-  <img alt="AI revenue and costs" src="./assets/how_ai_changes_software_pnl/figure_2a.svg" />
-  <img alt="AI gross and net margin" src="./assets/how_ai_changes_software_pnl/figure_2b.svg" />
+<figure class="post-figure" id="figure-2">
+<div class='figure-pair'>
+  <img alt='AI revenue and costs' src='./assets/how_ai_changes_software_pnl/figure_2a.svg' />
+  <img alt='AI gross and net margin' src='./assets/how_ai_changes_software_pnl/figure_2b.svg' />
 </div>
-<p><em>Figure 2. AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</em></p>
+<figcaption><span class="figure-label">Figure 2.</span> AIBoost's revenue, cost, and margin growth as adoption goes from 0 to 1 million users.</figcaption>
+</figure>
 <h3 id="handling-expensive-ai-features">Handling expensive AI features</h3>
 <p><strong>Economy of scale</strong></p>
 <p>So why is there not an economy of scale for AI features similar to traditional features? If an AI capability is just another feature in a product, why can it not be optimized similarly to a database or workflow?</p>
 <p>Economies of scale arise when efficiencies can be found from the redundancy of doing the same thing thousands or millions of times. For instance, in a database that focuses on storing clothing information, as adoption scales, users will start to show common patterns. Their usage will likely follow consistent patterns, so the infrastructure can scale down dynamically during expected low usage periods. The data entered in the database will have similarities, allowing better compression rates on the data and leading to more efficient storage. Users in the same company will also have similar queries, so tables can be indexed and results can be cached, reducing querying costs. All of these will combine to ensure that, for the database, each additional user or company costs less to add and support than the previous one. AI-based features, though, are different. Their benefit in products is to add flexibility, dynamics, and personalization. When the feature is used, it's personalized to the user. The focus on personalization and context leak prevention will mean scaling efficiencies such as caching will have a lot less benefit. This implementation pattern is why there won't be efficiencies at scale, and cost will scale linearly with usage.</p>
-<p>If you're following the space, you will correctly point out that per-token costs are declining consistently, as highlighted by <a href="https://en.wikipedia.org/wiki/Experience_curve_effect#Wright%27s_law_and_the_discovery_of_the_learning_curve_effect">Wright's Law</a> that predicts the cost per token has dropped roughly an order of magnitude per year for the past few years. While this is indeed true due to inference efficiencies, distillation, and chip improvements, this drop in cost has been matched by a similar growth in the tokens consumed to complete a task. Reasoning models burn 10-100x more tokens than the models they replaced, and agent frameworks can make dozens of thinking-based calls together. This is compounded with growing context windows that get filled with personalized data on each call. This increased usage means that while the cost per token has dropped, the cost to complete a task has stayed roughly flat. Even if token deflation eventually outpaces this growth in usage, the costs will still be linearly linked to adoption due to personalized inference.</p>
+<p>If you're following the space, you will rightly point out that per-token costs are declining predictably, as highlighted by <a href="https://en.wikipedia.org/wiki/Experience_curve_effect#Wright%27s_law_and_the_discovery_of_the_learning_curve_effect">Wright's Law</a> that predicts the cost per token has dropped roughly an order of magnitude per year for the past few years. While this is indeed true due to inference efficiencies, distillation, and chip improvements, this drop in cost has been matched by a similar growth in the tokens consumed to complete a task. Reasoning models burn 10-100x more tokens than the models they replaced, and agent frameworks can make dozens of thinking calls together. This is coupled with growing context windows that get filled with personalized data on each call. This increased usage means that while the cost per token has dropped, the cost to complete a task has stayed roughly flat. Even if token deflation eventually outpaces this growth in usage, the costs will still be linearly linked to adoption.</p>
 <p><strong>Increased cost</strong></p>
 <p>If there isn't an economy of scale, can't you just charge more for AI features to hit your target margin? If the features are so great and powerful, won't users be willing to pay more for them?</p>
 <p>Raising prices and/or charging separately for AI features may work in the short term, especially for the first few products in a space or for an existing product with users adding new AI capabilities. This approach of charging a premium in a green-field space can be seen in consumer goods and manufacturing. In software, this will truly only be a short-term band-aid. Since agents have lowered the cost to build so much, once a proven price point has been established in a space, competitors willing to take lower margins will enter lucrative markets, increasing competition. The main pressure against competitors will be non-software moats such as network effects, data flywheels, or switching costs, which will hold up better.</p>
 <p>If a company raises prices, this increased competition will force them to respond in two ways. First, they can race to the bottom by lowering prices. This can be effective if they're in a winner-takes-most market and they have access to a lot of capital. In this scenario, the viable approach is burning cash to be the winner and, once they are the winner, increasing prices to regain margins. Alternatively, they can focus on going beyond software to add more value to their product. This could include ensuring that buying the software also means transferring liability, gaining regulatory compliance, or some other service-based value. The key is to find a capability that is hard to copy. By bundling that capability for customers with the easy-to-copy software, they can charge a premium, resulting in increased margins.</p>
 <p><strong>Build your own model</strong></p>
-<p>Wouldn't building your own model give you an edge to increase the margin on AI features? By owning the model, surely you can find some scaling efficiencies.</p>
+<p>Wouldn't building your own model give you a wedge to increase the margin on AI features? By owning the model, surely you can find some scaling efficiencies.</p>
 <p>For generalizable models and agents, at this time, it will be hard to compete with OpenAI, Google, Anthropic, and other frontier labs. Open models require hosting costs, which have their own high costs. Additionally, open models are consistently 6-12 months behind in capabilities, a gap that, in a competitive market, can mean losing customers. If a company manages to find a profitable pattern for generalizable models that users enjoy, their best product will likely be to sell access to the model and not worry about other software products.</p>
 <p>For a specialized task, though, building and hosting their own model can be a leverage point. If they need AI flexibility for a nuanced task, they have access to non-public data for the task, and they can create an efficient model that proves valuable (via cost or performance), then this can be a major differentiator. For specialized models, since their utility is constrained, scaling benefits may also emerge. Additionally, if they are deployed with the right data flywheels in place, deploying them can lead to an even better product differentiation. All of these can lead to decreasing costs and the ability to charge a premium, helping increase their margins. I do warn them to be cautious with this approach. Thoroughly vet if they truly have a unique task, unique data, and/or unique approach. Often, a company might think they have unique data, but they either can't train on it for regulatory reasons or every competitor has their own similar version of the unique non-public data.</p>
 <h2 id="arbitrage-opportunities">Arbitrage opportunities</h2>

@@ -2,11 +2,12 @@
   {
     "file": "some-guy-from-buffalo.md",
     "date": "2026-07-28",
-    "title": "Part 1: Some Guy From Buffalo",
+    "title": "Some Guy From Buffalo",
     "author": [
       "Jason Chin",
       "Domen Jemec"
-    ]
+    ],
+    "series": "Genomic Relativity"
   },
   {
     "file": "your-genome-report.md",
@@ -15,7 +16,8 @@
     "author": [
       "Jason Chin",
       "Domen Jemec"
-    ]
+    ],
+    "series": "Genomic Relativity"
   },
   {
     "file": "era0_part1.md",

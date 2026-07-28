@@ -134,4 +134,5 @@ dmypy.json
 # claude
 .claude
 CLAUDE.md
+AGENTS.md
 instructions.md

@@ -249,6 +249,29 @@
       margin: 20px 0;
     }
     article .figure-pair img{width: 100%; margin: 0}
+    article .post-figure{
+      margin: 24px 0 30px;
+      scroll-margin-top: 96px;
+    }
+    article .post-figure.single{
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    article .post-figure .figure-pair{margin: 0}
+    article .post-figure > img{display: block; margin: 0}
+    article .post-figure figcaption{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
+      font-style: normal;
+    }
+    article .post-figure .figure-label{
+      color: var(--ink);
+      font-weight: 700;
+    }
     .lightbox{
       position: fixed;
       inset: 0;
@@ -402,6 +425,7 @@
       <nav aria-label='Primary'>
         <a href='../blog.html' class='active'>Blog</a>
         <a href='../history_book.html'>History Book</a>
+        <a href='../genomic_relativity.html'>Genomic Relativity</a>
         <a href='../index.html#contact'>Contact</a>
         <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>
         <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>
@@ -423,8 +447,10 @@
         <h1>What Your Genome Report Doesn&#x27;t Say</h1>
         <p class='byline'><a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a> and <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a></p>
         <p>Consider two genetic reports sitting on your doctor's desk, one from Invitae and one from GeneDx. The first report is for your two-year-old child, evaluated for early markers of developmental delays. You sent a saliva sample to Invitae, one of the largest clinical genomics laboratories in the United States. The lab says it tests 241 genes that are associated with neurodevelopmental disorders. Two weeks later your doctor gets back the report. You see it, and under "Result," it says <em>Uncertain</em> with three findings flagged, each in a notation that looks something like a serial number.</p>
-<p id="figure-1"><img alt="Invitae NDD Panel report: three Variants of Uncertain Significance, no diagnosis" src="./assets/your-genome-report/invitae-ndd-report-sample.png" /><br />
-<em>Figure 1. Sample Invitae Neurodevelopmental Disorders Panel report with patient identifiers redacted.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></em></p>
+<figure class="post-figure single" id="figure-1">
+<img alt="Invitae NDD Panel report: three Variants of Uncertain Significance, no diagnosis" src="./assets/your-genome-report/invitae-ndd-report-sample.png" />
+<figcaption><span class="figure-label">Figure 1.</span> Sample Invitae Neurodevelopmental Disorders Panel report with patient identifiers redacted.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></figcaption>
+</figure>
 <p>Your heart drops and the results instantly send your mind into overdrive. It's based on a gene, so why is it uncertain? The one word you remember from your science classes is heterozygous, but you've forgotten that it means the change sits on only one of your child's two copies of the gene. This could have happened through inheritance from either parent or through a new mutation. The rest of the report is a code, and most concerning is that the ambiguity ends with the advice to discuss the results with a healthcare provider.</p>
 <p>The second report you requested is a GeneDx cancer panel. While it's a different lab with a different disease target, the report ends up with the same structure, giving you the gene name, a string of letters and numbers for the "variant," a consequence, zygosity, and verdict. You're left with a similar set of questions, though depending on the verdict, the report might alleviate concerns or deliver more.</p>
 <p>You talk to your doctor about these letters and learn that this notation, consisting of c., p., the position numbers, and the letter substitutions, is how every major clinical genomics laboratory in the world reports its findings. It has become the standardized shared language for medical genetics so that trained physicians can consistently read the report regardless of the lab running the test. Your genetic counselor, though, tells you that you don't need to worry about those specifics since the test translates them for you and that they're here to answer any questions you may have.</p>
@@ -455,8 +481,10 @@
 <p>The reference genome was one of the primary products of the Human Genome Project, the international effort that ran from 1990 to 2003 and produced what was announced, somewhat misleadingly, as "the human genome." In reality, the genome it produced was a representative human genome assembled from DNA donated by a small number of anonymous volunteers. The DNA that was extracted from the volunteers' blood was sequenced in fragments and then stitched into a continuous sequence. This was transformative in the sequencing space, as it gave researchers a map against which a person's sequence could be compared, rapidly accelerating analysis. This map made tasks like finding the cause of simple mutation-driven diseases simpler. Without the reference genome, the last two decades of genomic medicine would not have happened.</p>
 <p>But the reference was never meant to scientifically represent <strong>THE</strong> human genome, or a single universal true genome. Instead, it was meant to be what we described, a practical tool and comparison anchor. As more genomes were sequenced and technology improved, the <a href="https://www.ncbi.nlm.nih.gov/grc">Genome Reference Consortium</a> has maintained and updated the references, including continuing to advance their latest major version, GRCh38, alongside an earlier version, GRCh37. Despite being built in 2009, GRCh37 is maintained as it still remains widely popular for clinical labs. They have not switched because each revision changes the genomic coordinates that are used to define the numbers in the variant description. Minor updates can be somewhat smoothly handled, but a major shift would require revalidation of the diagnostic pipeline, a time-intensive process. This revalidation is due to the change in how a variant is represented. A variant that lives at one address in GRCh37 lives at a slightly different address in GRCh38. For clinical diagnostic reports that look at sometimes proprietary variants, this means ensuring all the variants are cross-mapped and validated. In addition, any associated analysis pipelines, publications, and documentation need to support the change in the coordinates for the variant. As an example, if you look at public clinical variant repositories such as <a href="https://www.ncbi.nlm.nih.gov/clinvar/">ClinVar</a>, you can see that they have to maintain separate coordinates for the different references. All this remapping, reanalysis, and republication creates a cognitive load on the field. Keep this in mind for later.</p>
 <p>But let's dive deeper into what the GRC human references actually are. Since they came from the donation of several people, it's fair to think that they're either all from a single person or an equal split from the group, but neither is true. GRCh38 is a mosaic drawn from roughly twenty donors, but this obscures the truth that a single volunteer, an anonymous man from Buffalo known in the literature as RP11, accounts for roughly 70% of the sequence by himself.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> The rest is stitched together from the other contributors to fill the gaps. This means that no single person is actually the reference, but, at the same time, the reference is heavily biased toward a single individual.</p>
-<p id="figure-2"><img alt="Sequencing and Alignment Overview" src="./assets/your-genome-report/sequencing_alignment.png" /><br />
-<em>Figure 2. An overview of genomic alignment showing how DNA is broken into fragments, the fragments are sequenced, and then compared against a reference.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></em></p>
+<figure class="post-figure single" id="figure-2">
+<img alt="Sequencing and Alignment Overview" src="./assets/your-genome-report/sequencing_alignment.png" />
+<figcaption><span class="figure-label">Figure 2.</span> An overview of genomic alignment showing how DNA is broken into fragments, the fragments are sequenced, and then compared against a reference.<sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></figcaption>
+</figure>
 <p>So when you get your genome sequenced for a test, the reference they use is like one of those we mentioned. What the lab actually does is break down the sample you provided, isolate the DNA, break the DNA into a lot of short fragments, and then put it through a sequencing machine to read the pieces, converting an electric impulse into a DNA letter. Once all the pieces have been read, a computer program uses the reference to figure out where each piece goes (allowing for pieces to overlap), and the places where the reads disagree with the reference become the list of variants on the report. This is a bit like rebuilding a puzzle against a printout of the finished picture, laying each piece where it best matches and noting every spot where your piece and the printout disagree.</p>
 <p>So let's layer this back into what the clinical report example, or most any report from a certified clinical laboratory, is actually saying. Remember, the reference is twenty individuals, and over 70% is individual RP11. So all the report is saying is that your genome has a few listed differences from individual RP11 and a few dozen others, not because that group is the target you're trying to hit, but because their sequence became the baseline from which every difference is described.</p>
 <h2 id="the-velvet-handcuffs">The Velvet Handcuffs</h2>

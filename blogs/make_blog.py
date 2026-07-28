@@ -31,6 +31,7 @@ def nav_items(active):
     return (
         f"<a href='../blog.html'{blog}>Blog</a>\n"
         f"        <a href='../history_book.html'{cb}>History Book</a>\n"
+        f"        <a href='../genomic_relativity.html'>Genomic Relativity</a>\n"
         f"        <a href='../index.html#contact'>Contact</a>\n"
         f"        {ICON_GITHUB}\n"
         f"        {ICON_X}"
@@ -74,16 +75,56 @@ def linkify_footnotes(html_str):
 
 
 def link_figures(html_str):
-    '''Give each figure paragraph an id and turn in-text "Figure N" mentions into anchors that scroll to it.'''
-    html_str = re.sub(r'<p>(<img[^>]*>\s*<br\s*/>\s*<em>Figure (\d+)\.)', r'<p id="figure-\2">\1', html_str)
+    '''Render numbered image captions semantically and link in-text figure references.'''
+    caption_label = r'(Figure|Image) (\d+)\.'
 
     def link(m):
         if m.group(1):
             return m.group(0)
-        n = m.group(2)
-        return f'<a class="fig-ref" href="#figure-{n}">Figure {n}</a>'
+        kind, n = m.group(2), m.group(3)
+        return f'<a class="fig-ref" href="#figure-{n}">{kind} {n}</a>'
 
-    return re.sub(r'(<em>)?Figure (\d+)', link, html_str)
+    # Link prose references before replacing captions. The optional <em> group
+    # prevents the caption's own label from becoming a self-link.
+    html_str = re.sub(r'(<em>)?(Figure|Image) (\d+)', link, html_str)
+
+    def figure(media_html, kind, n, caption_html, single):
+        single_class = ' single' if single else ''
+        return (
+            f'<figure class="post-figure{single_class}" id="figure-{n}">\n'
+            f'{media_html.strip()}\n'
+            f'<figcaption><span class="figure-label">{kind} {n}.</span> '
+            f'{caption_html.strip()}</figcaption>\n'
+            f'</figure>'
+        )
+
+    def paired_figure(m):
+        return figure(m.group(1), m.group(2), m.group(3), m.group(4), single=False)
+
+    # A responsive image pair is raw HTML followed by an italic Markdown
+    # caption. Group the whole unit into one semantic figure.
+    html_str = re.sub(
+        rf'(<div class=[\'"]figure-pair[\'"]>.*?</div>)\s*'
+        rf'<p>\s*<em>{caption_label}\s*(.*?)</em>\s*</p>',
+        paired_figure,
+        html_str,
+        flags=re.DOTALL,
+    )
+
+    def single_figure(m):
+        return figure(m.group(1), m.group(2), m.group(3), m.group(4), single=True)
+
+    # Python-Markdown emits either one paragraph with <br /> when the image and
+    # caption are adjacent, or two paragraphs when a blank line separates them.
+    # Support both authoring forms.
+    return re.sub(
+        rf'<p>\s*(<img\b[^>]*>)\s*'
+        rf'(?:<br\s*/?>\s*|</p>\s*<p>\s*)'
+        rf'<em>{caption_label}\s*(.*?)</em>\s*</p>',
+        single_figure,
+        html_str,
+        flags=re.DOTALL,
+    )
 
 TEMPLATE = '''<!doctype html>
 <html lang='en'>
@@ -317,6 +358,29 @@ TEMPLATE = '''<!doctype html>
       margin: 20px 0;
     }}
     article .figure-pair img{{width: 100%; margin: 0}}
+    article .post-figure{{
+      margin: 24px 0 30px;
+      scroll-margin-top: 96px;
+    }}
+    article .post-figure.single{{
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }}
+    article .post-figure .figure-pair{{margin: 0}}
+    article .post-figure > img{{display: block; margin: 0}}
+    article .post-figure figcaption{{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
+      font-style: normal;
+    }}
+    article .post-figure .figure-label{{
+      color: var(--ink);
+      font-weight: 700;
+    }}
     .lightbox{{
       position: fixed;
       inset: 0;

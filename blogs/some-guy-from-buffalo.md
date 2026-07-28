@@ -1,4 +1,4 @@
-# Part 1: Some Guy From Buffalo
+# Some Guy From Buffalo
 
 ## Still Waiting for Copernicus
 
@@ -6,9 +6,9 @@ In 1543, a Polish astronomer published a book so quietly radical that he dedicat
 
 His goal was to be able to remove exceptions without having to rescue the model with new ones, something we would later come to know as Occam's razor. So he tried something else. What if the Sun sat still, and the Earth were merely another planet, orbiting along with the rest?
 
-<div style="display: flex; gap: 1rem; align-items: flex-start;">
-  <div style="flex: 1;"><img src="./assets/some-guy-from-buffalo/pre-Copernican.gif" alt="The pre-Copernican cosmos, with Earth at the center of planetary motion" style="width: 100%; height: auto;"></div>
-  <div style="flex: 1;"><img src="./assets/some-guy-from-buffalo/copernican_solar.gif" alt="The Copernican cosmos, with the Sun at the center and Earth among the planets" style="width: 100%; height: auto;"></div>
+<div class='figure-pair'>
+  <img src="./assets/some-guy-from-buffalo/pre-Copernican.gif" alt="The pre-Copernican cosmos, with Earth at the center of planetary motion">
+  <img src="./assets/some-guy-from-buffalo/copernican_solar.gif" alt="The Copernican cosmos, with the Sun at the center and Earth among the planets">
 </div>
 
 *Figure 1. The pre-Copernican cosmos (left) fixed Earth at the center of planetary motion, while the Copernican cosmos (right) placed the Sun at the center and Earth among the planets.[^1]*
@@ -21,7 +21,7 @@ While this made Copernicus's model conceptually cleaner, in practice it did not 
 
 But what does this have to do with human genomics?
 
-[Previously](https://gptomics.com/blog/your-genome-report.html), we outlined how genomic medicine represents your DNA as a list of *deviations from one specific reference genome* and how this reference is a patchwork assembled mostly from the cells of a single anonymous donor. The most commonly used reference is GRCh38, which, more or less, is the current equivalent of Earth in the Earth-centric universe that is modern human genetics.
+[Previously](./your-genome-report.html), we outlined how genomic medicine represents your DNA as a list of *deviations from one specific reference genome* and how this reference is a patchwork assembled mostly from the cells of a single anonymous donor. The most commonly used reference is GRCh38, which, more or less, is the current equivalent of Earth in the Earth-centric universe that is modern human genetics.
 
 The bulk of the reference's sequence comes from one donor, known by the code RP11, with the rest stitched in from others.[^2] Do not think that the reference is impersonal. It is accidentally personal since it is a mosaic dominated by one stranger and then treated as though it was THE neutral human origin.
 
@@ -29,7 +29,7 @@ This origin came to be when RP11, a man from Buffalo, answered an advertisement 
 
 The medical genomics community then took the skewed average genome and pitched the personalized-medicine revolution, all built on the fictitious neighbor. As a result, most people who get genomic sequencing receive a list of deviations from a central reference, their orbits based on a mosaic that is seventy percent one man from Buffalo.
 
-This is not the first time the healthcare space has made such a mistake. Adolphe Quetelet brought it to biology by applying astronomy's theory of errors to understand human physical traits. The theory of errors proposed that at the center of many measurements lies the true value and that deviations from it are errors. We dive deeper into this in our [history book](https://gptomics.com/history_book/era0_part1.html), but Quetelet's approach of measuring many humans to find a true center led to a measurement that persists today. He developed the weight-over-height-squared formula that he used to define "normal," a formula renamed the body mass index (BMI) in 1972[^4] and still used in modern healthcare.
+This is not the first time the healthcare space has made such a mistake. Adolphe Quetelet brought it to biology by applying astronomy's theory of errors to understand human physical traits. The theory of errors proposed that at the center of many measurements lies the true value and that deviations from it are errors. We dive deeper into this in our [history book](../history_book/era0_part1.html), but Quetelet's approach of measuring many humans to find a true center led to a measurement that persists today. He developed the weight-over-height-squared formula that he used to define "normal," a formula renamed the body mass index (BMI) in 1972[^4] and still used in modern healthcare.
 
 Because of how the reference genome is constructed, the most common complaint has naturally been that the small, select group is not representative of the broader diversity found across eight billion humans. This criticism is valid, but it sits downstream of an even bigger peculiarity.
 
@@ -48,7 +48,6 @@ One man turned Copernicus's quiet heresy into a public emergency. Galileo did th
 Decades earlier, a quieter figure had found a way to reconcile both views. In Tycho Brahe's system, the Earth stayed in the center, biblically aligned. The other planets orbited the Sun, and the Sun, in turn, orbited the Earth. It was the astronomical equivalent of having your cake and eating it too. Since Tycho kept most of Copernicus's mathematical organization without asking anyone to admit the Earth moved, it stayed a popular compromise for decades.
 
 ![A seventeenth-century illustration of the Tychonic planetary system](./assets/some-guy-from-buffalo/Tychonian.png)
-
 *Figure 2. Tycho's compromise, illustrated in the seventeenth century: the Sun, Moon, and sphere of fixed stars orbit an immobile Earth, while the five known planets orbit the Sun.[^5]*
 
 Genomics has its Tychos. The newest and best-engineered reference is CHM13. This reference, finished in 2022, is the first nearly complete telomere-to-telomere human genome from a single sample. CHM13 is now gapless where the older references had been politely looking away, giving a richer, more defined center to the genomic universe.[^6]
