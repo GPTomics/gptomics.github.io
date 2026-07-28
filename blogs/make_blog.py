@@ -350,7 +350,7 @@ TEMPLATE = '''<!doctype html>
       line-height: 1.6;
     }}
     article pre code{{background: none; color: var(--ink); padding: 0}}
-    article img{{max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px; cursor: zoom-in}}
+    article img{{display: block; max-width: 100%; height: auto; margin: 20px auto; border-radius: 8px; cursor: zoom-in}}
     article .figure-pair{{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -369,7 +369,7 @@ TEMPLATE = '''<!doctype html>
       margin-right: auto;
     }}
     article .post-figure .figure-pair{{margin: 0}}
-    article .post-figure > img{{display: block; margin: 0}}
+    article .post-figure > img{{display: block; margin: 0 auto}}
     article .post-figure figcaption{{
       margin-top: 8px;
       color: var(--muted);
