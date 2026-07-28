@@ -120,7 +120,7 @@ Going to a personal genome will not answer every question overnight. The unknown
 
 For twenty years, the foundation of genomic medicine has been a pile of short reads and a reference genome. The instruments have improved. The question is whether the clinical and regulatory infrastructure will evolve fast enough.
 
-## Notes
+## Endnotes
 
 [^1]: Invitae, "Neurodevelopmental Disorders Panel," sample case report (2023), meddx.com.hk. Provides the anonymized clinical report used as the essay's anchor example; patient identifiers redacted. https://meddx.com.hk/img/ndd-sample-report.pdf
 [^2]: V. A. Schneider et al., "Evaluation of GRCh38 and de novo haploid genome assemblies demonstrates the enduring quality of the reference assembly," *Genome Research* 27, 849-864 (2017). Reports that one library, RP11, from an anonymous male of admixed African-European ancestry, supplies about 70% of GRCh38. https://genome.cshlp.org/content/27/5/849

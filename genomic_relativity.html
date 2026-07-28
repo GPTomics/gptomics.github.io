@@ -125,14 +125,14 @@
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      padding:18px 0 14px;
-      margin:0 0 22px;
+      padding:10px 0 8px;
+      margin:0;
     }
     .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
     .brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
     .brand-link:hover{text-decoration:none}
-    .logo{width:58px; height:58px; object-fit:contain; flex:0 0 auto}
-    .brand h1{margin:6px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px}
+    .logo{width:48px; height:48px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:1px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px; line-height:1.2}
     nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
     nav a{
       font-size:13.8px;
@@ -148,10 +148,10 @@
     main{padding:8px 0 0}
     .intro h1{
       margin:0 0 12px;
-      font-size:clamp(30px,4vw,44px);
+      font-size:20px;
       font-weight:800;
-      line-height:1.16;
-      letter-spacing:-0.3px;
+      line-height:1.25;
+      letter-spacing:0.15px;
     }
     .series-authors{margin:0 0 24px; color:var(--muted); font-size:15px; font-style:italic}
     .series-authors a{color:inherit; text-decoration:underline; text-underline-offset:3px}
@@ -192,7 +192,7 @@
       text-align:center;
     }
     @media (max-width:720px){
-      header{flex-direction:column; align-items:flex-start}
+      header{flex-direction:column; align-items:flex-start; gap:8px}
       nav{justify-content:flex-start; gap:7px}
     }
   </style>
@@ -224,7 +224,7 @@
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Genomic Relativity</h1>
         <p class="series-authors">
-          By <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>
+          Series co-authors: <a href="https://x.com/infoecho/" target="_blank" rel="noopener">Jason Chin</a>
           and <a href="https://domenjemec.com/" target="_blank" rel="noopener">Domen Jemec</a>
         </p>
         <p class="intro-copy">

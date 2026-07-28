@@ -98,8 +98,8 @@
       align-items:center;
       justify-content:space-between;
       gap:18px;
-      padding:18px 0 14px;
-      margin:0 0 22px 0;
+      padding:10px 0 8px;
+      margin:0;
     }
     .brand{
       display:flex;
@@ -108,8 +108,8 @@
       min-width:0;
     }
     .logo{
-      width:58px;
-      height:58px;
+      width:48px;
+      height:48px;
       border-radius:0;
       border:0;
       background: transparent;
@@ -117,15 +117,17 @@
       flex:0 0 auto;
     }
     .brand h1{
-      margin:6px 0 0;
+      margin:1px 0 0;
       font-weight:750;
       letter-spacing:0.2px;
       font-size:24px;
+      line-height:1.2;
     }
     .brand p{
-      margin:2px 0 0;
+      margin:0;
       color:var(--muted);
       font-size:13.8px;
+      line-height:1.35;
       max-width:60ch;
     }
     nav{
@@ -152,8 +154,9 @@
     nav a.icon svg{width:18px; height:18px; display:block}
 
     .summary{
-      margin: 6px 0 26px 0;
+      margin:0 0 26px;
     }
+    .summary hr{margin:0 0 12px}
     .summary h2{
       margin:0 0 12px;
       font-size:20px;
@@ -187,8 +190,8 @@
     }
     @media (max-width: 720px){
       .grid{grid-template-columns: 1fr;}
-      header{flex-direction:column; align-items:flex-start;}
-      nav{justify-content:flex-start;}
+      header{flex-direction:column; align-items:flex-start; gap:8px;}
+      nav{justify-content:flex-start; gap:7px;}
     }
 
     .tile{
