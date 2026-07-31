@@ -1,6 +1,6 @@
 # Relative To What
 
-In our [previous blog](https://www.gptomics.com/blog/some-guy-from-buffalo.html), we discussed how astronomy and genomics both struggled to define a true center. Each field treated the center as the key to understanding everything around it, whether universe or genome.
+In our [previous blog](https://www.gptomics.com/blog/some-guy-from-buffalo), we discussed how astronomy and genomics both struggled to define a true center. Each field treated the center as the key to understanding everything around it, whether universe or genome.
 
 ## The Ether That Wasn't There
 
@@ -64,7 +64,7 @@ Think of the reference genome as a toll bridge. It is currently the only river c
 
 Stacked on top is a vertical institutional pile that adds inertia to the system. The NIH funds and maintains the reference assembly. The ACMG sets standards for deciding whether a variant is pathogenic, and those variants must be described against a specified reference sequence.[^5] Bodies like ASCO turn "pathogenic per ACMG" into actual treatment guidelines. Each layer intertwines its legitimacy with its foundations. No single body can swap that foundation without either invalidating itself or invalidating everything stacked above.
 
-This structure also drives the business realities of this same system. Long-read sequencing can generate complete personal assemblies and has narrowed the gap with short-read sequencing, but adoption remains limited. Healthcare protocols and billing are defined in relation to the reference-based system. Why would anyone move fast to adopt a more expensive technology if the current stack already works? The current system is not built for tests whose value requires time to compound. Where there is forward thinking, it usually takes the form of adding long-read capabilities to the existing architecture and using them to build a mass-market reference-based test. The [incentives in biology](https://www.gptomics.com/blog/biology_is_messy.html) just keep driving a more complex reference.
+This structure also drives the business realities of this same system. Long-read sequencing can generate complete personal assemblies and has narrowed the gap with short-read sequencing, but adoption remains limited. Healthcare protocols and billing are defined in relation to the reference-based system. Why would anyone move fast to adopt a more expensive technology if the current stack already works? The current system is not built for tests whose value requires time to compound. Where there is forward thinking, it usually takes the form of adding long-read capabilities to the existing architecture and using them to build a mass-market reference-based test. The [incentives in biology](https://www.gptomics.com/blog/biology_is_messy) just keep driving a more complex reference.
 
 Physics, in contrast, moved quickly. Max Planck was championing Einstein's special relativity within a year of its publication. By 1908, Hermann Minkowski had recast the whole theory in the language of spacetime, and within a few more years relativity was part of the central vocabulary of the field. Much of that speed came from necessity. The ether had failed, and several other cracks in classical theory had formed.
 

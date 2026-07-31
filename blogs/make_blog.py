@@ -29,10 +29,10 @@ def nav_items(active):
     blog = " class='active'" if active == 'blog' else ''
     cb = " class='active'" if active == 'history_book' else ''
     return (
-        f"<a href='../blog.html'{blog}>Blog</a>\n"
-        f"        <a href='../history_book.html'{cb}>History Book</a>\n"
-        f"        <a href='../genomic_relativity.html'>Genomic Relativity</a>\n"
-        f"        <a href='../index.html#contact'>Contact</a>\n"
+        f"<a href='../blog'{blog}>Blog</a>\n"
+        f"        <a href='../history_book'{cb}>History Book</a>\n"
+        f"        <a href='../genomic_relativity'>Genomic Relativity</a>\n"
+        f"        <a href='../#contact'>Contact</a>\n"
         f"        {ICON_GITHUB}\n"
         f"        {ICON_X}"
     )
@@ -524,7 +524,7 @@ TEMPLATE = '''<!doctype html>
   <div class='wrap'>
     <header>
       <div class='brand'>
-        <a class='brand-link' href='../index.html'>
+        <a class='brand-link' href='../'>
           <img class='logo' src='../resources/logo.svg' alt='GPTomics logo' />
           <div>
             <h1>GPTomics</h1>
@@ -733,7 +733,7 @@ def main():
     manifest = load_manifest()
     existing = next((e for e in manifest if e['file'] == md_dest.name), None)
     iso_date = existing['date'] if existing else date.today().isoformat()
-    href = f'{section}/{slug}.html'
+    href = f'{section}/{slug}'
     extra = {'series': 'History Book', 'path': href} if args.history_book else None
     manifest = upsert_manifest(manifest, md_dest.name, iso_date, title, author_field, extra)
     save_manifest(manifest)
@@ -792,7 +792,7 @@ def main():
         year=date.today().year,
         body_html=body_html,
         nav_items=nav_items(section),
-        back_link_href='../history_book.html' if args.history_book else '../blog.html',
+        back_link_href='../history_book' if args.history_book else '../blog',
         back_link_label='History Book' if args.history_book else 'All posts',
         SITE_URL=SITE_URL,
         GA_ID=GA_ID,

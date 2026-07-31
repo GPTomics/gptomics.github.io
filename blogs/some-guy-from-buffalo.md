@@ -21,7 +21,7 @@ While this made Copernicus's model conceptually cleaner, in practice it did not 
 
 But what does this have to do with human genomics?
 
-[Previously](./your-genome-report.html), we outlined how genomic medicine represents your DNA as a list of *deviations from one specific reference genome* and how this reference is a patchwork assembled mostly from the cells of a single anonymous donor. The most commonly used reference is GRCh38, which, more or less, is the current equivalent of Earth in the Earth-centric universe that is modern human genetics.
+[Previously](./your-genome-report), we outlined how genomic medicine represents your DNA as a list of *deviations from one specific reference genome* and how this reference is a patchwork assembled mostly from the cells of a single anonymous donor. The most commonly used reference is GRCh38, which, more or less, is the current equivalent of Earth in the Earth-centric universe that is modern human genetics.
 
 The bulk of the reference's sequence comes from one donor, known by the code RP11, with the rest stitched in from others.[^2] Do not think that the reference is impersonal. It is accidentally personal since it is a mosaic dominated by one stranger and then treated as though it was THE neutral human origin.
 
@@ -29,7 +29,7 @@ This origin came to be when RP11, a man from Buffalo, answered an advertisement 
 
 The medical genomics community then took the skewed average genome and pitched the personalized-medicine revolution, all built on the fictitious neighbor. As a result, most people who get genomic sequencing receive a list of deviations from a central reference, their orbits based on a mosaic that is seventy percent one man from Buffalo.
 
-This is not the first time the healthcare space has made such a mistake. Adolphe Quetelet brought it to biology by applying astronomy's theory of errors to understand human physical traits. The theory of errors proposed that at the center of many measurements lies the true value and that deviations from it are errors. We dive deeper into this in our [history book](../history_book/era0_part1.html), but Quetelet's approach of measuring many humans to find a true center led to a measurement that persists today. He developed the weight-over-height-squared formula that he used to define "normal," a formula renamed the body mass index (BMI) in 1972[^4] and still used in modern healthcare.
+This is not the first time the healthcare space has made such a mistake. Adolphe Quetelet brought it to biology by applying astronomy's theory of errors to understand human physical traits. The theory of errors proposed that at the center of many measurements lies the true value and that deviations from it are errors. We dive deeper into this in our [history book](../history_book/era0_part1), but Quetelet's approach of measuring many humans to find a true center led to a measurement that persists today. He developed the weight-over-height-squared formula that he used to define "normal," a formula renamed the body mass index (BMI) in 1972[^4] and still used in modern healthcare.
 
 Because of how the reference genome is constructed, the most common complaint has naturally been that the small, select group is not representative of the broader diversity found across eight billion humans. This criticism is valid, but it sits downstream of an even bigger peculiarity.
 
