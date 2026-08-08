@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <meta name='description' content='AI can predict biology, but the cells still get the final vote. Why the assay, not the model, decides what a drug discovery loop can learn.' />
+  <title>The Wet Lab is Part of the Model | GPTomics</title>
+  <meta property='og:site_name' content='GPTomics' />
+  <meta property='og:locale' content='en_US' />
+  <meta property='og:title' content='The Wet Lab is Part of the Model' />
+  <meta property='og:description' content='AI can predict biology, but the cells still get the final vote. Why the assay, not the model, decides what a drug discovery loop can learn.' />
+  <meta property='og:url' content='https://www.gptomics.com/blog/the-wet-lab-is-part-of-the-model' />
+  <meta property='og:type' content='article' />
+  <meta property='og:image' content='https://www.gptomics.com/blog/assets/the-wet-lab-is-part-of-the-model/jurassic-park-hatching-eggs.png' />
+  <meta property='og:image:type' content='image/png' />
+  <meta property='og:image:width' content='755' />
+  <meta property='og:image:height' content='428' />
+  <meta property='og:image:alt' content='Scientists leaning over a nest of hatching dinosaur eggs in a Jurassic Park hatchery' />
+  <meta property='article:author' content='Bianca Lauro' />
+  <meta property='article:published_time' content='2026-08-08T08:00:00-07:00' />
+  <meta property='article:modified_time' content='2026-08-08T08:00:00-07:00' />
+  <meta property='article:section' content='Drug Discovery' />
+  <meta property='article:tag' content='ai drug discovery' />
+  <meta property='article:tag' content='assay design' />
+  <meta property='article:tag' content='wet lab' />
+  <meta property='article:tag' content='experimental design' />
+  <meta property='article:tag' content='design-test-learn cycle' />
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@gptomics' />
+  <meta name='twitter:creator' content='@gptomics' />
+  <meta name='twitter:title' content='The Wet Lab is Part of the Model' />
+  <meta name='twitter:description' content='AI can predict biology, but the cells still get the final vote. Why the assay, not the model, decides what a drug discovery loop can learn.' />
+  <meta name='twitter:image' content='https://www.gptomics.com/blog/assets/the-wet-lab-is-part-of-the-model/jurassic-park-hatching-eggs.png' />
+  <meta name='twitter:image:alt' content='Scientists leaning over a nest of hatching dinosaur eggs in a Jurassic Park hatchery' />
+  <link rel='canonical' href='https://www.gptomics.com/blog/the-wet-lab-is-part-of-the-model' />
+  <link rel='icon' type='image/svg+xml' href='../resources/logo.svg' />
+  <link rel='icon' href='../resources/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='16x16' href='../resources/favicon-16x16.png' />
+  <link rel='icon' type='image/png' sizes='32x32' href='../resources/favicon-32x32.png' />
+  <link rel='icon' type='image/png' sizes='48x48' href='../resources/favicon-48x48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='../resources/favicon-192x192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='../resources/apple-touch-icon.png' />
+  <link rel='manifest' href='../resources/site.webmanifest' />
+  <link rel='preconnect' href='https://www.googletagmanager.com' />
+  <meta name='author' content='Bianca Lauro' />
+  <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The Wet Lab is Part of the Model",
+    "description": "AI can predict biology, but the cells still get the final vote. Why the assay, not the model, decides what a drug discovery loop can learn.",
+    "datePublished": "2026-08-08T08:00:00-07:00",
+    "dateModified": "2026-08-08T08:00:00-07:00",
+    "wordCount": 1897,
+    "articleSection": "Drug Discovery",
+    "keywords": "ai drug discovery, assay design, wet lab experiments, experimental design, design-test-learn cycle, reporter assay, RNA therapeutics, assay bias",
+    "image": "https://www.gptomics.com/blog/assets/the-wet-lab-is-part-of-the-model/jurassic-park-hatching-eggs.png",
+    "author": {"@type": "Person", "name": "Bianca Lauro", "url": "https://www.linkedin.com/in/biancamlauro/"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "GPTomics",
+      "url": "https://www.gptomics.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.gptomics.com/resources/logo_square.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.gptomics.com/blog/the-wet-lab-is-part-of-the-model"
+    }
+  }
+  </script>
+  <style>
+    :root{
+      --bg: #fbfafe;
+      --bg2: #ffffff;
+      --ink: #16122e;
+      --muted: #4d4666;
+      --border: #e4dff0;
+      --brand: #5d44a8;
+      --brand-tint: rgba(93,68,168,0.07);
+      --brand-tint-soft: rgba(93,68,168,0.04);
+      --brand-edge: rgba(93,68,168,0.28);
+      --brand-pale: #d4cce4;
+      --editorial: #c2483a;
+      --spark: #00b7f3;
+      --shadow: 0 8px 26px rgba(22, 18, 46, 0.07);
+      --radius: 14px;
+      --maxw: 1280px;
+    }
+    *{box-sizing:border-box}
+    ::selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    ::-moz-selection{background:rgba(0,183,243,0.30); color:var(--ink)}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a{color: var(--editorial); text-decoration:none}
+    a:hover{text-decoration: underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 18px 46px}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 0 8px;
+      margin:0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 10;
+    }
+    .brand{display:flex; align-items:flex-start; gap:14px; min-width:0}
+    .brand a.brand-link{display:flex; align-items:flex-start; gap:14px; color:inherit}
+    .brand a.brand-link:hover{text-decoration:none}
+    .logo{width:48px; height:48px; object-fit:contain; flex:0 0 auto}
+    .brand h1{margin:1px 0 0; font-weight:750; letter-spacing:0.2px; font-size:24px; line-height:1.2}
+    .brand p{margin:0; color:var(--muted); font-size:13.8px; line-height:1.35; max-width:60ch}
+    nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    nav a{
+      font-size:13.8px;
+      padding:7px 10px;
+      border-radius:0;
+      border:1px solid transparent;
+      color: var(--ink);
+    }
+    nav a:hover{
+      border-color: var(--border);
+      background: var(--brand-tint);
+      text-decoration:none;
+    }
+    nav a.active{color: var(--brand); border-color: var(--brand-edge); background: var(--brand-tint)}
+    nav a.icon{padding:7px; color: var(--muted)}
+    nav a.icon:hover{color: var(--brand)}
+    nav a.icon svg{width:18px; height:18px; display:block}
+
+    main{max-width:800px; margin:0 auto; padding:8px 0 0}
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color: var(--muted);
+      font-size:13.5px;
+      margin-bottom: 22px;
+    }
+    .back-link:hover{color: var(--brand)}
+    .back-link svg{width:12px; height:12px}
+
+    article .post-date{
+      font-size:13px;
+      color: var(--editorial);
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    article h1{
+      margin:0 0 6px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight:800;
+      line-height:1.2;
+      letter-spacing:-0.2px;
+      color: var(--ink);
+    }
+    article .byline{
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0 0 28px;
+      font-style: italic;
+    }
+    article .byline a{color: inherit; text-decoration: underline; text-underline-offset: 3px}
+    article .byline a:hover{color: var(--brand); text-decoration: none}
+    article h2{
+      margin: 36px 0 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.1px;
+      color: var(--ink);
+      scroll-margin-top: 96px;
+    }
+    article h3{
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    article p{
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+    }
+    article a{color: var(--editorial); text-decoration: underline; text-underline-offset: 3px}
+    article a:hover{text-decoration: none}
+    article a.fig-ref{color: var(--brand); text-decoration: none; border-bottom: 1px dotted var(--brand-edge)}
+    article a.fig-ref:hover{border-bottom-style: solid; text-decoration: none}
+    article p[id^="figure-"]{scroll-margin-top: 96px}
+    article sup a.footnote-ref{text-decoration: none; font-weight: 600}
+    article sup a.footnote-ref:hover{text-decoration: underline}
+    article sup + sup::before{content: ","; color: var(--muted); font-weight: 400}
+    article .footnote li{scroll-margin-top: 96px}
+    article ul, article ol{
+      color: var(--ink);
+      font-size: 16.5px;
+      line-height: 1.75;
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+    article li{margin-bottom: 6px}
+    article blockquote{
+      border-left: 3px solid var(--spark);
+      padding-left: 16px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+    article .hl{background: rgba(0,183,243,0.20); padding: 0 3px; border-radius: 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone}
+    article code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      background: var(--brand-tint);
+      color: var(--brand);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    article pre{
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 20px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    article pre code{background: none; color: var(--ink); padding: 0}
+    article img{display: block; max-width: 100%; height: auto; margin: 20px auto; border-radius: 8px; cursor: zoom-in}
+    article .figure-pair{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    article .figure-pair img{width: 100%; margin: 0}
+    article .post-figure{
+      margin: 24px 0 30px;
+      scroll-margin-top: 96px;
+    }
+    article .post-figure.single{
+      width: fit-content;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    article .post-figure .figure-pair{margin: 0}
+    article .post-figure > img{display: block; margin: 0 auto}
+    article .post-figure figcaption{
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
+      font-style: normal;
+    }
+    article .post-figure .figure-label{
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(22, 18, 46, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      z-index: 9999;
+      cursor: zoom-out;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .lightbox.is-open{opacity: 1; pointer-events: auto}
+    .lightbox img{max-width: 96vw; max-height: 92vh; width: auto; height: auto; background: var(--bg); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,0.45)}
+    .lightbox-close{
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      color: rgba(255,255,255,0.85);
+      font-size: 28px;
+      line-height: 1;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
+    .lightbox-close:hover{color: #fff}
+    article hr{border: none; border-top: 1px solid var(--border); margin: 32px 0}
+    article .katex-display{overflow-x: auto; overflow-y: hidden; padding: 4px 0; max-width: 100%; -webkit-overflow-scrolling: touch}
+    article .katex-display > .katex{white-space: nowrap}
+    @media (max-width: 700px){
+      article .katex-display .katex{font-size: 0.85em}
+    }
+    @media (max-width: 480px){
+      article .katex-display .katex{font-size: 0.72em}
+    }
+    article .table-wrap{overflow-x: auto; margin: 22px 0}
+    article table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      line-height: 1.5;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+    article thead th{
+      text-align: left;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-size: 11.5px;
+      padding: 10px 12px;
+      border-bottom: 1.5px solid var(--ink);
+      background: transparent;
+    }
+    article tbody td{
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    article tbody tr:last-child td{border-bottom: 1px solid var(--ink)}
+    article tbody tr:hover td{background: rgba(0,183,243,0.10)}
+    article th[style*='right']{text-align: right}
+    article td[style*='right']{text-align: right}
+    article table a{color: var(--editorial)}
+
+    .toc{
+      position: fixed;
+      top: 120px;
+      left: calc(50% - 620px);
+      width: 200px;
+      max-height: calc(100vh - 150px);
+      overflow-y: auto;
+      padding-right: 10px;
+      z-index: 5;
+    }
+    .toc-title{
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .toc ol{list-style: none; padding: 0; margin: 0}
+    .toc li{margin: 0}
+    .toc a{
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid var(--border);
+      text-decoration: none;
+    }
+    .toc a:hover{color: var(--ink); border-left-color: var(--brand-edge); text-decoration: none}
+    .toc a.is-active{color: var(--brand); border-left-color: var(--brand)}
+    @media (max-width: 1259px){
+      .toc{display: none}
+    }
+
+    html{scroll-behavior:smooth}
+    footer{
+      margin-top:40px;
+      padding-top:14px;
+      border-top:1px solid rgba(22,18,46,0.10);
+      color: rgba(22,18,46,0.55);
+      font-size:12.5px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer a{color: var(--brand)}
+
+    @media (max-width: 720px){
+      header{flex-direction:column; align-items:flex-start; gap:8px}
+      nav{justify-content:flex-start; gap:7px}
+    }
+    @media (max-width: 500px){
+      footer{flex-direction:column; text-align:center}
+    }
+  </style>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css' integrity='sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+' crossorigin='anonymous' />
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js' integrity='sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg' crossorigin='anonymous'></script>
+  <script defer src='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js' integrity='sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk' crossorigin='anonymous'
+    onload='renderMathInElement(document.body, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "\\[", right: "\\]", display: true }], throwOnError: false });'></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-WC0W8D6J20'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WC0W8D6J20');
+  </script>
+</head>
+<body id='top'>
+  <div class='wrap'>
+    <header>
+      <div class='brand'>
+        <a class='brand-link' href='../'>
+          <img class='logo' src='../resources/logo.svg' alt='GPTomics logo' />
+          <div>
+            <h1>GPTomics</h1>
+          </div>
+        </a>
+      </div>
+      <nav aria-label='Primary'>
+        <a href='../blog' class='active'>Blog</a>
+        <a href='../history_book'>History Book</a>
+        <a href='../genomic_relativity'>Genomic Relativity</a>
+        <a href='../#contact'>Contact</a>
+        <a class='icon' href='https://github.com/GPTomics' target='_blank' rel='noopener' aria-label='GitHub'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg></a>
+        <a class='icon' href='https://x.com/gptomics' target='_blank' rel='noopener' aria-label='X'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z'/></svg></a>
+      </nav>
+    </header>
+
+    <aside class='toc' aria-label='Table of contents'>
+      <div class='toc-title'>On this page</div>
+      <ol id='toc-list'></ol>
+    </aside>
+
+    <main>
+      <a class='back-link' href='../blog'>
+        <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M19 12H5M12 19l-7-7 7-7'/></svg>
+        All posts
+      </a>
+      <article>
+        <div class='post-date'>AUGUST 8, 2026</div>
+        <h1>The Wet Lab is Part of the Model</h1>
+        <p class='byline'><a href="https://www.linkedin.com/in/biancamlauro/" target="_blank" rel="noopener">Bianca Lauro</a></p>
+        <h2 id="ai-can-predict-biology-but-biology-still-decides-whats-real">AI can predict biology, but biology still decides what’s real</h2>
+<p>If you haven’t been sleeping under a rock, then you’ve at least heard that AI can design drugs. This is fair and exciting because the models are helpful and make things clear for us and can spot things that you and I would probably miss after 4 coffees and looking at your work at 8 pm all slumped in your computer chair (but still want to sit there because sitting there means you’re still doing work…but you know you’re not 😉). I genuinely appreciate AI because it lets me spend less time on the grunt work of finding possibilities and more time on deciding which experiment is actually worth running. Like my brain kicking in and saying, “Wait, they need different transfection methods, can that inherently create bias?”</p>
+<p>My main point is that AI can make predictions, but <strong>eventually those predictions have to meet real biology in an experiment</strong>. Of course, I’d love a robot to run the experiment because it would save time and energy, and maybe one day the whole process will be automated. But the cells still get the final vote. That may sound obvious, but it is an important piece I think is slowly being overlooked.</p>
+<p>It’s like when you grow up and you ask your mom for advice and she says well you should do this, or maybe you should take this class, or this job would be better. But guess what? That was all based on her experience and predictions based on knowledge she possessed and info you fed her about the current situation and that was applied to a new future scenario. But what determines what happens after that? Me, Bianca, the person doing life.</p>
+<p>The same principle applies to science. I consult AI, it predicts stuff, but then Bianca and/or a robot needs to test that prediction in biology. AI may eventually design and even execute the experiments for me, but it still needs biology to give answers back.</p>
+<p><strong><em>I just ran this experiment and I got the answer. Hold your horses, getting a result doesn’t mean you understand what happened</em></strong></p>
+<p>Imagine this, you get a pile of RNA molecules you want to test in cells, and you want to know which gives a higher reporter signal. You run the test and A is giving a higher luminescence reading than B. Woohoo! That means A is better than B and is the BEST! Sometimes that’s true, but a higher signal isn’t enough evidence to conclude that A is the better therapeutic. Why do you ask? Because saying A is the best sits on top of a whole host of unknowns.</p>
+<p><em>A quick list of things I’d ask:</em></p>
+<ol>
+<li>
+<p>Was your RNA intact in both cases?</p>
+</li>
+<li>
+<p>Did we quantify them right?</p>
+</li>
+<li>
+<p>What was the relative innate immune response? Did that affect expression? Oh boy, what immune signals should I look at? Wait, what pathway would it even trigger? Omg…</p>
+</li>
+<li>
+<p>Was transfection efficiency good in all the wells? Did I put the dish on an angle in the incubator or was the incubator set up on an angle? (don’t laugh, this has happened, or maybe that is funny? lol)</p>
+</li>
+<li>
+<p>Were the cells equally healthy?</p>
+</li>
+<li>
+<p>Is the reporter itself biasing the readout?</p>
+</li>
+</ol>
+<p>The AI can only see what we choose to measure and give it. But I the scientist must decide what that value means and what you can’t say about it. This is why experimental work can’t just be treated as a “validation step” at the end of a model’s pipeline. The experiment is part of the system’s intelligence.</p>
+<h2 id="models-only-see-what-the-assay-lets-them-see">Models only see what the assay lets them see</h2>
+<p>I had a Mustang once and kept hearing these weird sounds on the highway. I took it to the mechanic; they hooked it up to that computer and they said there’s nothing wrong. But I knew the car wasn’t fine. The scanner only measures problems the car’s sensors are designed to detect. That noise could be something wearing down without ever triggering a “code” in the car’s computer.</p>
+<p>The same principle applies to assays. Every decision in a biological data set you get was shaped by human decisions. For example, I chose the cell type, dose, time point, what to measure, which controls, how to get a successful result. You get a window into the biology, but I created a window that isn’t complete.</p>
+<p>If an experiment measures only protein expression, the model may learn which sequences produce the strongest signal under those conditions. It may not learn which sequences cause excessive innate immune activation, reduce cell viability or lose expression after twenty-four hours.</p>
+<p>The data isn’t bad, but AI can only learn from what the experiment actually measures. If my experiment missed something or there’s a problem, the AI could learn those problems too. <strong>Being good at predicting an assay doesn’t always mean being good at predicting real human biology.</strong></p>
+<p>It’s like trying to figure out what’s going on in the neighborhood but you only put a camera into the window of one person’s home and draw conclusions from what you see..</p>
+<h2 id="the-goal-isnt-just-more-data">The goal isn’t just more data</h2>
+<p>We could probably agree that most people, when trying to answer a question, say well, we need more data. We don’t just need more data though; <strong>we need better data</strong>. We need clarity and that’s the challenge. And probably the hardest assays to run are the assays that can separate competing explanations like, if a therapy fails, was it unstable? Did it even enter the cell? (another funny moment, people thinking they can just throw anything on a cell, and it will be taken up 😂) Was translation blocked? Was the protein degraded? Or did my assay just miss the real signal?</p>
+<p>So, the point here is that AI can help me decide what to test next, but <strong>it can’t rescue an experiment that was never designed to answer the why.</strong></p>
+<h2 id="but-ai-can-speed-everything-up-right">But AI can speed everything up, right?</h2>
+<p>But what if I’m using the wrong directions? Driving my Subaru faster isn’t going to get me there faster I’m just lost faster … LOL</p>
+<p>I love turning this into real life so here’s another scenario if you are a Casper fan.</p>
+<figure class="post-figure" id="figure-1">
+<div class='figure-pair'>
+  <img src="./assets/the-wet-lab-is-part-of-the-model/casper-grooming-machine.png" alt="Dibs strapped into an automated grooming machine, a mechanical toothbrush pressed against his face">
+  <img src="./assets/the-wet-lab-is-part-of-the-model/casper-grooming-aftermath.png" alt="Dibs covered head to toe in shaving foam after the grooming machine finishes its routine">
+</div>
+<figcaption><span class="figure-label">Figure 1.</span> The automated morning routine in Casper (1995). The machine runs every step of the process, and runs all of them badly.</figcaption>
+</figure>
+<p>The scene where Dibs (Eric Idle) and Kat (Christina Ricci) sit in this ridiculous machine that’s supposed to get him ready for the day. It brushes teeth, shaves, does everything and theoretically is more efficient. Except it’s terrible at the job, you see the toothbrush is brushing the face and then the knives coming to cut his beard and he’s in the chair on the conveyer belt that’s going to get him there no matter what but the knives are clacking together sharpening up for their task ahead, but the knives are so large they look like they are going to sacrifice an animal.</p>
+<p>But this is the point, automating a bad process doesn’t suddenly make it a good one. You’ve just made the bad process faster and Biology has the same problem. AI can accelerate the design-test-learn cycle, but if the assay feeding that cycle is noisy or misleading, you’re just getting crappy data faster.</p>
+<h2 id="ai-changes-what-the-scientists-job-actually-is">AI changes what the scientist’s job actually is</h2>
+<p>AI is great because it can shift scientists’ role from generating data to actually designing systems that produce data we can interpret. So that means scientists can now ask:</p>
+<ol>
+<li>
+<p>Does this assay measure the biology we care about?</p>
+</li>
+<li>
+<p>Can this assay separate competing mechanisms?</p>
+</li>
+<li>
+<p>Are controls good to rule out noise?</p>
+</li>
+<li>
+<p>Is this assay reproducible and scalable?</p>
+</li>
+<li>
+<p>Can we generalize this data beyond this experiment?</p>
+</li>
+</ol>
+<p>So having a good assay means it doesn’t just test the hypothesis it also shapes what the system can learn next.</p>
+<figure class="post-figure single" id="figure-2">
+<img alt="Scientists leaning over a nest of hatching dinosaur eggs in a Jurassic Park hatchery" src="./assets/the-wet-lab-is-part-of-the-model/jurassic-park-hatching-eggs.png" />
+<figcaption><span class="figure-label">Figure 2.</span> The hatchery scene in Jurassic Park (1993). The eggs are hatching in a park that was designed to make reproduction impossible.</figcaption>
+</figure>
+<p>We can use Jurassic Park to emulate this scenario. If you can recall the scene when they discover the dinosaur eggs are hatching but they are like, “wait, the dinosaurs are breeding?” They were like, we made all the dinosaurs female therefore they can’t reproduce. That’s an experimental strategy that is incomplete. They measured something, but it wasn’t enough to answer the biological question they actually cared about. The real question was: “Can these dinosaurs reproduce in this environment?” A scientist acting as a system designer would think beyond simply checking whether the dinosaurs were originally female:</p>
+<ol>
+<li>
+<p>Could the frog DNA change their biology? (In the movie, they used frog DNA to fill gaps in the dinosaur DNA, and some frogs can change sex under certain conditions.)</p>
+</li>
+<li>
+<p>Could sex change under certain environmental conditions?</p>
+</li>
+<li>
+<p>Are there eggs or nests appearing?</p>
+</li>
+<li>
+<p>Are we monitoring reproductive behavior?</p>
+</li>
+<li>
+<p>Would our measurements even catch reproduction if it started?</p>
+</li>
+</ol>
+<p>So, when I say that a good assay does not just test a hypothesis, it shapes what the system can learn next, that means Jurassic Park shouldn’t have just asked, “Are they female?” They needed to design a system capable of answering the bigger question: “Can life find a way?” 😂</p>
+<p><strong>You’re not just the person running the experiment anymore. You’re deciding what window into reality the AI gets to see.</strong></p>
+<h2 id="the-wet-lab-is-part-of-the-model">The wet lab is part of the model</h2>
+<p>Think of AI drug discovery as a loop where everything depends on everything else. For example, the AI will suggest what to test and then you run the experiment to test it and the result can be fed back into AI to teach it what to try next. However, this loop is only as good as what information you feed back into it. And I think one of the worst things is when the data gives inconsistent results: AI can mistake random noise for something important. So, the real point is that we have to make sure that we have smart AI, good experiments and that the AI and experiments are constantly learning from each other.</p>
+<p>So, the real power isn’t just having really smart AI or really good experiments. It’s making sure the AI and the biology are constantly learning from each other.</p>
+<p>Ideally it looks like this:</p>
+<p>AI says, “Based on what I know, I think these 10 molecules are worth testing.”<br />
+The lab tests them.<br />
+Biology says, “Actually, #7 worked really well. #2 was toxic. #4 did nothing.”<br />
+AI learns from those results and makes a smarter next guess.</p>
+<p>If this isn’t hitting home, just remember the Jurassic Park scene and it gives the whole lesson.</p>
+<p>Scientists: “We designed this system and we know what it will do!” All confident like us scientist 😉</p>
+<p>Biology: “SURPRISE!”</p>
+<p>So, the lesson here is that we can make our best prediction, but biology might do something completely different and the experiment is what tells us what’s actually real.</p>
+<p>Small caveat: this movie is fiction, but you get the idea, biological systems can behave in unexpected ways your model/design didn’t anticipate, and this is very real.</p>
+<p><strong><em>End of the day, biology gets the final say</em></strong></p>
+<p>AI can make a really good prediction, but then you run the experiment and biology is like, “Nope.” 😂 And honestly, that’s where it gets interesting because now you have to figure out what you missed and why.</p>
+      </article>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 GPTomics. Just figure things out.</div>
+      <div><a href='#top'>I'm lazy, take me to the top</a></div>
+    </footer>
+  </div>
+  <div class='lightbox' id='lightbox' role='dialog' aria-modal='true' aria-hidden='true'>
+    <button class='lightbox-close' type='button' aria-label='Close'>&times;</button>
+    <img alt='' />
+  </div>
+  <script>
+    (function(){
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('img');
+      function open(src, alt){
+        img.src = src;
+        img.alt = alt || '';
+        box.classList.add('is-open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        box.classList.remove('is-open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        img.src = '';
+      }
+      document.querySelectorAll('article img').forEach(function(el){
+        el.addEventListener('click', function(){ open(el.currentSrc || el.src, el.alt); });
+      });
+      box.addEventListener('click', close);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
+  <script>
+    (function(){
+      var list = document.getElementById('toc-list');
+      var toc = document.querySelector('.toc');
+      if(!list || !toc) return;
+      var headings = document.querySelectorAll('article h2');
+      if(!headings.length){ toc.style.display = 'none'; return; }
+      var links = {};
+      headings.forEach(function(h){
+        if(!h.id) return;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+        links[h.id] = a;
+      });
+      if('IntersectionObserver' in window){
+        var current = null;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting){
+              if(current) current.classList.remove('is-active');
+              current = links[e.target.id];
+              if(current) current.classList.add('is-active');
+            }
+          });
+        }, {rootMargin: '-80px 0px -70% 0px'});
+        headings.forEach(function(h){ if(h.id) io.observe(h); });
+      }
+    })();
+  </script>
+</body>
+</html>
